@@ -9,5 +9,5 @@ vi .env # or your editor of choice
 yarn install
 yarn build # or yarn dev for hot reload and stuff
 
-php artisan migrate:fresh
+php artisan db:rebuild
 ```
