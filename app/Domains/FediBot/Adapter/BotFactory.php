@@ -2,11 +2,15 @@
 
 namespace App\Domains\FediBot\Adapter;
 
+use App\Domains\FediBot\Backend\Gw2ForumRss;
+use App\Domains\FediBot\Backend\PostBackend;
+use App\Domains\FediBot\Enum\BackendType;
+use App\Domains\FediBot\Exceptions\UnknownBackend;
 use App\Domains\FediBot\Models\Bot;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
 
-class BotClientFactory
+class BotFactory
 {
     protected Client $httpClient;
 
@@ -20,5 +24,13 @@ class BotClientFactory
         return (new MastodonClient($this->httpClient))
             ->domain($bot->domain)
             ->token($bot->access_token);
+    }
+
+    public function toBackend(Bot $bot): PostBackend
+    {
+        return match($bot->backend->type) {
+            BackendType::GW2_FORUM_RSS => resolve(Gw2ForumRss::class),
+            default => throw UnknownBackend::for($bot->backend->type)
+        };
     }
 }

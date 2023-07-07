@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use SimpleXMLElement;
 
-class Gw2ForumRss
+class Gw2ForumRss implements PostBackend
 {
     /**
      * @return Collection<Post>

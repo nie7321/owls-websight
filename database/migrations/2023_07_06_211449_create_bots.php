@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('bot_backends', function (Blueprint $table) {
             $table->id();
 
-            $table->string('type');
+            $table->string('type')->unique();
             $table->string('label');
 
             $table->timestamps();
