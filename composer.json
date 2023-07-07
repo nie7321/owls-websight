@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "ext-simplexml": "*",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/jetstream": "^3.2",
@@ -13,7 +14,7 @@
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^2.11",
         "revolution/laravel-mastodon-api": "^3.0",
-        "ext-simplexml": "*"
+        "sentry/sentry-laravel": "^3.6"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",
