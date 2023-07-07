@@ -23,9 +23,13 @@ return new class extends Migration
             $table->id();
 
             $table->string('username');
-            $table->string('access_token');
+            $table->string('server_url');
+            $table->string('access_token', 4000);
             $table->foreignId('bot_backend_id')->index();
             $table->json('configuration');
+
+            $table->string('check_frequency_interval');
+            $table->datetime('next_check_at')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

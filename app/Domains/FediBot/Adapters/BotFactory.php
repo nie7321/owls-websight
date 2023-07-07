@@ -22,15 +22,22 @@ class BotFactory
     public function toClient(Bot $bot): MastodonClient
     {
         return (new MastodonClient($this->httpClient))
-            ->domain($bot->domain)
+            ->domain($bot->server_url)
             ->token($bot->access_token);
     }
 
     public function toBackend(Bot $bot): PostBackend
     {
-        return match($bot->backend->type) {
+        $backend = match($bot->backend->type) {
             BackendType::GW2_FORUM_RSS => resolve(Gw2ForumRss::class),
             default => throw UnknownBackend::for($bot->backend->type)
         };
+
+        $errors = $backend->validateConfiguration($bot->configuration);
+        if ($errors->isNotEmpty()) {
+            throw new PostBackendError("Invalid backend config: {$errors->first()}");
+        }
+
+        return $backend;
     }
 }

@@ -3,13 +3,22 @@
 namespace App\Domains\FediBot\Adapters;
 
 use App\Domains\FediBot\Entities\ServerLimits;
+use Carbon\CarbonInterval;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Cache;
 use Revolution\Mastodon\MastodonClient as RevolutionMastodonClient;
 use Revolution\Mastodon\Contracts\Factory as RevolutionMastodonClientInterface;
 
 class MastodonClient extends RevolutionMastodonClient implements RevolutionMastodonClientInterface
 {
     public function limits(): ServerLimits
+    {
+        $cacheKey = "FEDI_LIMITS/{$this->domain}";
+
+        return Cache::remember($cacheKey, CarbonInterval::minutes(15)->totalSeconds, $this->fetchLimits(...));
+    }
+
+    private function fetchLimits(): ServerLimits
     {
         $instance = $this->get('/instance');
 

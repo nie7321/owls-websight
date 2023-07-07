@@ -15,28 +15,18 @@ class Bot extends Model
     use HasFactory, SoftDeletes;
 
     protected $casts = [
+        'next_check_at' => 'datetime',
         'access_token' => 'encrypted',
         'configuration' => 'array',
     ];
 
     public function backend(): BelongsTo
     {
-        return $this->belongsTo(BotBackend::class);
+        return $this->belongsTo(BotBackend::class, 'bot_backend_id');
     }
 
     public function post_history(): HasMany
     {
         return $this->hasMany(PostHistory::class);
-    }
-
-    /**
-     * @return Attribute<string, never>
-     */
-    protected function domain(): Attribute
-    {
-        // @TODO this would have to webfinger to be accurate tho
-        return Attribute::make(
-            get: fn () => Str::of($this->username)->after('@')->prepend('https://'),
-        );
     }
 }

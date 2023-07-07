@@ -4,14 +4,25 @@ namespace App\Domains\FediBot\Backends;
 
 use App\Domains\FediBot\Entities\ServerLimits;
 use App\Domains\FediBot\Entities\Post;
+use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\MessageBag as MessageBagImpl;
 use Illuminate\Support\Str;
 use SimpleXMLElement;
 
 class Gw2ForumRss implements PostBackend
 {
+
+    public function validateConfiguration(array $configuration): MessageBag
+    {
+        $bag = new MessageBagImpl;
+        $bag->addIf(! Arr::has($configuration, 'feed'), 'feed', "Key 'feed' expected with URL");
+
+        return $bag;
+    }
+
     /**
      * @return Collection<Post>
      */
