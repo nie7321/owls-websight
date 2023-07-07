@@ -4,6 +4,7 @@ namespace App\Domains\FediBot\Backends;
 
 use App\Domains\FediBot\Entities\ServerLimits;
 use App\Domains\FediBot\Entities\Post;
+use App\Domains\FediBot\Exceptions\PostBackendError;
 use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -48,7 +49,7 @@ class Gw2ForumRss implements PostBackend
             ->get($url);
 
         if (! $response->successful()) {
-            throw new \Exception('throw a better exception chief');
+            throw new PostBackendError("Unable to get posts from GW2 forms: {$response->status()}}");
         }
 
         return $response->body();
