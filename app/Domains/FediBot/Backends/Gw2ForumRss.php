@@ -39,7 +39,7 @@ class Gw2ForumRss implements PostBackend
             $posts[] = $this->itemToPost($item, $limits);
         }
 
-        return new Collection($posts);
+        return (new Collection($posts))->reverse();
     }
 
     protected function getFeed(string $url): string
