@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domains\FediBot\Enum;
+namespace App\Domains\FediBot\Enums;
 
 enum BackendType: string
 {

@@ -2,7 +2,7 @@
 
 namespace App\Domains\FediBot\Seeders;
 
-use App\Domains\FediBot\Enum\BackendType;
+use App\Domains\FediBot\Enums\BackendType;
 use App\Domains\FediBot\Models\BotBackend;
 use App\Domains\Foundation\Seeders\IdempotentSeeder;
 

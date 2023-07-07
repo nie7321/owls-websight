@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domains\FediBot\Entity;
+namespace App\Domains\FediBot\Entities;
 
 class Post
 {

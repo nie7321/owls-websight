@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Domains\FediBot\Backend;
+namespace App\Domains\FediBot\Backends;
 
-use App\Domains\FediBot\Entity\ServerLimits;
-use App\Domains\FediBot\Entity\Post;
+use App\Domains\FediBot\Entities\ServerLimits;
+use App\Domains\FediBot\Entities\Post;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;

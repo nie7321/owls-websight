@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domains\FediBot\Adapter;
+namespace App\Domains\FediBot\Adapters;
 
-use App\Domains\FediBot\Entity\ServerLimits;
+use App\Domains\FediBot\Entities\ServerLimits;
 use Illuminate\Support\Arr;
 use Revolution\Mastodon\MastodonClient as RevolutionMastodonClient;
 use Revolution\Mastodon\Contracts\Factory as RevolutionMastodonClientInterface;

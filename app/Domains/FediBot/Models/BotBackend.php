@@ -2,7 +2,7 @@
 
 namespace App\Domains\FediBot\Models;
 
-use App\Domains\FediBot\Enum\BackendType;
+use App\Domains\FediBot\Enums\BackendType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

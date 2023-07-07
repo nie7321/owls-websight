@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Domains\FediBot\Adapter;
+namespace App\Domains\FediBot\Adapters;
 
-use App\Domains\FediBot\Backend\Gw2ForumRss;
-use App\Domains\FediBot\Backend\PostBackend;
-use App\Domains\FediBot\Enum\BackendType;
+use App\Domains\FediBot\Backends\Gw2ForumRss;
+use App\Domains\FediBot\Backends\PostBackend;
+use App\Domains\FediBot\Enums\BackendType;
 use App\Domains\FediBot\Exceptions\UnknownBackend;
 use App\Domains\FediBot\Models\Bot;
 use GuzzleHttp\Client;
