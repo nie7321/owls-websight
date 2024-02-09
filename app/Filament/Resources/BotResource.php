@@ -41,9 +41,10 @@ class BotResource extends Resource
                     ->label('Backend')
                     ->required()
                     ->options(BotBackend::orderBy('label')->pluck('label', 'id')),
-                Forms\Components\TextInput::make('configuration')
+                Forms\Components\KeyValue::make('configuration')
                     ->required()
-                    ->json()
+                    ->keyPlaceholder('Property name')
+                    ->valuePlaceholder('Property value')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('check_frequency_interval')
                     ->label('Check Frequency Interval')
