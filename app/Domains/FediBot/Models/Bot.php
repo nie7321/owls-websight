@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
 
@@ -28,5 +29,10 @@ class Bot extends Model
     public function post_history(): HasMany
     {
         return $this->hasMany(PostHistory::class);
+    }
+
+    public function latest_post(): HasOne
+    {
+        return $this->hasOne(PostHistory::class)->latestOfMany();
     }
 }
