@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('credits', fn () => view('legal.credits'))->name('legal.credits');
 
-Route::get('{year}/{month}/{day}/{slug}', \App\Http\Controllers\BlogPostController::class)
+Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class, 'show'])
     ->where([
         'year' => '\d{4}',
         'month' => '\d{2}',
         'day' => '\d{2}',
     ])
     ->name('blog-post.show');
+
+Route::get('/', [Controllers\BlogPostController::class, 'index'])->name('blog-post.index');
 
 Route::middleware([
     'auth:sanctum',

@@ -33,7 +33,7 @@
                     </div>
                 </a></div>
             <div class="flex items-center space-x-4 leading-5 sm:space-x-6"><a
-                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/blog">Blog</a><a
+                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('blog-post.index') }}">Home</a><a
                     class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/tags">Tags</a><a
                     class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">Projects</a><a
                     class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/about">About</a>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="px-12 py-4"><a
                                 class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                                href="/blog">Blog</a></div>
+                                href="{{ route('blog-post.index') }}">Home</a></div>
                         <div class="px-12 py-4"><a
                                 class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
                                 href="/tags">Tags</a></div>
