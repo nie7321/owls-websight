@@ -167,7 +167,7 @@
                     <div>&copy; {{ \Illuminate\Support\Carbon::now()->year }} owls, all rights reserved</div>
                 </div>
                 <div class="mb-8 text-sm text-gray-500 dark:text-gray-400">
-                    <a target="#" href="{{ route('legal.credits') }}">credits &amp; licenses</a>
+                    <a href="{{ route('legal.credits') }}">credits &amp; licenses</a>
                 </div>
             </div>
         </footer>
