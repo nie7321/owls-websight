@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('{year}/{month}/{day}/{slug}', \App\Http\Controllers\BlogPostController::class)
+    ->where([
+        'year' => '\d{4}',
+        'month' => '\d{2}',
+        'day' => '\d{2}',
+    ])
+    ->name('blog-post.show');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
