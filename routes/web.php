@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('credits', fn () => view('legal.credits'))->name('legal.credits');
+
 Route::get('{year}/{month}/{day}/{slug}', \App\Http\Controllers\BlogPostController::class)
     ->where([
         'year' => '\d{4}',

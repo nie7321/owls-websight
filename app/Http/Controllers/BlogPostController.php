@@ -20,6 +20,8 @@ class BlogPostController extends Controller
         abort_unless($post->published_at->isSameDay($urlDate), 404);
         abort_unless($post->published_at->lessThan(Carbon::now()), 403);
 
-        dd($post->title, $post->content, $post->tags->map->label);
+        return view('blog.show', [
+            'post' => $post,
+        ]);
     }
 }
