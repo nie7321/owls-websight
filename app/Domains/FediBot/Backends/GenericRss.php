@@ -2,7 +2,7 @@
 
 namespace App\Domains\FediBot\Backends;
 
-use App\Domains\FediBot\Backends\Concerns\RssTools;
+use App\Domains\FediBot\Backends\RSS\RssTools;
 use App\Domains\FediBot\Entities\Post;
 use App\Domains\FediBot\Entities\ServerLimits;
 use Illuminate\Contracts\Support\MessageBag;
@@ -13,7 +13,12 @@ use Illuminate\Support\Str;
 
 class GenericRss implements PostBackend
 {
-    use RssTools;
+    public function __construct(
+        protected RssTools $rssUtil,
+    )
+    {
+        //
+    }
 
     public function validateConfiguration(array $configuration): MessageBag
     {
@@ -44,11 +49,11 @@ class GenericRss implements PostBackend
     public function postsFromFeed(array $configuration, ServerLimits $limits): Collection
     {
         $posts = new Collection;
-        foreach (Arr::get($configuration, 'feeds', []) as $feedUrl) {
+        foreach (Arr::get($configuration, 'feed', []) as $feedUrl) {
             $posts = $posts->concat($this->forFeed($feedUrl, $limits));
         }
 
-        return $posts->sortByDesc('publishedAt');
+        return $posts->sortBy('publishedAt');
     }
 
     /**
@@ -56,17 +61,17 @@ class GenericRss implements PostBackend
      *
      * Sorting is handled collectively for all feeds in {@see GenericRss::postsFromFeed()}.
      *
-     * @return Collection<Post>
+     * @return Post[]
      */
-    protected function forFeed(string $feedUrl, ServerLimits $limits): Collection
+    protected function forFeed(string $feedUrl, ServerLimits $limits): array
     {
-        $xml = simplexml_load_string($this->getFeed($feedUrl));
+        $xml = simplexml_load_string($this->rssUtil->getFeed($feedUrl));
 
         $posts = [];
         foreach ($xml->xpath('/rss/channel/item') as $item) {
-            $posts[] = $this->itemToPost($item, $limits);
+            $posts[] = $this->rssUtil->itemToPost($item, $limits);
         }
 
-        return new Collection($posts);
+        return $posts;
     }
 }
