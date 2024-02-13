@@ -40,7 +40,7 @@ class PostingService
 
     public function post(Bot $bot): ActivityReport
     {
-        $backend = $this->factory->toBackend($bot);
+        $backend = $this->factory->toInitializedBackend($bot);
         $fediClient = $this->factory->toClient($bot);
 
         $limits = $fediClient->limits();
