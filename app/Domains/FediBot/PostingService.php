@@ -38,6 +38,33 @@ class PostingService
             ->get();
     }
 
+    /**
+     * Fetches the items for a bot and logs them as if it had posted them. Useful when starting up a new bot so it
+     * doesn't post 50 old items immediately.
+     */
+    public function initializeWithoutPosting(Bot $bot): ActivityReport
+    {
+        $backend = $this->factory->toInitializedBackend($bot);
+        $fediClient = $this->factory->toClient($bot);
+
+        $limits = $fediClient->limits();
+
+        $backendPosts = $backend->postsFromFeed($bot->configuration, $limits);
+
+        $bot->post_history()->createMany($backendPosts->map(function (Post $post) {
+            return [
+                'identifier' => $post->uniqueIdentifier,
+                'content' => $post->formattedMessage
+            ];
+        }));
+
+        return new ActivityReport(
+            bot: $bot,
+            newPosts: new Collection,
+            allPostsFromBackend: $backendPosts,
+        );
+    }
+
     public function post(Bot $bot): ActivityReport
     {
         $backend = $this->factory->toInitializedBackend($bot);
