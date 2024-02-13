@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Domains\FediBot\Adapters\BotFactory;
 use App\Domains\FediBot\Models\BotBackend;
 use App\Filament\Resources\BotResource\Pages;
 use App\Filament\Resources\BotResource\RelationManagers;
@@ -40,12 +41,37 @@ class BotResource extends Resource
                 Forms\Components\Select::make('bot_backend_id')
                     ->label('Backend')
                     ->required()
-                    ->options(BotBackend::orderBy('label')->pluck('label', 'id')),
-                Forms\Components\KeyValue::make('configuration')
+                    ->options(BotBackend::orderBy('label')->pluck('label', 'id'))
+                    ->reactive(),
+                Forms\Components\Textarea::make('configuration')
                     ->required()
-                    ->keyPlaceholder('Property name')
-                    ->valuePlaceholder('Property value')
-                    ->columnSpanFull(),
+                    ->json()
+                    ->rule(function (callable $get, BotFactory $factory): callable {
+                        $backendId = $get('bot_backend_id');
+                        if (! $backendId) {
+                            return fn () => null;
+                        }
+
+                        $backend = $factory->toBackend(BotBackend::findOrFail($backendId)->type);
+                        return function (string $attribute, mixed $value, \Closure $fail) use ($backend) {
+                            if (is_string($value)) {
+                                $value = json_decode($value, associative: true);
+                            }
+
+                            $value ??= [];
+                            $errorBag = $backend->validateConfiguration($value);
+
+                            foreach ($errorBag->getMessages() as $message) {
+                                collect($message)
+                                    ->each(fn (string $message) => $fail("{$attribute}: {$message}"));
+                            }
+                        };
+                    })
+                    ->rows(10)
+                    ->cols(20)
+                    ->columnSpanFull()
+                    ->afterStateHydrated(fn (Forms\Components\Textarea $component, $state) => $component->state(json_encode($state, JSON_PRETTY_PRINT)))
+                    ->dehydrateStateUsing(fn (?string $state) => json_decode($state) ?? '{}'),
                 Forms\Components\TextInput::make('check_frequency_interval')
                     ->label('Check Frequency Interval')
                     ->helperText('Any CarbonInterval-compatible string')
