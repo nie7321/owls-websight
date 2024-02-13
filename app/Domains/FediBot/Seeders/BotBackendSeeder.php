@@ -15,6 +15,7 @@ class BotBackendSeeder extends IdempotentSeeder
     {
         return [
             ['type' => BackendType::GW2_FORUM_RSS, 'label' => 'Guild Wars 2 Forum RSS'],
+            ['type' => BackendType::RSS, 'label' => 'RSS Feed(s)'],
         ];
     }
 }
