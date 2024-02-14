@@ -31,19 +31,15 @@
                         </div>
                         <div class="hidden h-6 text-2xl font-semibold sm:block">owlblog</div>
                     </div>
-                </a></div>
-            <div class="flex items-center space-x-4 leading-5 sm:space-x-6"><a
-                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('blog-post.index') }}">Home</a><a
-                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/tags">Tags</a><a
-                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">Projects</a><a
-                    class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/about">About</a>
-                <button aria-label="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                         stroke="currentColor" class="h-6 w-6 text-gray-900 dark:text-gray-100">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
-                    </svg>
-                </button>
+                </a>
+            </div>
+            <div class="flex items-center space-x-4 leading-5 sm:space-x-6">
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('blog-post.index') }}">Home</a>
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">About</a>
+                <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Characters</a> -->
+                <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Topics</a> -->
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Contact</a>
+
                 <button :aria-label="`toggle ${currentMode} mode`"
                         x-data="{
                             currentMode: null,
