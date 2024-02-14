@@ -3,6 +3,7 @@
 namespace App\Domains\Blog\Models;
 
 use App\Domains\Auth\Models\User;
+use App\Domains\Blog\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 class BlogPost extends Model
 {
@@ -48,5 +50,28 @@ class BlogPost extends Model
                 ]);
             },
         );
+    }
+
+    /**
+     * @return Attribute<PostStatus, never>
+     */
+    public function status(): Attribute
+    {
+        return Attribute::make(
+            get: function(): PostStatus {
+                if (! $this->published_at) {
+                    return PostStatus::DRAFT;
+                }
+
+                $now = Carbon::now();
+                if ($this->published_at->lte($now)) {
+                    return PostStatus::PUBLISHED;
+                }
+
+                return PostStatus::SCHEDULED;
+            },
+        );
+
+
     }
 }

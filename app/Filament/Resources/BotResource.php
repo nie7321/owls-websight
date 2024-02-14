@@ -18,6 +18,9 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class BotResource extends Resource
 {
     protected static ?string $label = 'Fedi Bots';
+
+    protected static ?string $navigationGroup = 'Tools';
+
     protected static ?string $model = Bot::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-cog';
