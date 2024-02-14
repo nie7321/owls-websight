@@ -181,6 +181,7 @@
                 <div class="mb-4 flex space-x-4 text-sm text-gray-500 dark:text-gray-400">
                     <div>&copy; {{ \Illuminate\Support\Carbon::now()->year }} owls, all rights reserved</div>
                     <div><a href="{{ route('legal.credits') }}">credits &amp; licenses</a></div>
+                    <div><a href="{{ route('filament.admin.pages.dashboard') }}">admin</a></div>
                 </div>
                 <div class="mb-4 flex space-x-4">
                     <img src="{{ asset('image/tfnow.gif') }}" alt="Team Fortress Now!">

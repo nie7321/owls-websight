@@ -28,13 +28,3 @@ Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class
 
 Route::get('/feed', Controllers\FeedController::class)->name('feed.atom');
 Route::get('/', [Controllers\BlogPostController::class, 'index'])->name('blog-post.index');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
