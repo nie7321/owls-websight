@@ -4,12 +4,12 @@
             <h1
                 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14"
             >
-                Latest Long-Form Posts
+                Latest
             </h1>
-            <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">But you should <a href="https://mastodon.yshi.org/@owls" class="underline">find me on fedi</a> for the latest short-form posts.</p>
+            <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">But you should <a href="https://mastodon.yshi.org/@owls" class="underline">find me on fedi</a> for the up-to-the-minute stuff.</p>
         </div>
 
-        @if($posts->total() === 0)
+        @if(count($posts->items()) === 0)
             <div class="divide-y divide-gray-200 dark:divide-gray-700 py-12">
                 <p class="text-2xl font-bold leading-8 tracking-tight text-center">There are no posts!</p>
             </div>
@@ -65,7 +65,9 @@
             </ul>
         @endif
     </div>
-    <div class="flex justify-end text-base font-medium leading-6"><a
-            class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts"
-            href="/blog">All Posts →</a></div>
+    <div class="text-base font-medium leading-6 xl:grid xl:grid-cols-4">
+        <div class="xl:col-span-3 xl:col-end-5">
+            {{ $posts->links('blog.pager') }}
+        </div>
+    </div>
 </x-guest-layout>
