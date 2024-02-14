@@ -1,4 +1,4 @@
-<x-guest-layout>
+<x-guest-layout :title="$post->title">
     <article>
         <div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
             <header class="pt-6 xl:pb-6">

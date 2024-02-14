@@ -26,6 +26,7 @@ Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class
     ])
     ->name('blog-post.show');
 
+Route::get('/feed', Controllers\FeedController::class)->name('feed.atom');
 Route::get('/', [Controllers\BlogPostController::class, 'index'])->name('blog-post.index');
 
 Route::middleware([
