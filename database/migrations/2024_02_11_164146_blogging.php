@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('title', 4000);
             $table->string('slug', 4000)->unique();
             $table->text('content');
+            $table->text('summary');
 
             $table->foreignId('author_user_id')->index();
 

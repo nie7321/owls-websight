@@ -24,7 +24,7 @@
                         <div class="mr-3">
                             <img
                                 class="max-w-14 rounded-full"
-                                src="https://mastomedia.yshi.org/accounts/avatars/108/239/251/250/937/273/original/680abda5e63ccb5a.png"
+                                src="{{ asset('image/owls-avatar.png') }}"
                                 alt="an owl"
                                 aria-hidden="true"
                             >

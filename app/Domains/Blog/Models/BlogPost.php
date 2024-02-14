@@ -3,6 +3,7 @@
 namespace App\Domains\Blog\Models;
 
 use App\Domains\Auth\Models\User;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -26,5 +27,26 @@ class BlogPost extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_user_id');
+    }
+
+    /**
+     * @return Attribute<string, never>
+     */
+    public function permalink(): Attribute
+    {
+        return Attribute::make(
+            get: function (): ?string {
+                if (! $this->published_at) {
+                    return null;
+                }
+
+                return route('blog-post.show', [
+                    'year' => $this->published_at->year,
+                    'month' => $this->published_at->format('m'),
+                    'day' => $this->published_at->format('d'),
+                    'slug' => $this->slug,
+                ]);
+            },
+        );
     }
 }

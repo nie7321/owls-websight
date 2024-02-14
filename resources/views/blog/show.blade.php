@@ -34,7 +34,7 @@
                                                                          height="38" decoding="async" data-nimg="1"
                                                                          class="h-10 w-10 rounded-full"
                                                                          style="color: transparent;"
-                                                                         src="https://mastomedia.yshi.org/accounts/avatars/108/239/251/250/937/273/original/680abda5e63ccb5a.png">
+                                                                         src="{{ asset('image/owls-avatar.png') }}">
                                 <dl class="whitespace-nowrap text-sm font-medium leading-5">
                                     <dt class="sr-only">Name</dt>
                                     <dd class="text-gray-900 dark:text-gray-100">owls</dd>
@@ -49,9 +49,7 @@
                 </dl>
                 <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                     <div class="prose max-w-none pb-8 pt-10 dark:prose-invert">
-                        <pre>
-                            {{ $post->content }}
-                        </pre>
+                        {!! $htmlContent !!}
                     </div>
                 </div>
                 <footer>

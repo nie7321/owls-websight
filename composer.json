@@ -16,11 +16,12 @@
         "laravel/jetstream": "^4.2",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+        "league/commonmark": "*",
         "livewire/livewire": "^3.0",
         "revolution/laravel-mastodon-api": "^3.0",
         "sentry/sentry-laravel": "^3.6",
-        "stevebauman/hypertext": "^1.0",
-        "spatie/laravel-medialibrary": "^11.0.0"
+        "spatie/laravel-medialibrary": "^11.0.0",
+        "stevebauman/hypertext": "^1.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.13",

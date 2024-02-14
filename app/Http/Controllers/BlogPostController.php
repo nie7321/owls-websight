@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Domains\Blog\Markdown\PostRenderer;
+use App\Domains\Blog\Markdown\SummaryRenderer;
 use App\Domains\Blog\Models\BlogPost;
+use App\Domains\Blog\Repositories\BlogPostRepository;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
 class BlogPostController extends Controller
 {
-    public function index(Request $request): View
+    public function index(Request $request, BlogPostRepository $repo, SummaryRenderer $markdownEngine): View
     {
-        return view('blog.index');
+        $posts = $repo->findPublishedPosts();
+
+        return view('blog.index', [
+            'toMarkdown' => $markdownEngine,
+            'posts'=> $posts,
+        ]);
     }
 
-    public function show(Request $request, int $year, int $month, int $day, string $slug): View
+    public function show(Request $request, PostRenderer $markdown, int $year, int $month, int $day, string $slug): View
     {
         $urlDate = Carbon::create($year, $month, $day);
         $post = BlogPost::query()
@@ -28,6 +36,7 @@ class BlogPostController extends Controller
 
         return view('blog.show', [
             'post' => $post,
+            'htmlContent' => $markdown->convert($post->content),
         ]);
     }
 }
