@@ -14,7 +14,7 @@ class BlogPostController extends Controller
 {
     public function index(Request $request, BlogPostRepository $repo, SummaryRenderer $markdownEngine): View
     {
-        $posts = $repo->findPublishedPosts();
+        $posts = $repo->findPublishedPosts()->paginate(10);
 
         return view('blog.index', [
             'toMarkdown' => $markdownEngine,

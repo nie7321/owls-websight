@@ -59,7 +59,10 @@
                                 class="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">Tags</h2>
                             <div class="flex flex-wrap">
                                 @forelse ($post->tags as $tag)
-                                    <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" href="#">
+                                    <a
+                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                        href="{{ route('tag.show', $tag->slug) }}"
+                                    >
                                         {{ $tag->label }}
                                     </a>
                                 @empty
@@ -70,7 +73,7 @@
                     </div>
                     <div class="pt-4 xl:pt-8"><a
                             class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            aria-label="Back to the blog" href="#">← Back to the blog</a></div>
+                            aria-label="Back to the blog" href="{{ route('blog-post.index') }}">← Back to the blog</a></div>
                 </footer>
             </div>
         </div>

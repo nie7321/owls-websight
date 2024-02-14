@@ -16,6 +16,8 @@ use App\Http\Controllers;
 
 Route::get('credits', fn () => view('legal.credits'))->name('legal.credits');
 
+Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
+
 Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class, 'show'])
     ->where([
         'year' => '\d{4}',
