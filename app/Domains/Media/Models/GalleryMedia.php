@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Domains\Blog\Models;
+namespace App\Domains\Media\Models;
 
+use App\Domains\Blog\Models\BlogPost;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
