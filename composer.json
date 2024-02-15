@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.2",
         "ext-simplexml": "*",
+        "ext-imagick": "*",
         "filament/filament": "^3.2",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",

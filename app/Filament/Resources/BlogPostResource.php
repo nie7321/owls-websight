@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PostStatus;
+use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\BlogPostResource\Pages;
 use App\Filament\Resources\BlogPostResource\RelationManagers;
 use App\Domains\Blog\Models\BlogPost;
@@ -15,6 +16,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class BlogPostResource extends Resource
 {
@@ -49,7 +51,13 @@ class BlogPostResource extends Resource
                     ->unique(ignoreRecord: true),
                 Forms\Components\MarkdownEditor::make('content')
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('attachments')
+                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Forms\Components\Component $component, Exif $exifTool) {
+                        $exifTool->stripMetadata($file->path());
+                        return \Livewire\invade($component)->handleFileAttachmentUpload($file);
+                    }),
                 Forms\Components\MarkdownEditor::make('summary')
                     ->required()
                     ->columnSpanFull(),
