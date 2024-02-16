@@ -6,9 +6,8 @@ use App\Domains\Blog\Models\BlogPost;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class GalleryMedia extends BlogPost
+class GalleryImage extends BlogPost
 {
     use HasFactory, SoftDeletes;
 
@@ -17,8 +16,8 @@ class GalleryMedia extends BlogPost
         return $this->hasOne(Gallery::class);
     }
 
-    public function media(): HasOne
+    public function image(): HasOne
     {
-        return $this->hasOne(Media::class);
+        return $this->hasOne(Image::class);
     }
 }

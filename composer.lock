@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ac2772a9e7230367bc52d0c29d7a3f3",
+    "content-hash": "516f0dd81ab9928bee5d95fb8b1d6747",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -1673,6 +1673,43 @@
                 "source": "https://github.com/filamentphp/filament"
             },
             "time": "2024-02-07T18:46:44+00:00"
+        },
+        {
+            "name": "filament/spatie-laravel-media-library-plugin",
+            "version": "v3.2.34",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filamentphp/spatie-laravel-media-library-plugin.git",
+                "reference": "445a489a95a5f0e1bbce076c2836395606cb0cee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filamentphp/spatie-laravel-media-library-plugin/zipball/445a489a95a5f0e1bbce076c2836395606cb0cee",
+                "reference": "445a489a95a5f0e1bbce076c2836395606cb0cee",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^10.0",
+                "php": "^8.1",
+                "spatie/laravel-medialibrary": "^10.0|^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Filament\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Filament support for `spatie/laravel-medialibrary`.",
+            "homepage": "https://github.com/filamentphp/filament",
+            "support": {
+                "issues": "https://github.com/filamentphp/filament/issues",
+                "source": "https://github.com/filamentphp/filament"
+            },
+            "time": "2024-01-29T13:20:08+00:00"
         },
         {
             "name": "filament/support",
@@ -13433,8 +13470,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2",
-        "ext-simplexml": "*",
-        "ext-imagick": "*"
+        "ext-imagick": "*",
+        "ext-simplexml": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.6.0"

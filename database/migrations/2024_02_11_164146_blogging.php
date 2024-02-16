@@ -61,11 +61,9 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->json('metadata');
-            $table->text('alt_description');
-            $table->text('caption');
-
-            $table->foreignId('media_id')->index();
+            $table->json('metadata')->nullable();
+            $table->text('alt_description')->nullable();
+            $table->text('caption')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

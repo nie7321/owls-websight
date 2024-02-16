@@ -11,8 +11,8 @@ class Gallery extends Model
 {
     use HasFactory, SoftDeletes;
 
-    public function gallery_media(): HasMany
+    public function gallery_images(): HasMany
     {
-        return $this->hasMany(GalleryMedia::class)->orderBy('order_index', 'asc');
+        return $this->hasMany(GalleryImage::class)->orderBy('order_index', 'asc');
     }
 }
