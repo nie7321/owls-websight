@@ -61,10 +61,8 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->json('metadata')->nullable();
             $table->text('alt_description')->nullable();
             $table->text('caption')->nullable();
-
 
             $table->timestamps();
             $table->softDeletes();

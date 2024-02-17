@@ -31,8 +31,6 @@ class ImageResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('alt_description'),
                 Forms\Components\Textarea::make('caption'),
-                Forms\Components\Textarea::make('metadata')
-                    ->json(),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('media')
                     ->required()
                     ->columnSpanFull(),

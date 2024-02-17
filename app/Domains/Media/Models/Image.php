@@ -4,6 +4,7 @@ namespace App\Domains\Media\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Image\Enums\Fit;
 use Spatie\MediaLibrary\HasMedia;
@@ -17,6 +18,11 @@ class Image extends Model implements HasMedia
     protected $casts = [
         'metadata' => 'array',
     ];
+
+    public function galleries(): BelongsToMany
+    {
+        return $this->belongsToMany(Gallery::class)->withPivot('order_index');
+    }
 
     public function registerMediaConversions(Media $media = null): void
     {
