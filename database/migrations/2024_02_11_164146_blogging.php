@@ -48,7 +48,7 @@ return new class extends Migration
 
             $table->string('title', 4000);
             $table->string('slug', 4000);
-            $table->text('content');
+            $table->text('content')->nullable();
 
             $table->foreignId('author_user_id')->index();
 
@@ -64,6 +64,7 @@ return new class extends Migration
             $table->json('metadata')->nullable();
             $table->text('alt_description')->nullable();
             $table->text('caption')->nullable();
+
 
             $table->timestamps();
             $table->softDeletes();

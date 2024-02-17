@@ -3,7 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Domains\Auth\Models\User;
-use App\Domains\Blog\Enums\PostStatus;
+use App\Domains\Blog\Enums\PublishingStatus;
+use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\GalleryResource\Pages;
 use App\Filament\Resources\GalleryResource\RelationManagers;
 use App\Domains\Media\Models\Gallery;
@@ -15,6 +16,7 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class GalleryResource extends Resource
 {
@@ -42,9 +44,16 @@ class GalleryResource extends Resource
                     }),
                 Forms\Components\TextInput::make('slug')
                     ->required()
-                    ->maxLength(4000),
+                    ->maxLength(4000)
+                    ->unique(ignoreRecord: true),
                 Forms\Components\MarkdownEditor::make('content')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->fileAttachmentsDisk('public')
+                    ->fileAttachmentsDirectory('attachments')
+                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Forms\Components\Component $component, Exif $exifTool) {
+                        $exifTool->stripMetadata($file->path());
+                        return \Livewire\invade($component)->handleFileAttachmentUpload($file);
+                    }),
                 Forms\Components\Select::make('author_user_id')
                     ->label('Author')
                     ->required()
@@ -58,14 +67,26 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\IconColumn::make('status')
+                    ->icon(fn (PublishingStatus $state) => match ($state) {
+                        PublishingStatus::DRAFT => 'heroicon-o-pencil',
+                        PublishingStatus::SCHEDULED => 'heroicon-o-clock',
+                        PublishingStatus::PUBLISHED => 'heroicon-o-check-circle',
+                    })
+                    ->color(fn (PublishingStatus $state) => match ($state) {
+                        PublishingStatus::DRAFT => 'info',
+                        PublishingStatus::SCHEDULED => 'warning',
+                        PublishingStatus::PUBLISHED => 'success',
+                    }),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('author_user_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('author.name')
+                    ->label('Author')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('published_at')
+                    ->placeholder('unpublished')
                     ->dateTime()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -93,7 +114,8 @@ class GalleryResource extends Resource
                     Tables\Actions\ForceDeleteBulkAction::make(),
                     Tables\Actions\RestoreBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('created_at', 'desc');
     }
 
     public static function getRelations(): array

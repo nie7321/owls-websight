@@ -2,7 +2,7 @@
 
 namespace App\Domains\Blog\Enums;
 
-enum PostStatus
+enum PublishingStatus
 {
     case DRAFT;
     case SCHEDULED;

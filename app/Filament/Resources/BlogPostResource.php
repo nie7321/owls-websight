@@ -3,7 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Domains\Auth\Models\User;
-use App\Domains\Blog\Enums\PostStatus;
+use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Foundation\Filament\Forms\Components\RelationshipTagInput;
 use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\BlogPostResource\Pages;
@@ -40,7 +40,7 @@ class BlogPostResource extends Resource
                     ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set, ?BlogPost $post, ?string $state) {
                         // Only update it automatically for drafts.
                         // Otherwise the permalink will break and that's bad.
-                        if ($post->exists && $post->status !== PostStatus::DRAFT) {
+                        if ($post->exists && $post->status !== PublishingStatus::DRAFT) {
                             return;
                         }
 
@@ -77,15 +77,15 @@ class BlogPostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\IconColumn::make('status')
-                    ->icon(fn (PostStatus $state) => match ($state) {
-                            PostStatus::DRAFT => 'heroicon-o-pencil',
-                            PostStatus::SCHEDULED => 'heroicon-o-clock',
-                            PostStatus::PUBLISHED => 'heroicon-o-check-circle',
+                    ->icon(fn (PublishingStatus $state) => match ($state) {
+                            PublishingStatus::DRAFT => 'heroicon-o-pencil',
+                            PublishingStatus::SCHEDULED => 'heroicon-o-clock',
+                            PublishingStatus::PUBLISHED => 'heroicon-o-check-circle',
                         })
-                    ->color(fn (PostStatus $state) => match ($state) {
-                        PostStatus::DRAFT => 'info',
-                        PostStatus::SCHEDULED => 'warning',
-                        PostStatus::PUBLISHED => 'success',
+                    ->color(fn (PublishingStatus $state) => match ($state) {
+                        PublishingStatus::DRAFT => 'info',
+                        PublishingStatus::SCHEDULED => 'warning',
+                        PublishingStatus::PUBLISHED => 'success',
                     }),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

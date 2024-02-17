@@ -3,7 +3,7 @@
 namespace App\Domains\Blog\Models;
 
 use App\Domains\Auth\Models\User;
-use App\Domains\Blog\Enums\PostStatus;
+use App\Domains\Blog\Enums\PublishingStatus;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -53,22 +53,22 @@ class BlogPost extends Model
     }
 
     /**
-     * @return Attribute<PostStatus, never>
+     * @return Attribute<PublishingStatus, never>
      */
     public function status(): Attribute
     {
         return Attribute::make(
-            get: function(): PostStatus {
+            get: function(): PublishingStatus {
                 if (! $this->published_at) {
-                    return PostStatus::DRAFT;
+                    return PublishingStatus::DRAFT;
                 }
 
                 $now = Carbon::now();
                 if ($this->published_at->lte($now)) {
-                    return PostStatus::PUBLISHED;
+                    return PublishingStatus::PUBLISHED;
                 }
 
-                return PostStatus::SCHEDULED;
+                return PublishingStatus::SCHEDULED;
             },
         );
 
