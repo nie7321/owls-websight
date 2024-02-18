@@ -4,6 +4,7 @@
     </div>
 @else
     <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+        @php /** @var BlogPost $post */ @endphp
         @foreach($posts as $post)
             <li class="py-12">
                 <article>
