@@ -51,10 +51,10 @@
             </div>
             <div class="flex items-center space-x-4 leading-5 sm:space-x-6">
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('blog-post.index') }}">Home</a>
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">About</a>
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('about') }}">About</a>
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Characters</a> -->
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Topics</a> -->
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Contact</a>
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
 
                 <button :aria-label="`toggle ${currentMode} mode`"
                         x-data="{
@@ -185,7 +185,8 @@
                 </div>
                 <div class="mb-4 flex space-x-4 text-sm text-gray-500 dark:text-gray-400">
                     <div>&copy; {{ \Illuminate\Support\Carbon::now()->year }} owls, all rights reserved</div>
-                    <div><a href="{{ route('legal.credits') }}">credits &amp; licenses</a></div>
+                    <div><a href="{{ route('legal.credits') }}">credits</a></div>
+                    <div><a href="{{ route('legal.terms') }}">terms of use &amp; privacy policy</a></div>
                     <div><a href="{{ route('filament.admin.pages.dashboard') }}">admin</a></div>
                 </div>
                 <div class="mb-4 flex space-x-4">

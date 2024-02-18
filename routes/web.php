@@ -14,7 +14,10 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('credits', fn () => view('legal.credits'))->name('legal.credits');
+Route::get('legal/credits', fn () => view('legal.credits'))->name('legal.credits');
+Route::get('legal/terms-and-privacy', fn () => view('legal.terms-and-privacy'))->name('legal.terms');
+Route::get('about', fn () => view('about'))->name('about');
+Route::get('contact', fn () => view('contact'))->name('contact');
 
 Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
 
