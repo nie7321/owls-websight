@@ -203,6 +203,7 @@
 </section>
 
 @include('layouts._lightbox')
+@stack('modals')
 @vite('resources/js/app.js')
 @livewireScripts
 </body>
