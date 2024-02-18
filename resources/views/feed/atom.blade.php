@@ -7,6 +7,8 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
      xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:media="http://search.yahoo.com/mrss/"
 >
     <channel>
         <atom:link type="application/rss+xml" href="{{ route('feed.atom') }}" rel="self" />
@@ -37,6 +39,10 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
                 <content:encoded><![CDATA[{!! $postRenderer->convert($post->content) !!}]]></content:encoded>
                 <guid isPermaLink="true">{{ $post->permalink }}</guid>
                 <pubDate>{{ $post->published_at->toRssString() }}</pubDate>
+
+                @if($post->thumbnail_image)
+                    <media:thumbnail url="{{ $post->thumbnail_image->getFirstMedia()->getUrl('preview') }}" />
+                @endif
             </item>
         @endforeach
     </channel>

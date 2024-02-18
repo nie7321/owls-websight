@@ -11,10 +11,15 @@
     <meta property="og:url" content="{{ route('blog-post.index') }}" />
     <meta property="og:site_name" content="{{ config('app.name') }}" />
     <meta property="og:locale" content="en_US" />
-
     @isset($title)
         <meta property="og:title" content="{{ $title }}" />
     @endisset
+
+    @if($previewImage?->exists)
+        @php /** @var \App\Domains\Media\Models\Image $previewImage */@endphp
+        <meta property="og:image" content="{{ $previewImage->getFirstMedia()->getUrl() }}" />
+        <meta property="og:image:alt" content="{{ $previewImage->alt_description }}" />
+    @endif
 
     <script type="text/javascript">
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
