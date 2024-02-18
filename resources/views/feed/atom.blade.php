@@ -33,7 +33,8 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
                 <title><![CDATA[{{ $post->title }}]]></title>
                 <link>{{ $post->permalink }}</link>
                 <dc:creator><![CDATA[$post->author->name]]></dc:creator>
-                <description><![CDATA[{!! $renderer->convert($post->content) !!}]]></description>
+                <description><![CDATA[{!! $summaryRenderer->convert($post->summary) !!}]]></description>
+                <content:encoded><![CDATA[{!! $postRenderer->convert($post->content) !!}]]></content:encoded>
                 <guid isPermaLink="true">{{ $post->permalink }}</guid>
                 <pubDate>{{ $post->published_at->toRssString() }}</pubDate>
             </item>
