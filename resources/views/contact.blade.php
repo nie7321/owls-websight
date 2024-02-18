@@ -13,7 +13,7 @@
 
                 <p>If you would like to send an encrypted email, my <a href="{{ asset('nick-at-godless-internets-dot-org-2024-02.asc') }}">public key is available for download</a>. The fingerprint is <code>0cb11d9477db14727719690e55e2142e5fe2c0f9</code>.</p>
 
-                <div class="flex flex-wrap w-2/3">
+                <div class="flex flex-wrap w-full md:w-2/3">
                     <x-contact-entry label="Email" icon="brand-icons.email">
                         <a href="mailto:nick@godless-internets.org">nick@godless-internets.org</a>
                     </x-contact-entry>

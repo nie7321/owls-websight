@@ -105,7 +105,7 @@
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
                 </button>
-                <button aria-label="Toggle Menu" class="sm:hidden">
+                <button aria-label="Toggle Menu" class="sm:hidden" x-data="{}" @click="$dispatch('mobile-nav-toggle')">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                          class="h-8 w-8 text-gray-900 dark:text-gray-100">
                         <path fill-rule="evenodd"
@@ -114,9 +114,14 @@
                     </svg>
                 </button>
                 <div
-                    class="fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98] translate-x-full">
+                    x-data="{ showMobileNav: false }"
+                    class="fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98]"
+                    :class="showMobileNav ? 'translate-x-0' : 'translate-x-full'"
+                    @mobile-nav-toggle.window="showMobileNav = true; console.log('hey')"
+                    x-cloak
+                >
                     <div class="flex justify-end">
-                        <button class="mr-8 mt-11 h-8 w-8" aria-label="Toggle Menu">
+                        <button class="mr-8 mt-11 h-8 w-8" aria-label="Toggle Menu" @click="showMobileNav = false">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                  class="text-gray-900 dark:text-gray-100">
                                 <path fill-rule="evenodd"
@@ -126,21 +131,15 @@
                         </button>
                     </div>
                     <nav class="fixed mt-8 h-full">
-                        <div class="px-12 py-4"><a
-                                class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/">Home</a>
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('blog-post.index') }}">Home</a>
                         </div>
-                        <div class="px-12 py-4"><a
-                                class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                                href="{{ route('blog-post.index') }}">Home</a></div>
-                        <div class="px-12 py-4"><a
-                                class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                                href="/tags">Tags</a></div>
-                        <div class="px-12 py-4"><a
-                                class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                                href="/projects">Projects</a></div>
-                        <div class="px-12 py-4"><a
-                                class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100"
-                                href="/about">About</a></div>
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('about') }}">About</a>
+                        </div>
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('contact') }}">Contact</a>
+                        </div>
                     </nav>
                 </div>
             </div>
