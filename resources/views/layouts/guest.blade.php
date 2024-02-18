@@ -197,7 +197,7 @@
     </div>
 </section>
 
-@stack('modals')
+@include('layouts._lightbox')
 @vite('resources/js/app.js')
 @livewireScripts
 </body>

@@ -2,6 +2,7 @@
 
 namespace App\Domains\Markdown\Gallery;
 
+use App\Domains\Media\Models\Gallery;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;
@@ -12,7 +13,7 @@ class GalleryRenderer implements NodeRendererInterface, XmlNodeRendererInterface
     /**
      * @param GalleryPlaceholder $node
      */
-    public function render(Node $node, ChildNodeRendererInterface $childRenderer)
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): string
     {
         GalleryPlaceholder::assertInstanceOf($node);
 
@@ -22,8 +23,22 @@ class GalleryRenderer implements NodeRendererInterface, XmlNodeRendererInterface
          * - Eager load everything
          * Render the images!!!!!
          */
-        
-        return "<div style='color: pink;'>gallery {$node->slug} goes here</div>";
+
+        $gallery = Gallery::with(['images'])->whereSlug($node->slug)->first();
+        if (! $gallery) {
+            return view('blog.inline-gallery._not-found', ['slug' => $node->slug])->render();
+        }
+
+        if ($gallery->images->count() == 0) {
+            return view('blog.inline-gallery._empty', ['slug' => $node->slug])->render();
+        }
+
+        return view('blog.inline-gallery._gallery')
+            ->with([
+                'slug' => $node->slug,
+                'gallery' => $gallery,
+            ])
+            ->render();
     }
 
     public function getXmlTagName(Node $node): string
