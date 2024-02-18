@@ -4,6 +4,7 @@ namespace App\Domains\Blog\Models;
 
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
+use App\Domains\Media\Models\Image;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -29,6 +30,11 @@ class BlogPost extends Model
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'author_user_id');
+    }
+
+    public function thumbnail_image(): BelongsTo
+    {
+        return $this->belongsTo(Image::class, 'thumbnail_image_id');
     }
 
     /**

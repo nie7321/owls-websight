@@ -24,7 +24,7 @@ class GalleryRenderer implements NodeRendererInterface, XmlNodeRendererInterface
          * Render the images!!!!!
          */
 
-        $gallery = Gallery::with(['images'])->whereSlug($node->slug)->first();
+        $gallery = Gallery::with(['images.media'])->whereSlug($node->slug)->first();
         if (! $gallery) {
             return view('blog.inline-gallery._not-found', ['slug' => $node->slug])->render();
         }

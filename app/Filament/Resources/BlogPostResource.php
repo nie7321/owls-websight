@@ -62,6 +62,15 @@ class BlogPostResource extends Resource
                 Forms\Components\MarkdownEditor::make('summary')
                     ->required()
                     ->columnSpanFull(),
+                Forms\Components\Select::make('thumbnail_image_id')
+                    ->label('Thumbnail Image')
+                    ->relationship(
+                        name: 'thumbnail_image',
+                        titleAttribute: 'name',
+                        modifyQueryUsing: fn (Builder $query) => $query->orderBy('created_at', 'desc'),
+                    )
+                    ->searchable()
+                    ->preload(),
                 Forms\Components\Select::make('author_user_id')
                     ->label('Author')
                     ->required()
