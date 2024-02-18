@@ -5,12 +5,13 @@ namespace App\Domains\Blog\Models;
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Media\Models\Image;
+use Carbon\CarbonInterface;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 
@@ -35,6 +36,24 @@ class BlogPost extends Model
     public function thumbnail_image(): BelongsTo
     {
         return $this->belongsTo(Image::class, 'thumbnail_image_id');
+    }
+
+    /**
+     * Scope to load publish posts, in order, with the relevant relationships loaded for display on the index/feed/etc.
+     */
+    public function scopeForDisplay(Builder $query): void
+    {
+        $query->published()->withRenderRelationships()->orderBy('published_at', 'desc');
+    }
+
+    public function scopeWithRenderRelationships(Builder $query): void
+    {
+        $query->with(['author', 'tags', 'thumbnail_image']);
+    }
+
+    public function scopePublished(Builder $query, ?CarbonInterface $now = null): void
+    {
+        $query->where('published_at', '<=', $now ?? Carbon::now());
     }
 
     /**

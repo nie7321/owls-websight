@@ -2,6 +2,7 @@
 
 namespace App\Domains\Blog\Markdown;
 
+use App\Domains\Markdown\Gallery\GalleryExtension;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\Footnote\FootnoteExtension;
@@ -22,6 +23,7 @@ class AtomPostRenderer extends AbstractRenderer
         $env->addExtension(new CommonMarkCoreExtension);
         $env->addExtension(new GithubFlavoredMarkdownExtension);
         $env->addExtension(new FootnoteExtension);
+        $env->addExtension(new GalleryExtension);
 
         return $env;
     }

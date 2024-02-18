@@ -11,10 +11,10 @@ use Illuminate\Support\Str;
 
 class TagController extends Controller
 {
-    public function show(Request $request, BlogPostRepository $repo, PostRenderer $markdown, string $tagSlug): View
+    public function show(Request $request, PostRenderer $markdown, string $tagSlug): View
     {
         $tag = Tag::whereSlug(Str::lower($tagSlug))->firstOrFail();
-        $posts = $repo->findPublishedPostsForTag($tag)->paginate(10);
+        $posts = $tag->blog_posts()->forDisplay()->paginate(10);
 
         return view('tag.show', [
             'tag' => $tag,
