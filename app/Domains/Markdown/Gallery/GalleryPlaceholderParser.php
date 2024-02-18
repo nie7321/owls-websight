@@ -2,7 +2,6 @@
 
 namespace App\Domains\Markdown\Gallery;
 
-use League\CommonMark\Node\Block\AbstractBlock;
 use League\CommonMark\Parser\Block\AbstractBlockContinueParser;
 use League\CommonMark\Parser\Block\BlockContinue;
 use League\CommonMark\Parser\Block\BlockContinueParserInterface;
@@ -11,7 +10,6 @@ use League\CommonMark\Parser\Block\BlockStartParserInterface;
 use League\CommonMark\Parser\Cursor;
 use League\CommonMark\Parser\MarkdownParserStateInterface;
 use League\CommonMark\Util\RegexHelper;
-use League\Config\ConfigurationInterface;
 
 class GalleryPlaceholderParser extends AbstractBlockContinueParser
 {
@@ -38,7 +36,7 @@ class GalleryPlaceholderParser extends AbstractBlockContinueParser
             public function tryStart(Cursor $cursor, MarkdownParserStateInterface $parserState): ?BlockStart
             {
                 // The tag must be the only thing on the line
-                $match = RegexHelper::matchFirst('/^\s?{{([A-Z0-9\s_-]+)}}\s?$/i', $cursor->getLine());
+                $match = RegexHelper::matchFirst('/^\s*{{(\s*[A-Z0-9_-]+\s*)}}\s*$/i', $cursor->getLine());
                 if ($match === null) {
                     return BlockStart::none();
                 }
