@@ -48,7 +48,7 @@ class BlogPost extends Model
 
     public function scopeWithRenderRelationships(Builder $query): void
     {
-        $query->with(['author', 'tags', 'thumbnail_image']);
+        $query->with(['author', 'tags', 'thumbnail_image.media']);
     }
 
     public function scopePublished(Builder $query, ?CarbonInterface $now = null): void
