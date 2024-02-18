@@ -46,6 +46,8 @@ class ImagesRelationManager extends RelationManager
             ])
             ->headerActions([
                 Tables\Actions\AttachAction::make()
+                    ->preloadRecordSelect()
+                    ->recordSelectOptionsQuery(fn (Builder $query) => $query->orderBy('created_at', 'desc'))
                     ->form(fn (Tables\Actions\AttachAction $action): array => [
                         $action->getRecordSelect(),
                         Forms\Components\TextInput::make('order_index')
@@ -65,6 +67,7 @@ class ImagesRelationManager extends RelationManager
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DetachBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('order_index');
     }
 }
