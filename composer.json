@@ -10,6 +10,7 @@
     "require": {
         "php": "^8.2",
         "ext-imagick": "*",
+        "ext-gd": "*",
         "ext-simplexml": "*",
         "filament/filament": "^3.2",
         "filament/spatie-laravel-media-library-plugin": "^3.2",
