@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ isset($title) ? "{$title} | owls" : "owls" }}</title>
     <link rel="alternate" type="application/rss+xml" title="{{ config('app.name') }}" href="{{ route('feed.atom') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('image/owls-avatar.png') }}">
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ route('blog-post.index') }}" />
