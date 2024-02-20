@@ -2,17 +2,20 @@
 
 namespace App\Filament\Resources;
 
+use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\ImageResource\Pages;
 use App\Filament\Resources\ImageResource\RelationManagers;
 use App\Domains\Media\Models\Image;
-use Filament\Actions\Action;
 use Filament\Forms;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class ImageResource extends Resource
 {
@@ -24,6 +27,15 @@ class ImageResource extends Resource
 
     public static function form(Form $form): Form
     {
+        $uploadComponent = Forms\Components\SpatieMediaLibraryFileUpload::make('media');
+
+        /** @var callable(SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record): ?string $originalCallback */
+        $originalCallback = invade($uploadComponent)->saveUploadedFileUsing;
+        $replacementCallback = function (SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record, Exif $exifTool) use ($originalCallback) {
+            $exifTool->stripMetadata($file->path());
+            return $originalCallback($component, $file, $record);
+        };
+
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
@@ -31,9 +43,10 @@ class ImageResource extends Resource
                     ->maxLength(255),
                 Forms\Components\Textarea::make('alt_description'),
                 Forms\Components\Textarea::make('caption'),
-                Forms\Components\SpatieMediaLibraryFileUpload::make('media')
+                $uploadComponent
                     ->required()
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->saveUploadedFileUsing($replacementCallback),
             ]);
     }
 
