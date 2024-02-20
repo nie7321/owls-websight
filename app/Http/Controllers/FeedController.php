@@ -20,6 +20,6 @@ class FeedController extends Controller
                 'postRenderer' => $postRenderer,
                 'posts' => $posts,
             ])
-            ->header('Content-Type', 'application/atom+xml');
+            ->header('Content-Type', 'application/rss+xml');
     }
 }
