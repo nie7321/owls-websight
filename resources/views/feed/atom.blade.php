@@ -21,12 +21,14 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
         <sy:updatePeriod>hourly</sy:updatePeriod>
         <sy:updateFrequency>1</sy:updateFrequency>
 
+        <icon>{{ asset('image/owls-avatar.png') }}</icon>
+        <logo>{{ asset('image/owls-avatar.png') }}</logo>
         <image>
             <url>{{ asset('image/owls-avatar.png') }}</url>
             <title><![CDATA[{{ config('app.name') }}]]></title>
             <link>{{ route('blog-post.index') }}</link>
-            <width>32</width>
-            <height>32</height>
+            <width>90</width>
+            <height>90</height>
         </image>
 
         @php /** @var \App\Domains\Blog\Models\BlogPost $post */@endphp
@@ -34,8 +36,13 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
             <item>
                 <title><![CDATA[{{ $post->title }}]]></title>
                 <link>{{ $post->permalink }}</link>
-                <dc:creator><![CDATA[$post->author->name]]></dc:creator>
-                <description><![CDATA[{!! $summaryRenderer->convert($post->summary) !!}]]></description>
+                <dc:creator><![CDATA[{{ $post->author->name }}]]></dc:creator>
+                <description><![CDATA[
+                    @if($post->thumbnail_image)
+                        <p><img src="{{ $post->thumbnail_image->getFirstMedia()->getUrl('preview') }}" alt="{{ $post->thumbnail_image->alt_description }}"></p>
+                    @endif
+                    {!! $summaryRenderer->convert($post->summary) !!}
+                ]]></description>
                 <content:encoded><![CDATA[{!! $postRenderer->convert($post->content) !!}]]></content:encoded>
                 <guid isPermaLink="true">{{ $post->permalink }}</guid>
                 <pubDate>{{ $post->published_at->toRssString() }}</pubDate>
