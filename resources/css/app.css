@@ -11,6 +11,12 @@
     background: linear-gradient(0deg, #000000b3, #0000004d 70%, #0000);
 }
 
+.bg-gallery-caption-text a {
+    color: var(--tw-prose-links);
+    text-decoration: underline;
+    font-weight: 500
+}
+
 .heading-permalink {
     visibility: hidden;
 }
