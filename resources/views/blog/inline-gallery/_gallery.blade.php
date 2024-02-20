@@ -21,7 +21,7 @@
                 >
                 @if ($image->caption)
                     <figcaption class="bg-gallery-caption-text text-white overflow-auto absolute bottom-0 text-center z-10 w-full pt-12 pb-3 px-3">
-                        {{ $image->caption }}
+                        {!! $captionRenderer->convert($image->caption) !!}
                     </figcaption>
                 @endif
             </figure>

@@ -2,6 +2,7 @@
 
 namespace App\Domains\Markdown\Gallery;
 
+use App\Domains\Blog\Markdown\SummaryRenderer;
 use App\Domains\Media\Models\Gallery;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
@@ -33,10 +34,14 @@ class GalleryRenderer implements NodeRendererInterface, XmlNodeRendererInterface
             return view('blog.inline-gallery._empty', ['slug' => $node->slug])->render();
         }
 
+        // This is an atrocity.
+        $captionRenderer = resolve(SummaryRenderer::class);
+
         return view('blog.inline-gallery._gallery')
             ->with([
                 'slug' => $node->slug,
                 'gallery' => $gallery,
+                'captionRenderer' => $captionRenderer,
             ])
             ->render();
     }
