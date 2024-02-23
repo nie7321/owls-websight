@@ -38,4 +38,18 @@ class BlogPostController extends Controller
             'htmlContent' => $markdown->convert($post->content),
         ]);
     }
+
+    public function preview(Request $request, PostRenderer $markdown, int $id): View
+    {
+        $post = BlogPost::query()
+            ->withRenderRelationships()
+            ->findOrFail($id);
+
+        $this->authorize('preview', $post);
+
+        return view('blog.show', [
+            'post' => $post,
+            'htmlContent' => $markdown->convert($post->content),
+        ]);
+    }
 }

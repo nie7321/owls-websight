@@ -21,6 +21,7 @@ Route::get('contact', fn () => view('contact'))->name('contact');
 
 Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
 
+Route::get('blog-post/preview/{id}', [Controllers\BlogPostController::class, 'preview'])->name('blog-post.preview');
 Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class, 'show'])
     ->where([
         'year' => '\d{4}',

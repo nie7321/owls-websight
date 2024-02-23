@@ -16,6 +16,9 @@ class EditBlogPost extends EditRecord
             Actions\DeleteAction::make(),
             Actions\ForceDeleteAction::make(),
             Actions\RestoreAction::make(),
+            Actions\Action::make('preview')
+                ->url(fn () => route('blog-post.preview', $this->record))
+                ->extraAttributes(['target' => '_blank']),
         ];
     }
 }
