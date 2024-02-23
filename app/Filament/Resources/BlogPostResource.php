@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
+use App\Domains\Foundation\Filament\Actions\NowAction;
 use App\Domains\Foundation\Filament\Forms\Components\RelationshipTagInput;
 use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\BlogPostResource\Pages;
@@ -77,7 +78,10 @@ class BlogPostResource extends Resource
                     ->options(User::pluck('name', 'id'))
                     ->default(fn () => auth()->user()->id),
                 RelationshipTagInput::make('tags'),
-                Forms\Components\DateTimePicker::make('published_at'),
+                Forms\Components\DateTimePicker::make('published_at')
+                    ->native(false)
+                    ->closeOnDateSelection()
+                    ->suffixAction(NowAction::make('published_at_now')),
             ]);
     }
 
