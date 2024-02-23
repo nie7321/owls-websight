@@ -20,6 +20,9 @@
         @php /** @var \App\Domains\Media\Models\Image $previewImage */@endphp
         <meta property="og:image" content="{{ $previewImage->getFirstMedia()->getUrl() }}" />
         <meta property="og:image:alt" content="{{ $previewImage->alt_description }}" />
+    @else
+        <meta property="og:image" content="{{ asset('image/owls-avatar.png') }}" />
+        <meta property="og:image:alt" content="a cartoon owl, owls' avatar" />
     @endif
 
     <script type="text/javascript">
