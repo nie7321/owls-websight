@@ -1,5 +1,5 @@
 @php /** @var \App\Domains\Blog\Models\BlogPost $post */ @endphp
-<x-guest-layout :title="$post->title" :previewImage="$post->thumbnail_image">
+<x-guest-layout :title="$post->title" :previewImage="$post->thumbnail_image" :description="$post->summary">
     <article>
         <div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
             <header class="pt-6 xl:pb-6">

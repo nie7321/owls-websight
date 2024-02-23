@@ -21,8 +21,14 @@
         <meta property="og:image" content="{{ $previewImage->getFirstMedia()->getUrl() }}" />
         <meta property="og:image:alt" content="{{ $previewImage->alt_description }}" />
     @else
-        <meta property="og:image" content="{{ asset('image/owls-avatar.png') }}" />
-        <meta property="og:image:alt" content="a cartoon owl, owls' avatar" />
+        <meta property="og:image" content="{{ asset('image/default-social-banner.png') }}" />
+        <meta property="og:image:alt" content="a cartoon owl sticking its head into an editor full of HTML code" />
+    @endif
+
+    @if ($description)
+        <meta property="og:description" content="{{ $description }}" />
+    @else
+        <meta property="og:description" content="the personal website of owls, full of blog posts and other enjoyable web sights" />
     @endif
 
     <script type="text/javascript">

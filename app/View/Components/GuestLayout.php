@@ -8,12 +8,15 @@ use Illuminate\View\View;
 
 class GuestLayout extends Component
 {
+    public readonly ?string $description;
+
     public function __construct(
-        public ?string $title = null,
-        public ?Image $previewImage = null,
+        public readonly ?string $title = null,
+        public readonly ?Image $previewImage = null,
+        ?string $description = null,
     )
     {
-        //
+        $this->description = str_replace("\n", " ", $description);
     }
 
     /**
