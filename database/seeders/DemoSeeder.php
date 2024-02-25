@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Models\BlogPost;
+use App\Domains\Blog\Models\LinkCategory;
+use App\Domains\Blog\Models\RelationshipType;
 use App\Domains\Blog\Models\Tag;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
@@ -19,6 +21,25 @@ class DemoSeeder extends Seeder
             'is_admin' => true,
         ]);
 
+        $this->posts($owls);
+        $this->links();
+    }
+
+    protected function links(): void
+    {
+        LinkCategory::first()
+            ->links()
+            ->create([
+                'url' => 'https://mastodon.yshi.org/@owls',
+                'title' => 'owls on mastodon',
+                'description' => 'it me, mario',
+                'auto_update_card' => false,
+            ])
+            ->relationships()
+            ->attach(RelationshipType::inRandomOrder()->get()->take(2));
+    }
+    protected function posts(User $author): void
+    {
         // Text heavy post
         $this->post(
             [
@@ -27,7 +48,7 @@ class DemoSeeder extends Seeder
                 'published_at' => Carbon::now(),
             ],
             ['demiplane', "dm's guild", 'dnd', 'dnd 5e', 'dnd beyond', 'one dnd'],
-            $owls
+            $author
         );
 
         // Table of contents
@@ -38,7 +59,7 @@ class DemoSeeder extends Seeder
                 'published_at' => Carbon::now()->subWeeks(2),
             ],
             ['fediverse', 'mastodon', 'social media'],
-            $owls
+            $author
         );
 
         // Code
@@ -49,7 +70,7 @@ class DemoSeeder extends Seeder
                 'published_at' => Carbon::now()->subMonths(2),
             ],
             ['php', 'laravel', '🔥 tip'],
-            $owls
+            $author
         );
     }
 
