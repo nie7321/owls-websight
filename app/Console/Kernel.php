@@ -15,6 +15,10 @@ class Kernel extends ConsoleKernel
         $schedule->command('fedi-bot:post')
             ->everyMinute()
             ->withoutOverlapping(10);
+
+        $schedule->command('blog:refresh-link-cards')
+            ->hourly()
+            ->withoutOverlapping(10);
     }
 
     /**

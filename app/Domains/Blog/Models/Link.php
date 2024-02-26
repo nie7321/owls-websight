@@ -2,11 +2,14 @@
 
 namespace App\Domains\Blog\Models;
 
+use Carbon\CarbonInterface;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Carbon;
 
 class Link extends Model
 {
@@ -24,5 +27,19 @@ class Link extends Model
     public function relationships(): BelongsToMany
     {
         return $this->belongsToMany(RelationshipType::class);
+    }
+
+    public function scopeReadyForRefresh(Builder $query, ?CarbonInterface $now = null): void
+    {
+        $now ??= Carbon::now();
+
+        $query
+            ->where('auto_update_card', true)
+            ->where(function (Builder $query) use ($now): void {
+                $query
+                    ->whereNull('card_last_polled_at')
+                    ->orWhere('card_last_polled_at', '<=', $now->copy()->subDay());
+            })
+            ->orderBy('card_last_polled_at');
     }
 }
