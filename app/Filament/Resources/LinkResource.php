@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources;
 
+use App\Domains\OpenGraph\Actions\CacheOpenGraphImage;
+use App\Domains\OpenGraph\Actions\FetchOpenGraph;
 use App\Filament\Resources\LinkResource\Pages;
 use App\Filament\Resources\LinkResource\RelationManagers;
 use App\Domains\Blog\Models\Link;
@@ -12,6 +14,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Carbon;
 
 class LinkResource extends Resource
 {
@@ -33,8 +36,49 @@ class LinkResource extends Resource
                     ->required()
                     ->maxLength(4000),
                 Forms\Components\Toggle::make('auto_update_card')
-                    ->label('Enable Automatic Card Updates?'),
-                Forms\Components\Fieldset::make('Card Details')
+                    ->label('Enable Automatic Card Updates?')
+                    ->live()
+                    ->afterStateUpdated(function (
+                        Forms\Components\Toggle $component,
+                        Forms\Set $set,
+                        Forms\Get $get,
+                        FetchOpenGraph $openGraph,
+                        CacheOpenGraphImage $ogImageCacher,
+                        bool $state
+                    ) {
+                        $fieldSet = $component->getContainer()->getComponent('card_details');
+                        $fieldSet->disabled(false);
+
+                        $url = $get('url');
+                        if (! $state || ! $url) {
+                            return;
+                        }
+
+                        $metadata = $openGraph->fetch($url);
+                        if (! $metadata) {
+                            return;
+                        }
+
+                        $cardImage = [];
+                        if ($metadata->imageUrl) {
+                            $cardImage = [$ogImageCacher($metadata->imageUrl)];
+                        }
+
+                        /** @var Forms\Components\DateTimePicker $polledAtComponent */
+                        $polledAtComponent = $component->getContainer()->getComponent('card_last_polled_at');
+
+                        $set('title', $metadata->siteName ?? $metadata->title);
+                        $set('description', $metadata->description);
+                        $set('card_image_path', $cardImage);
+                        $set($polledAtComponent->getName(), Carbon::now()->format($polledAtComponent->getFormat()));
+                        $fieldSet->disabled(true);
+                    }),
+                Forms\Components\DateTimePicker::make('card_last_polled_at')
+                    ->key('card_last_polled_at'),
+                Forms\Components\Fieldset::make('card_details')
+                    ->key('card_details')
+                    ->label('Card Details')
+                    ->disabled(fn (Forms\Get $get) => $get('auto_update_card'))
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
@@ -43,11 +87,12 @@ class LinkResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->required()
                             ->columnSpanFull(),
+                        Forms\Components\FileUpload::make('card_image_path')
+                            ->disk('public')
+                            ->label('Card Image')
+                            ->image()
+                            ->columnSpanFull(),
                     ]),
-                Forms\Components\FileUpload::make('card_image_path')
-                    ->label('Card Image')
-                    ->image(),
-                Forms\Components\DateTimePicker::make('card_last_polled_at'),
             ]);
     }
 
