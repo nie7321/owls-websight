@@ -30,7 +30,8 @@ class LinkResource extends Resource
             ->schema([
                 Forms\Components\Select::make('link_category_id')
                     ->label('Category')
-                    ->relationship(name: 'category', titleAttribute: 'label'),
+                    ->relationship(name: 'category', titleAttribute: 'label')
+                    ->required(),
                 Forms\Components\TextInput::make('url')
                     ->label('URL')
                     ->required()
@@ -47,7 +48,6 @@ class LinkResource extends Resource
                         bool $state
                     ) {
                         $fieldSet = $component->getContainer()->getComponent('card_details');
-                        $fieldSet->disabled(false);
 
                         $url = $get('url');
                         if (! $state || ! $url) {
@@ -71,14 +71,12 @@ class LinkResource extends Resource
                         $set('description', $metadata->description);
                         $set('card_image_path', $cardImage);
                         $set($polledAtComponent->getName(), Carbon::now()->format($polledAtComponent->getFormat()));
-                        $fieldSet->disabled(true);
                     }),
                 Forms\Components\DateTimePicker::make('card_last_polled_at')
                     ->key('card_last_polled_at'),
                 Forms\Components\Fieldset::make('card_details')
                     ->key('card_details')
                     ->label('Card Details')
-                    ->disabled(fn (Forms\Get $get) => $get('auto_update_card'))
                     ->schema([
                         Forms\Components\TextInput::make('title')
                             ->required()
@@ -100,7 +98,9 @@ class LinkResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('Preview'),
+                Tables\Columns\ImageColumn::make('card_image_path')
+                    ->label('Preview')
+                    ->disk('public'),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('url')
