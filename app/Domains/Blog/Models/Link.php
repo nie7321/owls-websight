@@ -4,6 +4,7 @@ namespace App\Domains\Blog\Models;
 
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -41,5 +42,19 @@ class Link extends Model
                     ->orWhere('card_last_polled_at', '<=', $now->copy()->subDay());
             })
             ->orderBy('card_last_polled_at');
+    }
+
+    /**
+     * @return Attribute<string, never>
+     */
+    public function cardImageAssetPath(): Attribute
+    {
+        return Attribute::make(get: function () {
+            if ($this->card_image_path) {
+                return storage_path("storage/{$this->card_image_path}");
+            }
+
+            return route('social-card', ['title' => $this->title]);
+        });
     }
 }

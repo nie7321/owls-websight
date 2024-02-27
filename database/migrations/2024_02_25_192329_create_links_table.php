@@ -13,6 +13,7 @@ return new class extends Migration
 
             $table->string('slug')->unqiue();
             $table->string('label');
+            $table->text('description');
 
             $table->softDeletes();
             $table->timestamps();

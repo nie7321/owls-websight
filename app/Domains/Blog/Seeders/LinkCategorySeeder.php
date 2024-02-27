@@ -13,13 +13,9 @@ class LinkCategorySeeder extends IdempotentSeeder
 
     public function data(): array
     {
-        return collect(LinkCategoryEnum::cases())
-            ->map(function (LinkCategoryEnum $case) {
-                return [
-                    'slug' => $case,
-                    'label' => LinkCategoryEnum::label($case),
-                ];
-            })
-            ->all();
+        return [
+            ['slug' => LinkCategoryEnum::BLOG_ROLL, 'label' => 'Blog Roll', 'description' => 'If you want to be listed on the blog roll, let me know!'],
+            ['slug' => LinkCategoryEnum::OTHER, 'label' => 'Interesting Links', 'description' => 'You can find some of the best stuff on the internet here.'],
+        ];
     }
 }

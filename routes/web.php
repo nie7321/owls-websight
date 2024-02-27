@@ -19,6 +19,9 @@ Route::get('legal/terms-and-privacy', fn () => view('legal.terms-and-privacy'))-
 Route::get('about', fn () => view('about'))->name('about');
 Route::get('contact', fn () => view('contact'))->name('contact');
 
+Route::get('social-card.svg', Controllers\SocialCardController::class)->name('social-card');
+Route::get('links/{categorySlug}', [Controllers\LinkController::class, 'show'])->name('link.show');
+
 Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
 
 Route::get('blog-post/preview/{id}', [Controllers\BlogPostController::class, 'preview'])->name('blog-post.preview');

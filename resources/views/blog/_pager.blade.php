@@ -1,6 +1,4 @@
 @if ($paginator->hasPages())
-
-
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}">
         <div class="space-y-2 pb-8 pt-6 md:space-y-5">
             <nav class="flex justify-between">
@@ -27,5 +25,4 @@
             </nav>
         </div>
     </nav>
-
 @endif

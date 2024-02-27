@@ -65,6 +65,7 @@
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Characters</a> -->
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Topics</a> -->
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
+                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('link.show', \App\Domains\Blog\Enums\LinkCategoryEnum::BLOG_ROLL) }}">Links</a>
 
                 <button :aria-label="`toggle ${currentMode} mode`"
                         x-data="{
@@ -149,6 +150,9 @@
                         </div>
                         <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('contact') }}">Contact</a>
+                        </div>
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{  route('link.show', \App\Domains\Blog\Enums\LinkCategoryEnum::BLOG_ROLL) }}">Links</a>
                         </div>
                     </nav>
                 </div>
