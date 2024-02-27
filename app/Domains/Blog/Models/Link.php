@@ -51,7 +51,7 @@ class Link extends Model
     {
         return Attribute::make(get: function () {
             if ($this->card_image_path) {
-                return storage_path("storage/{$this->card_image_path}");
+                return asset("storage/{$this->card_image_path}");
             }
 
             return route('social-card', ['title' => $this->title]);
