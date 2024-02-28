@@ -12,6 +12,8 @@ readonly class DefaultCardSettings
     public string $bgColour;
     public DefaultCardFont $font;
     public float $textSizeRem;
+    public int $waveOffset;
+    public bool $waveBottom;
 
     public function __construct(
         public string $title,
@@ -22,6 +24,8 @@ readonly class DefaultCardSettings
         [$this->bgColour, $this->textFill, $this->textStroke] = $this->colourPalette();
         $this->font = $this->font();
         $this->textSizeRem = $this->calculateTextSize();
+        $this->waveOffset = ($this->seed % 25 * 10) * -1;
+        $this->waveBottom = $this->seed % 2 === 1;
     }
 
     private function calculateTextSize(): float
