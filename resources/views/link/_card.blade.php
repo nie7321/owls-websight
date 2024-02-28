@@ -1,7 +1,10 @@
-@php /** @var \App\Domains\Blog\Models\Link $link */ @endphp
+@php
+/** @var \App\Domains\Blog\Models\Link $link */
+$xfnString = $link->relationships->map->slug->join(' ');
+@endphp
 <div class="md max-w-[544px] p-4 md:w-1/2">
     <div class="h-full  overflow-hidden rounded-md border-2 border-gray-200 border-opacity-60 dark:border-gray-700">
-        <a target="_blank" href="{{ $link->url }}" aria-label="{{ $link->title }}">
+        <a target="_blank" href="{{ $link->url }}" aria-label="{{ $link->title }}" rel="{{ $xfnString }}">
             <img
                 alt="{{ $link->title }}"
                 loading="lazy"
@@ -15,7 +18,7 @@
         </a>
         <div class="p-6">
             <h2 class="mb-3 text-2xl font-bold leading-8 tracking-tight">
-                <a target="_blank" href="{{ $link->url }}" class="underline">
+                <a target="_blank" href="{{ $link->url }}" class="underline" rel="{{ $xfnString }}">
                     {{ $link->title }}
                 </a>
             </h2>
