@@ -36,6 +36,12 @@ class LinkResource extends Resource
                     ->label('URL')
                     ->required()
                     ->maxLength(4000),
+                Forms\Components\Select::make('relationships')
+                    ->label('XFN Relationships')
+                    ->multiple()
+                    ->preload()
+                    ->relationship('relationships', 'label')
+                    ->columnSpanFull(),
                 Forms\Components\Toggle::make('auto_update_card')
                     ->label('Enable Automatic Card Updates?')
                     ->live()
@@ -100,7 +106,8 @@ class LinkResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('card_image_path')
                     ->label('Preview')
-                    ->disk('public'),
+                    ->disk('public')
+                    ->defaultImageUrl(fn (Link $link) => $link->card_image_asset_path),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('url')
