@@ -53,7 +53,8 @@ class CacheOpenGraphImage
         $tempFile = $this->cleanImageFactory($contentType, $tempFile);
 
         $dir = 'opengraph';
-        $publicFilename = Str::of(Str::uuid())->append('.', $fileExtension);
+        $fileHash = hash_file('sha256', $tempFile);
+        $publicFilename = Str::of($fileHash)->append('.', $fileExtension);
         Storage::disk('public')->putFileAs($dir, $tempFile, $publicFilename);
 
         return "{$dir}/{$publicFilename}";
