@@ -6,7 +6,7 @@
             >
                 {{ $category->label }}
             </h1>
-            <p>If you want to be listed on the blogroll, <a href="{{ route('contact') }}" class="underline">let me know!</a></p>
+            <p>{{ $category->description }}</p>
         </div>
 
         <div class="container py-12">

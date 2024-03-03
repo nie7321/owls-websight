@@ -45,7 +45,7 @@
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
     <div class="flex h-screen flex-col justify-between font-sans">
         <header class="flex items-center justify-between py-10">
-            <div><a aria-label="TailwindBlog" href="/">
+            <div><a aria-label="owlblog" href="/">
                     <div class="flex items-center justify-between">
                         <div class="mr-3">
                             <img
@@ -65,7 +65,39 @@
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Characters</a> -->
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Topics</a> -->
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('link.show', \App\Domains\Blog\Enums\LinkCategoryEnum::BLOG_ROLL) }}">Links</a>
+
+                <div class="hidden text-gray-900 dark:text-gray-100 sm:block relative text-left dropdown">
+                    <button
+                        class="inline-flex justify-center w-full font-medium transition duration-150 ease-in-out"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="true"
+                        aria-controls="links-dropdown"
+                    >
+                        <span id="links-dropdown-label">Links</span>
+                        <svg class="w-5 h-5 ml-2 -mr-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                    <div class="hidden dropdown-menu">
+                        <div
+                            class="absolute right-0 w-40 mt-2 origin-top-right bg-white dark:bg-black divide-y divide-gray-100 dark:divide-slate-600 rounded-md shadow-lg dark:shadow-sm dark:shadow-slate-600 outline-none"
+                            aria-labelledby="links-dropdown-label"
+                            id="links-dropdown"
+                            role="menu"
+                        >
+                            @php /** @var \App\Domains\Blog\Models\LinkCategory $linkCategory */@endphp
+                            @foreach($linkCategories as $linkCategory)
+                                <a
+                                    href="{{ route('link.show', $linkCategory->slug) }}"
+                                    class="flex justify-between w-full px-4 py-2 text-left" role="menuitem"
+                                >
+                                    {{ $linkCategory->label }}
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
 
                 <button :aria-label="`toggle ${currentMode} mode`"
                         x-data="{
