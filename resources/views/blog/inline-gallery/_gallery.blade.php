@@ -17,6 +17,7 @@
                 <img
                     class="block object-cover h-full w-full"
                     src="{{ $image->getFirstMedia()->getUrl() }}"
+                    title="{{ $image->title }}"
                     alt="{{ $image->alt_description }}"
                 >
                 @if ($image->caption)

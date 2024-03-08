@@ -11,6 +11,10 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
+/**
+ * @property string $name Internal name for the image, to help admins find it.
+ * @property string $title Title for the image, to use in galleries or other public spots.
+ */
 class Image extends Model implements HasMedia
 {
     use HasFactory, SoftDeletes, InteractsWithMedia;

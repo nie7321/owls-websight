@@ -39,8 +39,13 @@ class ImageResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Internal Name')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(2000),
+                Forms\Components\TextInput::make('title')
+                    ->label('Title')
+                    ->required()
+                    ->maxLength(2000),
                 Forms\Components\Textarea::make('alt_description'),
                 Forms\Components\Textarea::make('caption'),
                 $uploadComponent
@@ -57,6 +62,10 @@ class ImageResource extends Resource
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('media')
                     ->conversion('preview'),
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Internal Name')
+                    ->sortable()
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('title')
                     ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('caption')
