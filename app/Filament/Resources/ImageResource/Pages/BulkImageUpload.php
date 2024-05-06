@@ -104,7 +104,10 @@ class BulkImageUpload extends Page implements HasForms
              * @var TemporaryUploadedFile $tempFile
              */
             foreach ($uploadComponent->getState() as $uuid => $tempFile) {
-                $imageRecord = Image::create(['name' => $tempFile->getClientOriginalName()]);
+                $imageRecord = Image::create([
+                    'name' => $tempFile->getClientOriginalName(),
+                    'title' => $tempFile->getClientOriginalName(),
+                ]);
                 $uploadComponent->model($imageRecord);
 
                 $exifTool->stripMetadata($tempFile->path());
