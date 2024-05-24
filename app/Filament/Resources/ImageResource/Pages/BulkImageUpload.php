@@ -17,6 +17,8 @@ use Filament\Resources\Pages\Page;
 use Filament\Support\Exceptions\Halt;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use function Filament\Support\is_app_url;
 
@@ -42,6 +44,9 @@ class BulkImageUpload extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
+            Forms\Components\TextInput::make('prefix')
+                ->label("Internal Name Prefix")
+                ->hint('Prepends to the internal title for all images'),
             Forms\Components\SpatieMediaLibraryFileUpload::make('images')
                 ->key('images')
                 ->multiple()
@@ -87,6 +92,7 @@ class BulkImageUpload extends Page implements HasForms
             $this->callHook('afterValidate');
 
             $data = $this->mutateFormDataBeforeCreate($data);
+            $prefix = Arr::get($data, 'prefix');
 
             $this->callHook('beforeCreate');
 
@@ -104,9 +110,16 @@ class BulkImageUpload extends Page implements HasForms
              * @var TemporaryUploadedFile $tempFile
              */
             foreach ($uploadComponent->getState() as $uuid => $tempFile) {
+                $filenameWithoutExtension = Str::of($tempFile->getClientOriginalName())->beforeLast('.');
+
+                $internalName = $filenameWithoutExtension;
+                if ($prefix) {
+                    $internalName = $filenameWithoutExtension->prepend("$prefix: ");
+                }
+
                 $imageRecord = Image::create([
-                    'name' => $tempFile->getClientOriginalName(),
-                    'title' => $tempFile->getClientOriginalName(),
+                    'name' => $internalName->toString(),
+                    'title' => $filenameWithoutExtension->toString(),
                 ]);
                 $uploadComponent->model($imageRecord);
 
