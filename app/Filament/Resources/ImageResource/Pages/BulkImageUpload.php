@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\ImageResource\Pages;
 
 use App\Domains\Media\Actions\Exif;
+use App\Domains\Media\Models\Gallery;
 use App\Domains\Media\Models\Image;
 use App\Filament\Resources\ImageResource;
 use Filament\Actions\Action;
@@ -47,6 +48,10 @@ class BulkImageUpload extends Page implements HasForms
             Forms\Components\TextInput::make('prefix')
                 ->label("Internal Name Prefix")
                 ->hint('Prepends to the internal title for all images'),
+            Forms\Components\Select::make('gallery_id')
+                ->label('Add to Gallery')
+                ->hint('Optional gallery to add the uploaded images to')
+                ->options(Gallery::orderBy('created_at', 'desc')->pluck('title', 'id')),
             Forms\Components\SpatieMediaLibraryFileUpload::make('images')
                 ->key('images')
                 ->multiple()
@@ -92,7 +97,14 @@ class BulkImageUpload extends Page implements HasForms
             $this->callHook('afterValidate');
 
             $data = $this->mutateFormDataBeforeCreate($data);
+
             $prefix = Arr::get($data, 'prefix');
+
+            $galleryId = Arr::get($data, 'gallery_id');
+            $galleryOrderIndex = 1;
+            $gallery = $galleryId
+                ? Gallery::findOrFail($galleryId)
+                : null;
 
             $this->callHook('beforeCreate');
 
@@ -125,6 +137,11 @@ class BulkImageUpload extends Page implements HasForms
 
                 $exifTool->stripMetadata($tempFile->path());
                 $saveCallback($uploadComponent, $tempFile, $imageRecord);
+
+                if ($gallery) {
+                    $gallery->images()->attach($imageRecord, ['order_index' => $galleryOrderIndex]);
+                    $galleryOrderIndex++;
+                }
             }
 
             $this->callHook('afterCreate');
