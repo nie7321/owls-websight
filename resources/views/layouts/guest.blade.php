@@ -228,13 +228,13 @@
                         </svg>
                     </a>
                 </div>
-                <div class="mb-4 flex space-x-4 text-sm text-gray-500 dark:text-gray-400">
-                    <div>&copy; {{ \Illuminate\Support\Carbon::now()->year }} owls, all rights reserved</div>
+                <div class="mb-4 flex flex-row flex-wrap justify-center gap-2 space-x-4 text-sm text-gray-500 dark:text-gray-400">
+                    <div class="basis-full text-center md:basis-auto md:text-left">&copy; {{ \Illuminate\Support\Carbon::now()->year }} owls, all rights reserved</div>
                     <div><a href="{{ route('legal.credits') }}">credits</a></div>
                     <div><a href="{{ route('legal.terms') }}">terms of use &amp; privacy policy</a></div>
                     <div><a href="{{ route('filament.admin.pages.dashboard') }}">admin</a></div>
                 </div>
-                <div class="mb-4 flex space-x-4">
+                <div class="mb-4 flex flex-wrap justify-center content-center gap-4">
                     <img src="{{ asset('image/tfnow.gif') }}" alt="Team Fortress Now!">
                     <img src="{{ asset('image/php.gif') }}" alt="Powered by PHP">
                     <img src="{{ asset('image/petsites.gif') }}" alt="Top 100 Pet Sites">
