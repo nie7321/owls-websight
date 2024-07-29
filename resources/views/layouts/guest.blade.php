@@ -241,7 +241,9 @@
                     <img src="{{ asset('image/internetprivacy.gif') }}" alt="Internet Priavy Now">
                 </div>
                 <div class="mb-8">
-                    <img src="{{ asset('image/yasashii_badge.png') }}" alt="Yasashii Syndicate">
+                    <a href="https://yshi.org" target="_blank">
+                        <img src="{{ asset('image/yasashii_badge.png') }}" alt="Yasashii Syndicate">
+                    </a>
                 </div>
             </div>
         </footer>
