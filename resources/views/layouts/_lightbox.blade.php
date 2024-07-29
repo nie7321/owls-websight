@@ -17,9 +17,9 @@
                         </svg>
                     </button>
                 </div>
-                <figure class="p-2">
+                <figure class="p-2 flex flex-col gap-y-4 justify-center">
                     <img :alt="imgModalAlt" class="object-contain max-h-[90vh]" :src="imgModalSrc">
-                    <figcaption x-text="imgModalDesc" class="text-center text-white"></figcaption>
+                    <figcaption x-html="imgModalDesc" class="text-white"></figcaption>
                 </figure>
             </div>
         </div>

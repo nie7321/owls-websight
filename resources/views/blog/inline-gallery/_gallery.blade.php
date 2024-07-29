@@ -6,7 +6,7 @@
             <figure
                 class="flex justify-end content-start h-full w-full max-w-none relative cursor-pointer"
                 data-lightbox-image-src="{{ $image->getFirstMedia()->getUrl() }}"
-                data-lightbox-caption="{{ $image->caption }}"
+                data-lightbox-caption="{{ $captionRenderer->convert($image->caption ?? "") }}"
                 data-lightbox-alt="{{ $image->alt_description }}"
                 x-on:click.stop="$dispatch('img-modal', {
                     imgModalSrc: $el.dataset.lightboxImageSrc,
@@ -21,8 +21,10 @@
                     alt="{{ $image->alt_description }}"
                 >
                 @if ($image->caption)
-                    <figcaption class="bg-gallery-caption-text text-white overflow-auto absolute bottom-0 text-center z-10 w-full pt-12 pb-3 px-3">
-                        {!! $captionRenderer->convert($image->caption) !!}
+                    <figcaption class="bg-gallery-caption-text line-clamp-3 text-white absolute bottom-0 text-center z-10 w-full pt-12 pb-3 px-3">
+                        <div class="line-clamp-3">
+                            {!! $captionRenderer->convert($image->caption) !!}
+                        </div>
                     </figcaption>
                 @endif
             </figure>
