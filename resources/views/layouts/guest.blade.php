@@ -81,7 +81,7 @@
                     </button>
                     <div class="hidden dropdown-menu">
                         <div
-                            class="absolute right-0 w-40 mt-2 origin-top-right bg-white dark:bg-black divide-y divide-gray-100 dark:divide-slate-600 rounded-md shadow-lg dark:shadow-sm dark:shadow-slate-600 outline-none"
+                            class="absolute right-0 w-40 mt-2 origin-top-right bg-white dark:bg-gray-950 divide-y divide-gray-100 dark:divide-slate-50 rounded-md shadow-lg dark:shadow-sm dark:shadow-slate-50 outline-none"
                             aria-labelledby="links-dropdown-label"
                             id="links-dropdown"
                             role="menu"
@@ -183,9 +183,15 @@
                         <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('contact') }}">Contact</a>
                         </div>
-                        <div class="px-12 py-4">
-                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{  route('link.show', \App\Domains\Blog\Enums\LinkCategoryEnum::BLOG_ROLL) }}">Links</a>
-                        </div>
+
+                        @php /** @var \App\Domains\Blog\Models\LinkCategory $linkCategory */@endphp
+                        @foreach($linkCategories as $linkCategory)
+                            <div class="px-12 py-4">
+                                <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('link.show', $linkCategory->slug) }}">
+                                    {{ $linkCategory->label }}
+                                </a>
+                            </div>
+                        @endforeach
                     </nav>
                 </div>
             </div>
