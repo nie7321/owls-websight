@@ -19,6 +19,10 @@ class Kernel extends ConsoleKernel
         $schedule->command('blog:refresh-link-cards')
             ->hourly()
             ->withoutOverlapping(10);
+
+        $schedule->command('opml:canonicalizer')
+            ->everyThreeHours()
+            ->withoutOverlapping(10);
     }
 
     /**
