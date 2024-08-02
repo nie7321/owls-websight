@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Domains\Opml\Actions\CanonicalizeFeedUrl;
+use App\Domains\Opml\Models\ExternalOpmlList;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
 
@@ -13,22 +14,33 @@ class CanonicalizeOpmlFeedURLs extends Command
 
     public function handle(CanonicalizeFeedUrl $cannonicalizer): int
     {
-        $opmlUrl = $this->argument('url');
-        $filename = $this->argument('outputFilename');
+        $opmlFiles = ExternalOpmlList::whereActive(true)->get();
 
-        $updatedOpml = $cannonicalizer->forOpml($opmlUrl);
+        if (! $opmlFiles->count()) {
+            $this->info('No OPML lists to process.');
 
-        $url = $this->writeToDisk($filename, $updatedOpml->asXML());
+            return self::SUCCESS;
+        }
 
+        $reportHeaders = ["OPML", "URL"];
+        $reportRows = [];
+
+        $this->info("Processing {$opmlFiles->count()} lists...");
         $this->newLine();
-        $this->info("Finished processing.");
-        $this->newLine();
-        $this->info($url);
+
+        foreach ($opmlFiles as $opmlFile) {
+            $updatedOpml = $cannonicalizer->forOpml($opmlFile->url, $opmlFile->docs_url);
+            $this->writeToDisk($opmlFile, $updatedOpml->asXML());
+
+            $reportRows[] = [$opmlFile->label, $opmlFile->republished_url];
+        }
+
+        $this->table($reportHeaders, $reportRows);
 
         return self::SUCCESS;
     }
 
-    private function writeToDisk(string $filename, string $opmlString): string
+    private function writeToDisk(ExternalOpmlList $opmlFile, string $opmlString): void
     {
         $disk = Storage::disk('public');
 
@@ -36,9 +48,6 @@ class CanonicalizeOpmlFeedURLs extends Command
             $disk->createDirectory('opml');
         }
 
-        $path = "opml/{$filename}";
-        $disk->put($path, $opmlString);
-
-        return $disk->url($path);
+        $disk->put($opmlFile->opml_disk_path, $opmlString);
     }
 }

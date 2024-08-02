@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App\Domains\Opml\Actions;
 
 use App\Domains\Opml\Exceptions\OpmlOutlineMissing;
+use DateTimeInterface;
 use Illuminate\Http\Client\ConnectionException;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Http;
 use SimpleXMLElement;
 
@@ -15,11 +17,21 @@ class CanonicalizeFeedUrl
      * @param string $url URL for an OPML file
      * @return SimpleXMLElement Updated OPML. Call {@see SimpleXMLElement::asXML()} to get the XML.
      */
-    public function forOpml(string $url): SimpleXMLElement
+    public function forOpml(string $url, ?string $docsUrl): SimpleXMLElement
     {
         $opml = $this->getOpml($url);
         if (! $opml->body?->outline) {
             throw new OpmlOutlineMissing;
+        }
+
+        if (! $opml->head) {
+            $opml->addChild('head');
+        }
+
+        $opml->head->addChild('dateModified', Carbon::now()->format(DateTimeInterface::RFC822));
+
+        if ($docsUrl) {
+            $opml->head->addChild('docs', $docsUrl);
         }
 
         foreach ($opml->body->outline->children() as $outline) {

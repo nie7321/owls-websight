@@ -7,6 +7,7 @@ use App\Domains\Blog\Models\BlogPost;
 use App\Domains\Blog\Models\LinkCategory;
 use App\Domains\Blog\Models\RelationshipType;
 use App\Domains\Blog\Models\Tag;
+use App\Domains\Opml\Models\ExternalOpmlList;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -23,6 +24,7 @@ class DemoSeeder extends Seeder
 
         $this->posts($owls);
         $this->links();
+        $this->opmlFeeds();
     }
 
     protected function links(): void
@@ -87,5 +89,16 @@ class DemoSeeder extends Seeder
 
         $tags = collect($tags)->map(fn (string $tag) => Tag::create(['slug' => $tag, 'label' => $tag]));
         $post->tags()->sync($tags->map->id);
+    }
+
+    protected function opmlFeeds(): void
+    {
+        ExternalOpmlList::create([
+            'label' => 'Blaugust 2024',
+            'url' => 'https://aggronaut.com/Blaugust2024Feeds.opml',
+            'output_filename' => 'Blaugust2024Feeds.opml',
+            'docs_url' => null,
+            'active' => true,
+        ]);
     }
 }
