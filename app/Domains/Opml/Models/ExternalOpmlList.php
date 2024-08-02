@@ -27,7 +27,7 @@ class ExternalOpmlList extends Model
     protected function republishedUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => asset($this->opmlDiskPath),
+            get: fn () => asset("storage/{$this->opmlDiskPath}"),
         );
     }
 }
