@@ -94,7 +94,7 @@ class ImageResource extends Resource
                 CopyToClipboardAction::make()
                     ->label('Copy URL')
                     ->copyable(fn (Image $image) => $image->getFirstMedia()->getUrl()),
-            ])
+            ], position: Tables\Enums\ActionsPosition::BeforeColumns)
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
