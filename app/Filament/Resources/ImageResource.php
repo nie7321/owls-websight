@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources;
 
+use App\Domains\Foundation\Filament\Actions\CopyToClipboardAction;
 use App\Domains\Media\Actions\Exif;
 use App\Filament\Resources\ImageResource\Pages;
 use App\Filament\Resources\ImageResource\RelationManagers;
@@ -90,6 +91,9 @@ class ImageResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                CopyToClipboardAction::make()
+                    ->label('Copy URL')
+                    ->copyable(fn (Image $image) => $image->getFirstMedia()->getUrl()),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
