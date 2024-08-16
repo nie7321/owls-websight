@@ -40,6 +40,9 @@
     </script>
     @vite('resources/css/app.css')
     @livewireStyles
+    @isset($pageStyles)
+        {{ $pageStyles }}
+    @endisset
 </head>
 <body class="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
 <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
