@@ -52,7 +52,7 @@
                     <div class="flex items-center justify-between">
                         <div class="mr-3">
                             <img
-                                class="max-w-14 rounded-full"
+                                class="max-w-14 rounded-full aspect-square"
                                 src="{{ asset('image/owls-avatar.png') }}"
                                 alt="an owl"
                                 aria-hidden="true"
@@ -244,14 +244,14 @@
                     <div><a href="{{ route('filament.admin.pages.dashboard') }}">admin</a></div>
                 </div>
                 <div class="mb-4 flex flex-wrap justify-center content-center gap-4">
-                    <img src="{{ asset('image/tfnow.gif') }}" alt="Team Fortress Now!">
-                    <img src="{{ asset('image/php.gif') }}" alt="Powered by PHP">
-                    <img src="{{ asset('image/petsites.gif') }}" alt="Top 100 Pet Sites">
-                    <img src="{{ asset('image/internetprivacy.gif') }}" alt="Internet Priavy Now">
+                    <img src="{{ asset('image/tfnow.gif') }}" alt="Team Fortress Now!" loading="lazy" class="badge-88x31">
+                    <img src="{{ asset('image/php.gif') }}" alt="Powered by PHP" loading="lazy" class="badge-88x31">
+                    <img src="{{ asset('image/petsites.gif') }}" alt="Top 100 Pet Sites" loading="lazy" class="badge-88x31">
+                    <img src="{{ asset('image/internetprivacy.gif') }}" alt="Internet Priavy Now" loading="lazy" class="badge-88x31">
                 </div>
                 <div class="mb-8">
                     <a href="https://yshi.org" target="_blank">
-                        <img src="{{ asset('image/yasashii_badge.png') }}" alt="Yasashii Syndicate">
+                        <img src="{{ asset('image/yasashii_badge.png') }}" alt="Yasashii Syndicate" loading="lazy" class="h-[15px] w-[80px]">
                     </a>
                 </div>
             </div>
