@@ -26,8 +26,10 @@
     @endif
 
     @if ($description)
+        <meta name="description" content="{{ $description }}" />
         <meta property="og:description" content="{{ $description }}" />
     @else
+        <meta name="description" content="the personal website of owls, full of blog posts and other enjoyable web sights" />
         <meta property="og:description" content="the personal website of owls, full of blog posts and other enjoyable web sights" />
     @endif
 
