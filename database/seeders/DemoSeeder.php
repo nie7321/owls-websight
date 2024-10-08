@@ -74,6 +74,17 @@ class DemoSeeder extends Seeder
             ['php', 'laravel', '🔥 tip'],
             $author
         );
+
+        // Highlight JS/CSS Test
+        $this->post(
+            [
+                'title' => 'Test for Syntax Highlights',
+                'content' => file_get_contents(database_path('fixtures/test-highlight.md')),
+                'published_at' => Carbon::now()->subMonths(2),
+            ],
+            ['js'],
+            $author
+        );
     }
 
     protected function post(array $data, array $tags, User $author): void
