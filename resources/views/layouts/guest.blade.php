@@ -12,6 +12,8 @@
     <meta property="og:url" content="{{ route('blog-post.index') }}" />
     <meta property="og:site_name" content="{{ config('app.name') }}" />
     <meta property="og:locale" content="en_US" />
+    <meta name="fediverse:creator" content="@owls@yshi.org" />
+    
     @isset($title)
         <meta property="og:title" content="{{ $title }}" />
     @endisset
