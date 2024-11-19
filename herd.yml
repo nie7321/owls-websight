@@ -1,0 +1,11 @@
+name: owls-websight
+php: '8.3'
+secured: true
+aliases:
+    - owls-social
+services:
+    postgresql:
+        version: '16'
+        port: '${DB_PORT}'
+integrations:
+    forge: {  }

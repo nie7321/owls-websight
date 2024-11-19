@@ -14,6 +14,10 @@ use App\Http\Controllers;
 |
 */
 
+Route::domain(config('social.subdomain'))->group(function () {
+    Route::get('/', Controllers\SocialMediaLandingController::class);
+});
+
 Route::get('legal/credits', fn () => view('legal.credits'))->name('legal.credits');
 Route::get('legal/terms-and-privacy', fn () => view('legal.terms-and-privacy'))->name('legal.terms');
 Route::get('about', fn () => view('about'))->name('about');
