@@ -15,7 +15,8 @@ use App\Http\Controllers;
 */
 
 Route::domain(config('social.subdomain'))->group(function () {
-    Route::get('/', Controllers\SocialMediaLandingController::class);
+    Route::get('/', [Controllers\SocialMediaController::class, 'index']);
+    Route::get('.well-known/atproto-did', [Controllers\SocialMediaController::class, 'atprotoDID']);
 });
 
 Route::get('legal/credits', fn () => view('legal.credits'))->name('legal.credits');
