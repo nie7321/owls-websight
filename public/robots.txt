@@ -1,2 +1,8 @@
-User-agent: *
+User-agent: ia_archiver
 Disallow:
+
+User-agent: search.marginalia.nu
+Disallow:
+
+User-agent: *
+Disallow: /
