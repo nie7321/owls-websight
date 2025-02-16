@@ -17,16 +17,21 @@
                     <x-contact-entry label="Email" icon="brand-icons.email">
                         <a href="mailto:nick@godless-internets.org">nick@godless-internets.org</a>
                     </x-contact-entry>
-                    <x-contact-entry label="Fediverse" icon="brand-icons.mastodon">
-                        <a href="https://mastodon.yshi.org/@owls">@owls@yshi.org</a>
-                    </x-contact-entry>
 
                     <x-contact-entry label="Matrix" icon="brand-icons.matrix">
                         <a href="https://matrix.to/#/@owls:chat.yshi.org">@owls:chat.yshi.org</a>
                     </x-contact-entry>
 
-                    <x-contact-entry label="GitHub" icon="brand-icons.github">
-                        <a href="https://github.com/nie7321">nie7321</a>
+                    <x-contact-entry label="Fediverse" icon="brand-icons.mastodon">
+                        <a href="https://mastodon.yshi.org/@owls">@owls@yshi.org</a>
+                    </x-contact-entry>
+
+                    <x-contact-entry label="Bluesky" icon="brand-icons.bluesky">
+                        <a href="https://bsky.app/profile/owls.godless-internets.org">@owls.godless-internets.org</a>
+                    </x-contact-entry>
+
+                    <x-contact-entry label="Codeberg" icon="brand-icons.codeberg">
+                        <a href="https://codeberg.org/owls">owls</a>
                     </x-contact-entry>
 
                     <x-contact-entry label="Discord" icon="brand-icons.discord">
