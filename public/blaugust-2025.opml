@@ -13,7 +13,7 @@
         <outline type="rss" text="Alligators And Aneurysms" xmlUrl="https://alligatorsandaneurysms.wordpress.com/feed/" htmlUrl="https://AlligatorsAndAneurysms.wordpress.com"/>
         <outline type="rss" text="An Archaeopteryx" xmlUrl="https://anarchaeopteryx.bearblog.dev/feed/" htmlUrl="https://anarchaeopteryx.bearblog.dev/"/>
         <outline type="rss" text="august morning" xmlUrl="https://jeddacp.me/feed/" htmlUrl="https://jeddacp.me/"/>
-        <outline type="rss" text="Axxuy.xyz" xmlUrl="https://axxuy.xyz/feeds/" htmlUrl="https://axxuy.xyz" />
+        <outline type="rss" text="Axxuy.xyz" xmlUrl="https://axxuy.xyz/blog/feed.xml" htmlUrl="https://axxuy.xyz" />
         <outline type="rss" text="Aywren's Nook" xmlUrl="https://aywren.com/feed.xml" htmlUrl="https://aywren.com" />
         <outline type="rss" text="Calishat" xmlUrl="https://www.calishat.com/feed/" htmlUrl="https://www.calishat.com/"/>
         <outline type="rss" text="Casual Catte Creations" xmlUrl="https://casualcatte.com/feed/" htmlUrl="https://casualcatte.com"/>
@@ -51,7 +51,7 @@
         <outline type="rss" text="Le Blog de Didier MARY" xmlUrl="https://www.didiermary.fr/feed/" htmlUrl="https://www.didiermary.fr/"/>
         <outline type="rss" text="leekscosycorner" xmlUrl="https://leekscosycorner.com/feed/" htmlUrl="https://leekscosycorner.com"/>
         <outline type="rss" text="Mailvaltar - MMOs and other stuff" xmlUrl="https://mailvaltar.wordpress.com/feed/" htmlUrl="https://mailvaltar.wordpress.com/"/>
-        <outline type="rss" text="manonamora's computer" xmlUrl="https://manonamora.neocities.org/feed.xml" htmlUrl="https://manonamora.neocities.org/"/>
+        <outline type="rss" text="manonamora's computer" xmlUrl="https://manonamora.neocities.org/blog/blog-feed.xml" htmlUrl="https://manonamora.neocities.org/"/>
         <outline type="rss" text="Many Welps" xmlUrl="https://manywelps.com/feed/" htmlUrl="https://manywelps.com"/>
         <outline type="rss" text="Midnight Dreaming" xmlUrl="https://renkotsuban.com/rss.xml" htmlUrl="https://renkotsuban.com"/>
         <outline type="rss" text="Mikes Thoughts" xmlUrl="https://mikesthoughts.blog/feed/feed.xml" htmlUrl="https://mikesthoughts.blog"/>
