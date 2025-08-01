@@ -34,7 +34,7 @@ class CanonicalizeFeedUrl
             $opml->head->addChild('docs', $docsUrl);
         }
 
-        foreach ($opml->body->outline->children() as $outline) {
+        foreach ($opml->body->children() as $outline) {
             $cannonicalUrl = $this->getCannonicalFeedUrl((string) $outline['xmlUrl']);
             if (! $cannonicalUrl) {
                 // If this failed (site down or w/e), then ... do nothing?
