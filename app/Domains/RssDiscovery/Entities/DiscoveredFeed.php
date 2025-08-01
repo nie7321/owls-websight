@@ -33,7 +33,6 @@ readonly class DiscoveredFeed
         // Who knows what kinda weird-ass characters people will put in their titles. Let SimpleXML encode that stuff.
         $element = new SimpleXMLElement('<outline type="rss"/>');
         $element->addAttribute('text', $title ?? $this->title ?? $htmlUrl);
-        $element->addAttribute('title', $title ?? $this->title ?? $htmlUrl);
         $element->addAttribute('xmlUrl', $this->url);
         $element->addAttribute('htmlUrl', $htmlUrl);
 
