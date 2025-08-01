@@ -8,6 +8,7 @@ use Dom\HTMLDocument;
 use Exception;
 use Generator;
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 use Throwable;
 
 class DiscoverRssFeeds extends Command
@@ -36,7 +37,7 @@ class DiscoverRssFeeds extends Command
                 $siteLabel,
                 $url,
                 $feed ? 'Yes' : 'No',
-                $feed?->title,
+                $feed?->title ? "\"{$feed->title}\"" : null,
                 $feed?->type->value,
                 $feed?->url,
                 $feed?->opmlOutline($siteLabel, $url),
