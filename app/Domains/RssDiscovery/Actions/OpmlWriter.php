@@ -40,8 +40,8 @@ class OpmlWriter
         XML;
 
         $dom = new DOMDocument();
-        //$dom->preserveWhiteSpace = false;
-        //$dom->formatOutput = true;
+        $dom->preserveWhiteSpace = false;
+        $dom->formatOutput = true;
         $dom->loadXml($xml);
 
         return $dom;
