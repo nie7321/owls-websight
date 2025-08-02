@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use App\Domains\RssDiscovery\Actions\DiscoverSiteFeed;
 use App\Domains\RssDiscovery\Actions\OpmlWriter;
+use App\Domains\RssDiscovery\Entities\DiscoveredFeed;
+use App\Domains\RssDiscovery\Entities\FeedDiscoveryResult;
 use Dom\HTMLCollection;
 use Dom\HTMLDocument;
 use Exception;
@@ -65,13 +67,21 @@ class DiscoverRssFeeds extends Command
 
         $sites = explode("\n", $urlList);
         foreach ($sites as $line) {
+            $line = preg_replace('/<li><a href="/i', '', $line);
+            $line = preg_replace('/">/', ',', $line);
+            $line = preg_replace('/<\/a><\/li>/i', '', $line);
+            $line = preg_replace('/\*\s*$/', '', $line);
+
             [$url, $label] = explode(',', $line);
+
+            $url = trim($url);
+            $label = trim($label);
 
             if (! str_starts_with($url, 'http')) {
                 $url = "https://{$url}";
             }
 
-            yield trim($url) => trim($label);
+            yield $url => $label;
         }
     }
 }
