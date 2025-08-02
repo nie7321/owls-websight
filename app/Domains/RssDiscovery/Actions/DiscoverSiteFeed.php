@@ -12,22 +12,34 @@ use Dom\HTMLDocument;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Uri;
+use Throwable;
 
 class DiscoverSiteFeed
 {
     public function for(?string $siteName, string $url): FeedDiscoveryResult
     {
-        $response = retry(3, fn () => Http::get($url)->throw(), 250);
+        try {
+            $response = retry(3, fn() => Http::get($url)->throw(), 250);
 
-        $doc = @HTMLDocument::createFromString($response->body());
-        $linkTags = $doc->getElementsByTagName('link');
+            $doc = @HTMLDocument::createFromString($response->body());
+            $linkTags = $doc->getElementsByTagName('link');
 
-        $feeds = $this->getFeeds($url, $linkTags);
+            $feeds = $this->getFeeds($url, $linkTags);
+        } catch (Throwable $e) {
+            return new FeedDiscoveryResult(
+                siteName: $siteName,
+                siteUrl: $url,
+                feeds: collect(),
+                encounteredError: true,
+                error: $e->getMessage(),
+            );
+        }
 
         return new FeedDiscoveryResult(
             siteName: $siteName,
             siteUrl: $url,
             feeds: $feeds,
+            encounteredError: false,
         );
     }
 

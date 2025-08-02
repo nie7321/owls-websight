@@ -17,6 +17,8 @@ readonly class FeedDiscoveryResult
         public ?string $siteName,
         public string $siteUrl,
         public Collection $feeds,
+        public bool $encounteredError,
+        public ?string $error = null,
     ) {
         //
     }

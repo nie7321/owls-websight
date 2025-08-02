@@ -26,12 +26,11 @@ class DiscoverRssFeeds extends Command
         $opmlTags = [];
 
         foreach ($this->urls($path) as $url => $siteLabel) {
-            try {
-                $result = $discoverSiteFeed->for($siteLabel, $url);
-            } catch (Throwable) {
-                $notFound[] = [$siteLabel, $url];
+            $result = $discoverSiteFeed->for($siteLabel, $url);
 
-                continue;
+            if ($result->encounteredError) {
+                $this->error("Error for {$siteLabel} <{$url}>");
+                $this->error($result->error);
             }
 
             $feed = $result->bestFeed();
