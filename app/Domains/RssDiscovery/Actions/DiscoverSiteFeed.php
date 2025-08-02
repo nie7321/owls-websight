@@ -41,7 +41,12 @@ class DiscoverSiteFeed
                 continue;
             }
 
-            $type = FeedType::tryFrom($link->getAttribute('type'));
+            $typeRaw = $link->getAttribute('type');
+            if (! $typeRaw) {
+                continue;
+            }
+
+            $type = FeedType::tryFrom($typeRaw);
             if ($type === null) {
                 continue;
             }
