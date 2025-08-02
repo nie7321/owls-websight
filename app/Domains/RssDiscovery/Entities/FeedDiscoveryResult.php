@@ -65,6 +65,7 @@ readonly class FeedDiscoveryResult
             'https://sag.sadesignz.org/' => 'https://sag.sadesignz.org/feed/',
             'https://splendide-mendax.com' => 'https://splendide-mendax.com/rss.xml',
             'https://taxodium.ink' => 'https://taxodium.ink/rss.xml',
+            'https://aggronaut.com' => 'https://aggronaut.com/feed/',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);
