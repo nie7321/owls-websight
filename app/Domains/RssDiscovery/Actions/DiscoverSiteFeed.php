@@ -17,7 +17,7 @@ class DiscoverSiteFeed
 {
     public function for(?string $siteName, string $url): FeedDiscoveryResult
     {
-        $response = Http::get($url)->throw();
+        $response = retry(3, fn () => Http::get($url)->throw(), 250);
 
         $doc = @HTMLDocument::createFromString($response->body());
         $linkTags = $doc->getElementsByTagName('link');
