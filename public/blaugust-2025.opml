@@ -31,6 +31,7 @@
     <outline type="rss" text="Dave Henry Blog" xmlUrl="https://davehenry.blog/atom.xml" htmlUrl="https://davehenry.blog/"/>
     <outline type="rss" text="dirchansky freetalk" xmlUrl="https://dirchansky.com/freetalk/rss.xml" htmlUrl="https://dirchansky.com/freetalk"/>
     <outline type="rss" text="Divergent Rays" xmlUrl="https://divergentrays.com/blog/blogfeed.xml" htmlUrl="https://divergentrays.com/blog/"/>
+    <outline type="rss" text="dreamwidth.org" xmlUrl="https://waxingpoeticaboutlife.dreamwidth.org/data/atom" htmlUrl="https://waxingpoeticaboutlife.dreamwidth.org/"/>
     <outline type="rss" text="EVE Online Pictures" xmlUrl="https://evepics.wordpress.com/feed/" htmlUrl="https://evepics.wordpress.com/"/>
     <outline type="rss" text="Exposition is Inevitable" xmlUrl="https://kebrent.blogspot.com/feeds/posts/default" htmlUrl="https://kebrent.blogspot.com/"/>
     <outline type="rss" text="Fiat Mihi" xmlUrl="https://fiat-mihi.com/rss.xml" htmlUrl="https://fiat-mihi.com"/>
@@ -57,9 +58,11 @@
     <outline type="rss" text="kimberlyhirsh" xmlUrl="https://kimberlyhirsh.com/feed.xml" htmlUrl="https://kimberlyhirsh.com"/>
     <outline type="rss" text="Konfetti Explorations" xmlUrl="https://marisabel.nl/feeds/combined.php" htmlUrl="https://marisabel.nl"/>
     <outline type="rss" text="Lameazoid.com" xmlUrl="https://lameazoid.com/feed/" htmlUrl="https://lameazoid.com"/>
+    <outline type="rss" text="lapislabel.net" xmlUrl="https://lapislabel.net/feed.xml" htmlUrl="https://lapislabel.net"/>
     <outline type="rss" text="Lars-Christian's website" xmlUrl="https://lars-christian.com/feed.xml" htmlUrl="https://lars-christian.com"/>
     <outline type="rss" text="Le Blog de Didier MARY" xmlUrl="https://www.didiermary.fr/feed/" htmlUrl="https://www.didiermary.fr/"/>
     <outline type="rss" text="leekscosycorner" xmlUrl="https://leekscosycorner.com/feed/" htmlUrl="https://leekscosycorner.com"/>
+    <outline type="rss" text="Lemons to lemonades" xmlUrl="https://lemons.bearblog.dev/feed/" htmlUrl="https://lemons.bearblog.dev/"/>
     <outline type="rss" text="Liquid Depresso Injection" xmlUrl="https://blog.marqaroll.com/feeds/posts/default" htmlUrl="https://blog.marqaroll.com/"/>
     <outline type="rss" text="LunarLoony.co.uk" xmlUrl="https://lunarloony.co.uk/feed/" htmlUrl="https://lunarloony.co.uk"/>
     <outline type="rss" text="MagiWasTaken" xmlUrl="https://indiecator.org/feed/" htmlUrl="https://youtube.com/@magiwastaken"/>
@@ -116,14 +119,17 @@
     <outline type="rss" text="theTangentSpace" xmlUrl="https://thetangent.space/feed.xml" htmlUrl="https://thetangent.space"/>
     <outline type="rss" text="Tim Bornholdt" xmlUrl="https://www.timbornholdt.com/blog/feed.rss" htmlUrl="https://www.timbornholdt.com"/>
     <outline type="rss" text="Time to Loot" xmlUrl="https://www.timetoloot.com/feed/" htmlUrl="https://www.timetoloot.com/"/>
+    <outline type="rss" text="Trevor's Cold Toast" xmlUrl="http://coldtoast.org/index.xml" htmlUrl="http://coldtoast.org"/>
     <outline type="rss" text="Ubergeek Kellys World" xmlUrl="https://www.kgadams.net/feed" htmlUrl="https://www.kgadams.net"/>
     <outline type="rss" text="Unidentified Signal Source" xmlUrl="https://unidentifiedsignalsource.wordpress.com/feed/" htmlUrl="https://unidentifiedsignalsource.wordpress.com/"/>
     <outline type="rss" text="Varun Barad" xmlUrl="https://varunbarad.com/feed.xml" htmlUrl="https://varunbarad.com"/>
     <outline type="rss" text="Virtual Moose" xmlUrl="https://virtualmoose.org/feed/" htmlUrl="https://virtualmoose.org/"/>
     <outline type="rss" text="vrabia's blog" xmlUrl="https://vrabia.bearblog.dev/feed/" htmlUrl="https://vrabia.bearblog.dev/"/>
+    <outline type="rss" text="Werd I/O" xmlUrl="https://werd.io/rss/" htmlUrl="https://werd.io"/>
     <outline type="rss" text="Why I Game" xmlUrl="https://whyigame.wordpress.com/feed/" htmlUrl="https://whyigame.wordpress.com/"/>
     <outline type="rss" text="Words of the AgingGamer" xmlUrl="https://aginggamer.net/feed/" htmlUrl="https://aginggamer.net"/>
     <outline type="rss" text="Words Under My Name" xmlUrl="https://wordsundermyname.wordpress.com/feed/" htmlUrl="https://wordsundermyname.wordpress.com"/>
+    <outline type="rss" text="WW0CJ.radio" xmlUrl="https://ww0cj.radio/feed/" htmlUrl="https://ww0cj.radio"/>
     <outline type="rss" text="Your friendly neighborhood Blu" xmlUrl="https://blu30rion.wordpress.com/feed/" htmlUrl="https://BLU30RION.wordpress.com"/>
   </body>
 </opml>
