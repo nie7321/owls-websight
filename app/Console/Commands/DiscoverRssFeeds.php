@@ -3,56 +3,74 @@
 namespace App\Console\Commands;
 
 use App\Domains\RssDiscovery\Actions\DiscoverSiteFeed;
+use App\Domains\RssDiscovery\Actions\OpmlWriter;
 use Dom\HTMLCollection;
 use Dom\HTMLDocument;
 use Exception;
 use Generator;
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Throwable;
 
 class DiscoverRssFeeds extends Command
 {
-    protected $signature = 'opml:discover-feeds {path : Path to a file with "Blog URL,Site Label", one pair per line}';
+    protected $signature = 'opml:discover-feeds {path : Path to a file with "Blog URL,Site Label", one pair per line} {output : Filename (for the public dir) to output }';
     protected $description = 'Attempt to find an RSS feed URL for a website';
 
-    public function handle(DiscoverSiteFeed $discoverSiteFeed)
+    public function handle(DiscoverSiteFeed $discoverSiteFeed, OpmlWriter $writer)
     {
         $path = $this->argument('path');
+        $outputFile = $this->argument('output');
 
-        $this->info(implode(',', ["Site", "Base URL", "Found?", "Feed Title", "Feed Type", "Feed URL", "OPML"]));
+        $found = [];
+        $notFound = [];
+        $opmlTags = [];
 
         foreach ($this->urls($path) as $url => $siteLabel) {
             try {
                 $result = $discoverSiteFeed->for($siteLabel, $url);
             } catch (Throwable) {
-                $this->info(implode(',', [$siteLabel, $url, 'No']));
+                $notFound[] = [$siteLabel, $url];
 
                 continue;
             }
 
             $feed = $result->bestFeed();
 
-            $this->info(implode(',', [
-                $siteLabel,
-                $url,
-                $feed ? 'Yes' : 'No',
-                $feed?->title ? "\"{$feed->title}\"" : null,
-                $feed?->type->value,
-                $feed?->url,
-                $feed?->opmlOutline($siteLabel, $url),
-            ]));
+            if (! $feed) {
+                $notFound[] = [$siteLabel, $url];
+                continue;
+            }
+
+            $found[] = [$siteLabel, $url, $feed->url];
+            $opmlTags[] = $feed->opmlOutline($siteLabel, $url);
         }
+
+        $writer->toXml(public_path($outputFile), $opmlTags);
+
+        $this->newLine(3);
+
+        $this->info("Sites found:");
+        $this->newLine();
+        $this->table(["Site", "URL", "Feed"], $found);
+
+        $this->newLine(2);
+        $this->error("Sites not found:");
+        $this->newLine();
+        $this->table(["Site", "URL"], $notFound);
     }
 
     private function urls(string $path): Generator
     {
-        $urlList = file_get_contents($path);
+        $urlList = trim(file_get_contents($path));
         throw_if($urlList === false, new Exception('File not found'));
 
         $sites = explode("\n", $urlList);
         foreach ($sites as $line) {
             [$url, $label] = explode(',', $line);
+
+            if (! str_starts_with($url, 'http')) {
+                $url = "https://{$url}";
+            }
 
             yield trim($url) => trim($label);
         }

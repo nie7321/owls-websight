@@ -9,12 +9,13 @@ use SimpleXMLElement;
 
 readonly class DiscoveredFeed
 {
+    public string $url;
     public int $score;
 
     public function __construct(
         public ?string $title,
         public FeedType $type,
-        public string $url,
+        string $url,
     ) {
         $score = match ($this->type) {
             FeedType::ATOM => 2,
@@ -26,6 +27,7 @@ readonly class DiscoveredFeed
         }
 
         $this->score = $score;
+        $this->url = $url;
     }
 
     public function opmlOutline(?string $title, string $htmlUrl): string
