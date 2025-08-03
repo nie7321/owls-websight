@@ -69,6 +69,7 @@ readonly class FeedDiscoveryResult
             'https://taxodium.ink' => 'https://taxodium.ink/rss.xml',
             'https://aggronaut.com' => 'https://aggronaut.com/feed/',
             'https://lapislabel.net' => 'https://lapislabel.net/feed.xml',
+            'https://hollie.eilloh.net/' => 'https://hollie.eilloh.net/rss.xml',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);
