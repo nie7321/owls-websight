@@ -70,6 +70,9 @@ readonly class FeedDiscoveryResult
             'https://aggronaut.com' => 'https://aggronaut.com/feed/',
             'https://lapislabel.net' => 'https://lapislabel.net/feed.xml',
             'https://hollie.eilloh.net/' => 'https://hollie.eilloh.net/rss.xml',
+            'https://davehenry.blog/' => 'https://davehenry.blog/atom.xml',
+            'https://kimberlygb.nekoweb.org/' => 'https://kimberlygb.nekoweb.org/feed.xml',
+            'https://your-local-grubdog.neocities.org/' => 'https://your-local-grubdog.neocities.org/feed.xml',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);

@@ -24,7 +24,7 @@
     <outline type="rss" text="Casual Catte Creations" xmlUrl="https://casualcatte.com/feed/" htmlUrl="https://casualcatte.com"/>
     <outline type="rss" text="Chaosgoat" xmlUrl="https://chaosgoat.neocities.org/feed.xml" htmlUrl="https://chaosgoat.neocities.org"/>
     <outline type="rss" text="Chasing Dings!" xmlUrl="https://chasingdings.com/feed/" htmlUrl="https://chasingdings.com"/>
-    <outline type="rss" text="clandestini.org" xmlUrl="https://clandestini.org/feed/" htmlUrl="http://www.clandestini.org"/>
+    <outline type="rss" text="clandestini.org" xmlUrl="https://clandestini.org/feed/" htmlUrl="https://www.clandestini.org"/>
     <outline type="rss" text="cobb.land" xmlUrl="https://cobb.land/feed.xml" htmlUrl="https://cobb.land"/>
     <outline type="rss" text="coffee spills" xmlUrl="https://tallywinkle.bearblog.dev/feed/" htmlUrl="https://tallywinkle.bearblog.dev/"/>
     <outline type="rss" text="Conor Zone" xmlUrl="https://www.conor.zone/en/feeds/atom.xml" htmlUrl="https://www.conor.zone/en/blog/"/>
@@ -60,6 +60,7 @@
     <outline type="rss" text="Keeroks Space" xmlUrl="https://punkto.org/zonerender?https://thekeerok.neocities.org/archive" htmlUrl="https://thekeerok.neocities.org/"/>
     <outline type="rss" text="KF's Playground" xmlUrl="https://sincerityplayground.bearblog.dev/feed/" htmlUrl="https://sincerityplayground.bearblog.dev/"/>
     <outline type="rss" text="kimberlyhirsh" xmlUrl="https://kimberlyhirsh.com/feed.xml" htmlUrl="https://kimberlyhirsh.com"/>
+    <outline type="rss" text="Kim's Blog" xmlUrl="https://kimberlygb.nekoweb.org/feed.xml" htmlUrl="https://kimberlygb.nekoweb.org/"/>
     <outline type="rss" text="Konfetti Explorations" xmlUrl="https://marisabel.nl/feeds/combined.php" htmlUrl="https://marisabel.nl"/>
     <outline type="rss" text="Lameazoid.com" xmlUrl="https://lameazoid.com/feed/" htmlUrl="https://lameazoid.com"/>
     <outline type="rss" text="lapislabel.net" xmlUrl="https://lapislabel.net/feed.xml" htmlUrl="https://lapislabel.net"/>
@@ -122,7 +123,9 @@
     <outline type="rss" text="The Ancient Gaming Noob" xmlUrl="https://tagn.wordpress.com/feed/" htmlUrl="https://tagn.wordpress.com"/>
     <outline type="rss" text="The Dragon Chronicle" xmlUrl="https://www.thedragonchronicle.com/feed/" htmlUrl="https://www.thedragonchronicle.com/"/>
     <outline type="rss" text="The Ghastly Mirror" xmlUrl="https://www.ghastlymirror.xyz/rss.xml" htmlUrl="https://www.ghastlymirror.xyz/"/>
+    <outline type="rss" text="The GM Tim Blog" xmlUrl="https://thegmtim.ca/feed/" htmlUrl="https://thegmtim.ca"/>
     <outline type="rss" text="The Sun and the Air" xmlUrl="https://criminallyvulgar.dev/feed/" htmlUrl="https://criminallyvulgar.dev/"/>
+    <outline type="rss" text="The Weekly Miscellaneous" xmlUrl="https://theweeklymiscellaneous.co.uk/index.xml" htmlUrl="https://theweeklymiscellaneous.co.uk"/>
     <outline type="rss" text="The Works of Egan" xmlUrl="https://theworksofegan.net/feed.xml" htmlUrl="https://theworksofegan.net"/>
     <outline type="rss" text="theTangentSpace" xmlUrl="https://thetangent.space/feed.xml" htmlUrl="https://thetangent.space"/>
     <outline type="rss" text="Tim Bornholdt" xmlUrl="https://www.timbornholdt.com/blog/feed.rss" htmlUrl="https://www.timbornholdt.com"/>
@@ -139,5 +142,6 @@
     <outline type="rss" text="Words Under My Name" xmlUrl="https://wordsundermyname.wordpress.com/feed/" htmlUrl="https://wordsundermyname.wordpress.com"/>
     <outline type="rss" text="WW0CJ.radio" xmlUrl="https://ww0cj.radio/feed/" htmlUrl="https://ww0cj.radio"/>
     <outline type="rss" text="Your friendly neighborhood Blu" xmlUrl="https://blu30rion.wordpress.com/feed/" htmlUrl="https://BLU30RION.wordpress.com"/>
+    <outline type="rss" text="Your Local Grubdog" xmlUrl="https://your-local-grubdog.neocities.org/feed.xml" htmlUrl="https://your-local-grubdog.neocities.org/"/>
   </body>
 </opml>
