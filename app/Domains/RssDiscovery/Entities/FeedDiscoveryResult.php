@@ -73,6 +73,8 @@ readonly class FeedDiscoveryResult
             'https://davehenry.blog/' => 'https://davehenry.blog/atom.xml',
             'https://kimberlygb.nekoweb.org/' => 'https://kimberlygb.nekoweb.org/feed.xml',
             'https://your-local-grubdog.neocities.org/' => 'https://your-local-grubdog.neocities.org/feed.xml',
+            'https://gridranger.frama.io/' => 'https://gridranger.frama.io/feeds/all.atom.xml',
+            'https://z.arlmy.me' => 'https://z.arlmy.me/atom.xml',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);

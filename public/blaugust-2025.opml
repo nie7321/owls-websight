@@ -16,9 +16,13 @@
     <outline type="rss" text="Another Dayu" xmlUrl="https://anotherdayu.com/feed/" htmlUrl="https://anotherdayu.com/"/>
     <outline type="rss" text="august morning" xmlUrl="https://jeddacp.me/feed/" htmlUrl="https://jeddacp.me/"/>
     <outline type="rss" text="Avaruussuo" xmlUrl="https://jlaasonen.me/feed/" htmlUrl="https://jlaasonen.me"/>
+    <outline type="rss" text="AW Sketch" xmlUrl="https://www.awsketch.com/rss.xml" htmlUrl="https://www.awsketch.com/blog/"/>
     <outline type="rss" text="Axxuy.xyz" xmlUrl="https://axxuy.xyz/blog/feed.xml" htmlUrl="https://axxuy.xyz"/>
     <outline type="rss" text="Aywren's Nook" xmlUrl="https://aywren.com/feed.xml" htmlUrl="https://aywren.com"/>
+    <outline type="rss" text="BAXY" xmlUrl="https://baxy.typlog.io/feed.xml" htmlUrl="https://baxy.typlog.io/"/>
+    <outline type="rss" text="Before 30" xmlUrl="https://whimsies.bearblog.dev/feed/" htmlUrl="https://whimsies.bearblog.dev/"/>
     <outline type="rss" text="Beyond Tannhauser Gate" xmlUrl="https://www.beyondtannhausergate.com/feed/" htmlUrl="https://www.beyondtannhausergate.com/"/>
+    <outline type="rss" text="BongoTwisty" xmlUrl="https://www.bongotwisty.blog/index.xml" htmlUrl="https://www.bongotwisty.blog"/>
     <outline type="rss" text="brokenstar" xmlUrl="https://brokenstar.blog/feed/" htmlUrl="https://brokenstar.blog"/>
     <outline type="rss" text="Calishat" xmlUrl="https://www.calishat.com/feed/" htmlUrl="https://www.calishat.com/"/>
     <outline type="rss" text="Casual Catte Creations" xmlUrl="https://casualcatte.com/feed/" htmlUrl="https://casualcatte.com"/>
@@ -44,6 +48,7 @@
     <outline type="rss" text="Gaudete Theology" xmlUrl="https://gaudetetheology.wordpress.com/feed/" htmlUrl="https://gaudetetheology.wordpress.com"/>
     <outline type="rss" text="Geek on a Harley" xmlUrl="https://geekonaharley.org/feed/" htmlUrl="https://geekonaharley.org"/>
     <outline type="rss" text="Glome" xmlUrl="https://glome.bearblog.dev/feed/" htmlUrl="https://glome.bearblog.dev/"/>
+    <outline type="rss" text="Gridrager" xmlUrl="https://gridranger.frama.io/feeds/all.atom.xml" htmlUrl="https://gridranger.frama.io/"/>
     <outline type="rss" text="Heartless Gamer" xmlUrl="https://www.heartlessgamer.com/feeds/posts/default" htmlUrl="https://www.heartlessgamer.com/"/>
     <outline type="rss" text="HeyDingus" xmlUrl="https://heydingus.net/feed.rss" htmlUrl="https://heydingus.net"/>
     <outline type="rss" text="In An Age" xmlUrl="https://inanage.com/feed/" htmlUrl="https://inanage.com/"/>
@@ -78,7 +83,6 @@
     <outline type="rss" text="Matt's Blog" xmlUrl="https://mtwb.blog/index.xml" htmlUrl="https://mtwb.blog"/>
     <outline type="rss" text="Megan's writings" xmlUrl="https://megancarnes.blog/feed/" htmlUrl="https://megancarnes.blog"/>
     <outline type="rss" text="Midnight Dreaming" xmlUrl="https://renkotsuban.com/rss.xml" htmlUrl="https://renkotsuban.com"/>
-    <outline type="rss" text="Mikes Thoughts" xmlUrl="https://mikesthoughts.blog/feed/feed.xml" htmlUrl="https://mikesthoughts.blog"/>
     <outline type="rss" text="MMO Casual" xmlUrl="https://wowaltaddiction.blogspot.com/feeds/posts/default" htmlUrl="https://wowaltaddiction.blogspot.com"/>
     <outline type="rss" text="Mmo one night" xmlUrl="https://mmoonenight.blogspot.com/feeds/posts/default" htmlUrl="https://mmoonenight.blogspot.com"/>
     <outline type="rss" text="monocyte's blog" xmlUrl="https://monocyte.bearblog.dev/feed/" htmlUrl="https://monocyte.bearblog.dev"/>
@@ -143,5 +147,6 @@
     <outline type="rss" text="WW0CJ.radio" xmlUrl="https://ww0cj.radio/feed/" htmlUrl="https://ww0cj.radio"/>
     <outline type="rss" text="Your friendly neighborhood Blu" xmlUrl="https://blu30rion.wordpress.com/feed/" htmlUrl="https://BLU30RION.wordpress.com"/>
     <outline type="rss" text="Your Local Grubdog" xmlUrl="https://your-local-grubdog.neocities.org/feed.xml" htmlUrl="https://your-local-grubdog.neocities.org/"/>
+    <outline type="rss" text="素生" xmlUrl="https://z.arlmy.me/atom.xml" htmlUrl="https://z.arlmy.me"/>
   </body>
 </opml>
