@@ -75,6 +75,8 @@ readonly class FeedDiscoveryResult
             'https://your-local-grubdog.neocities.org/' => 'https://your-local-grubdog.neocities.org/feed.xml',
             'https://gridranger.frama.io/' => 'https://gridranger.frama.io/feeds/all.atom.xml',
             'https://z.arlmy.me' => 'https://z.arlmy.me/atom.xml',
+            'https://skywalker.works/blog/' => 'http://skywalker.works/blog/feed/', // tls not configured
+            'https://thelosophy.net' => 'https://thelosophy.net/rss.xml',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);
