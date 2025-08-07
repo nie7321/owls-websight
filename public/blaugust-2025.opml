@@ -134,7 +134,7 @@
     <outline type="rss" text="The Ghastly Mirror" xmlUrl="https://www.ghastlymirror.xyz/rss.xml" htmlUrl="https://www.ghastlymirror.xyz/"/>
     <outline type="rss" text="The GM Tim Blog" xmlUrl="https://thegmtim.ca/feed/" htmlUrl="https://thegmtim.ca"/>
     <outline type="rss" text="The Sun and the Air" xmlUrl="https://criminallyvulgar.dev/feed/" htmlUrl="https://criminallyvulgar.dev/"/>
-    <outline type="rss" text="The Wandering Allison" xmlUrl="https://thewanderingallison.vercel.app/%20index.xml" htmlUrl="https://thewanderingallison.vercel.app"/>
+    <outline type="rss" text="The Wandering Allison" xmlUrl="https://thewanderingallison.vercel.app/rss.xml" htmlUrl="https://thewanderingallison.vercel.app"/>
     <outline type="rss" text="The Weekly Miscellaneous" xmlUrl="https://theweeklymiscellaneous.co.uk/index.xml" htmlUrl="https://theweeklymiscellaneous.co.uk"/>
     <outline type="rss" text="The Works of Egan" xmlUrl="https://theworksofegan.net/feed.xml" htmlUrl="https://theworksofegan.net"/>
     <outline type="rss" text="Thelosophy" xmlUrl="https://thelosophy.net/rss.xml" htmlUrl="https://thelosophy.net"/>
@@ -154,6 +154,7 @@
     <outline type="rss" text="WW0CJ.radio" xmlUrl="https://ww0cj.radio/feed/" htmlUrl="https://ww0cj.radio"/>
     <outline type="rss" text="Your friendly neighborhood Blu" xmlUrl="https://blu30rion.wordpress.com/feed/" htmlUrl="https://BLU30RION.wordpress.com"/>
     <outline type="rss" text="Your Local Grubdog" xmlUrl="https://your-local-grubdog.neocities.org/feed.xml" htmlUrl="https://your-local-grubdog.neocities.org/"/>
+    <outline type="rss" text="椒盐豆豉" xmlUrl="https://blog.douchi.space/index.xml" htmlUrl="https://blog.douchi.space"/>
     <outline type="rss" text="素生" xmlUrl="https://z.arlmy.me/atom.xml" htmlUrl="https://z.arlmy.me"/>
   </body>
 </opml>
