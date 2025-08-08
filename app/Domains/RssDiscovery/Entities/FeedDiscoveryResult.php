@@ -77,6 +77,7 @@ readonly class FeedDiscoveryResult
             'https://z.arlmy.me' => 'https://z.arlmy.me/atom.xml',
             'https://skywalker.works/blog/' => 'http://skywalker.works/blog/feed/', // tls not configured
             'https://thelosophy.net' => 'https://thelosophy.net/rss.xml',
+            'https://vibesnscribes.com' => 'https://www.vibesnscribes.com/feed/',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);

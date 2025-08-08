@@ -53,6 +53,7 @@
     <outline type="rss" text="Gridrager" xmlUrl="https://gridranger.frama.io/feeds/all.atom.xml" htmlUrl="https://gridranger.frama.io/"/>
     <outline type="rss" text="Heartless Gamer" xmlUrl="https://www.heartlessgamer.com/feeds/posts/default" htmlUrl="https://www.heartlessgamer.com/"/>
     <outline type="rss" text="HeyDingus" xmlUrl="https://heydingus.net/feed.rss" htmlUrl="https://heydingus.net"/>
+    <outline type="rss" text="Heyraeh" xmlUrl="https://heyraeh.ca/feed/" htmlUrl="https://heyraeh.ca"/>
     <outline type="rss" text="In An Age" xmlUrl="https://inanage.com/feed/" htmlUrl="https://inanage.com/"/>
     <outline type="rss" text="Indiecator" xmlUrl="https://indiecator.org/feed/" htmlUrl="https://indiecator.org/"/>
     <outline type="rss" text="Inventory Full" xmlUrl="https://bhagpuss.blogspot.com/feeds/posts/default" htmlUrl="https://bhagpuss.blogspot.com/"/>
@@ -65,6 +66,7 @@
     <outline type="rss" text="kavmac" xmlUrl="https://kavmac.com/feed/" htmlUrl="https://kavmac.com/blog/"/>
     <outline type="rss" text="Kay Talks Games" xmlUrl="https://kaytalksgames.wordpress.com/feed/" htmlUrl="https://kaytalksgames.wordpress.com/"/>
     <outline type="rss" text="Kaylee Rowena" xmlUrl="https://kayleerowena.com/rss.xml" htmlUrl="https://kayleerowena.com/blog"/>
+    <outline type="rss" text="Kedara" xmlUrl="https://kedara.eu/blog/index.xml" htmlUrl="https://kedara.eu"/>
     <outline type="rss" text="Keeroks Space" xmlUrl="https://punkto.org/zonerender?https://thekeerok.neocities.org/archive" htmlUrl="https://thekeerok.neocities.org/"/>
     <outline type="rss" text="KF's Playground" xmlUrl="https://sincerityplayground.bearblog.dev/feed/" htmlUrl="https://sincerityplayground.bearblog.dev/"/>
     <outline type="rss" text="kimberlyhirsh" xmlUrl="https://kimberlyhirsh.com/feed.xml" htmlUrl="https://kimberlyhirsh.com"/>
@@ -139,12 +141,14 @@
     <outline type="rss" text="The Works of Egan" xmlUrl="https://theworksofegan.net/feed.xml" htmlUrl="https://theworksofegan.net"/>
     <outline type="rss" text="Thelosophy" xmlUrl="https://thelosophy.net/rss.xml" htmlUrl="https://thelosophy.net"/>
     <outline type="rss" text="theTangentSpace" xmlUrl="https://thetangent.space/feed.xml" htmlUrl="https://thetangent.space"/>
+    <outline type="rss" text="Third Shire" xmlUrl="https://thirdshire.com/index.xml" htmlUrl="https://thirdshire.com"/>
     <outline type="rss" text="Tim Bornholdt" xmlUrl="https://www.timbornholdt.com/blog/feed.rss" htmlUrl="https://www.timbornholdt.com"/>
     <outline type="rss" text="Time to Loot" xmlUrl="https://www.timetoloot.com/feed/" htmlUrl="https://www.timetoloot.com/"/>
     <outline type="rss" text="Trevor's Cold Toast" xmlUrl="http://coldtoast.org/index.xml" htmlUrl="http://coldtoast.org"/>
     <outline type="rss" text="Ubergeek Kellys World" xmlUrl="https://www.kgadams.net/feed" htmlUrl="https://www.kgadams.net"/>
     <outline type="rss" text="Unidentified Signal Source" xmlUrl="https://unidentifiedsignalsource.wordpress.com/feed/" htmlUrl="https://unidentifiedsignalsource.wordpress.com/"/>
     <outline type="rss" text="Varun Barad" xmlUrl="https://varunbarad.com/feed.xml" htmlUrl="https://varunbarad.com"/>
+    <outline type="rss" text="Vibes and Scribes" xmlUrl="https://www.vibesnscribes.com/feed/" htmlUrl="https://vibesnscribes.com"/>
     <outline type="rss" text="Virtual Moose" xmlUrl="https://virtualmoose.org/feed/" htmlUrl="https://virtualmoose.org/"/>
     <outline type="rss" text="vrabia's blog" xmlUrl="https://vrabia.bearblog.dev/feed/" htmlUrl="https://vrabia.bearblog.dev/"/>
     <outline type="rss" text="Werd I/O" xmlUrl="https://werd.io/rss/" htmlUrl="https://werd.io"/>
