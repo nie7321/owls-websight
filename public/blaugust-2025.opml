@@ -4,9 +4,9 @@
     <title>Blaugust 2025 Feeds</title>
   </head>
   <body>
-    <outline type="rss" text="A Lovely Harmless Monster" xmlUrl="https://mattbee.zone/rss.xml" htmlUrl="https://mattbee.zone"/>
     <outline type="rss" text="1sle" xmlUrl="https://1sle29.github.io/index.xml" htmlUrl="https://1sle29.github.io/"/>
     <outline type="rss" text="A Calm in the Chaos" xmlUrl="https://iam.skoo.bz/rss/" htmlUrl="https://iam.skoo.bz"/>
+    <outline type="rss" text="A Lovely Harmless Monster" xmlUrl="https://mattbee.zone/rss.xml" htmlUrl="https://mattbee.zone"/>
     <outline type="rss" text="A Nerdy Fujo Cries" xmlUrl="https://anerdyfujocries.wordpress.com/feed/" htmlUrl="https://anerdyfujocries.wordpress.com"/>
     <outline type="rss" text="A Pixel Nomad" xmlUrl="https://pixelnomad.ca/feed/" htmlUrl="https://pixelnomad.ca/"/>
     <outline type="rss" text="Achille Toupin" xmlUrl="https://www.achilletoupin.com/feed.xml" htmlUrl="https://www.achilletoupin.com"/>
@@ -50,6 +50,7 @@
     <outline type="rss" text="Gaudete Theology" xmlUrl="https://gaudetetheology.wordpress.com/feed/" htmlUrl="https://gaudetetheology.wordpress.com"/>
     <outline type="rss" text="Geek on a Harley" xmlUrl="https://geekonaharley.org/feed/" htmlUrl="https://geekonaharley.org"/>
     <outline type="rss" text="Glome" xmlUrl="https://glome.bearblog.dev/feed/" htmlUrl="https://glome.bearblog.dev/"/>
+    <outline type="rss" text="gobino's bites" xmlUrl="https://gobino.be/feed/" htmlUrl="https://gobino.be"/>
     <outline type="rss" text="Gridrager" xmlUrl="https://gridranger.frama.io/feeds/all.atom.xml" htmlUrl="https://gridranger.frama.io/"/>
     <outline type="rss" text="Heartless Gamer" xmlUrl="https://www.heartlessgamer.com/feeds/posts/default" htmlUrl="https://www.heartlessgamer.com/"/>
     <outline type="rss" text="HeyDingus" xmlUrl="https://heydingus.net/feed.rss" htmlUrl="https://heydingus.net"/>

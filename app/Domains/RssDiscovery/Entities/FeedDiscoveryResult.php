@@ -78,6 +78,8 @@ readonly class FeedDiscoveryResult
             'https://skywalker.works/blog/' => 'http://skywalker.works/blog/feed/', // tls not configured
             'https://thelosophy.net' => 'https://thelosophy.net/rss.xml',
             'https://vibesnscribes.com' => 'https://www.vibesnscribes.com/feed/',
+            'https://queenofsquiggles.codeberg.page/' => 'https://queenofsquiggles.codeberg.page/atom.xml',
+            'https://thewanderingallison.vercel.app' => 'https://thewanderingallison.vercel.app/rss.xml',
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);
