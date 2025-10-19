@@ -30,10 +30,6 @@
                         <a href="https://signal.me/#eu/Aynp6drdG_iL9V_KYWVZUp8LRK4kbuF_zkCpeHgK_RpNf-Xl4TdLUZsCxg5cdRD7">owls.01</a>
                     </x-contact-entry>
 
-                    <x-contact-entry label="Bluesky" icon="brand-icons.bluesky">
-                        <a href="https://bsky.app/profile/owls.godless-internets.org">@owls.godless-internets.org</a>
-                    </x-contact-entry>
-
                     <x-contact-entry label="Codeberg" icon="brand-icons.codeberg">
                         <a href="https://codeberg.org/owls">owls</a>
                     </x-contact-entry>
