@@ -43,7 +43,9 @@ class ImageResource extends Resource
 
     public static function form(Schema $schema): Schema
     {
-        $uploadComponent = SpatieMediaLibraryFileUpload::make('media');
+        $uploadComponent = SpatieMediaLibraryFileUpload::make('media')
+            ->disk(config('media-library.disk_name'))
+            ->conversionsDisk(config('media-library.disk_name'));
 
         /** @var callable(SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record): ?string $originalCallback */
         $originalCallback = invade($uploadComponent)->saveUploadedFileUsing;
@@ -108,7 +110,7 @@ class ImageResource extends Resource
                 EditAction::make(),
                 CopyToClipboardAction::make()
                     ->label('Copy URL')
-                    ->copyable(fn (Image $image) => $image->getFirstMedia()->getUrl()),
+                    ->copyable(fn (Image $image) => $image->getFirstMedia()?->getUrl()),
             ], position: RecordActionsPosition::BeforeColumns)
             ->toolbarActions([
                 BulkActionGroup::make([

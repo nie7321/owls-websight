@@ -26,8 +26,6 @@ use function Livewire\invade;
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Media\Actions\Exif;
-use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
 use App\Domains\Media\Models\Gallery;
 use Filament\Forms;
 use Filament\Resources\Resource;
@@ -70,9 +68,11 @@ class GalleryResource extends Resource
                     ->columnSpanFull()
                     ->fileAttachmentsDisk('public')
                     ->fileAttachmentsDirectory('attachments')
-                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Component $component, Exif $exifTool) {
+                    ->saveUploadedFileAttachmentUsing(function (TemporaryUploadedFile $file, Component $component, Exif $exifTool) {
                         $exifTool->stripMetadata($file->path());
-                        return invade($component)->handleFileAttachmentUpload($file);
+
+                        /** @var MarkdownEditor $component */
+                        return $file->storePublicly($component->getFileAttachmentsDirectory(), $component->getFileAttachmentsDiskName());
                     }),
                 Select::make('author_user_id')
                     ->label('Author')

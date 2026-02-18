@@ -75,9 +75,11 @@ class BlogPostResource extends Resource
                     ->columnSpanFull()
                     ->fileAttachmentsDisk('public')
                     ->fileAttachmentsDirectory('attachments')
-                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Component $component, Exif $exifTool) {
+                    ->saveUploadedFileAttachmentUsing(function (TemporaryUploadedFile $file, Component $component, Exif $exifTool) {
                         $exifTool->stripMetadata($file->path());
-                        return invade($component)->handleFileAttachmentUpload($file);
+
+                        /** @var MarkdownEditor $component */
+                        return $file->storePublicly($component->getFileAttachmentsDirectory(), $component->getFileAttachmentsDiskName());
                     }),
                 MarkdownEditor::make('summary')
                     ->required()
