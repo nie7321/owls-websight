@@ -34,10 +34,6 @@
                         <a href="https://codeberg.org/owls">owls</a>
                     </x-contact-entry>
 
-                    <x-contact-entry label="Discord" icon="brand-icons.discord">
-                        <a href="https://discordapp.com/users/147877205949546496">owlmanatt</a>
-                    </x-contact-entry>
-
                     <x-contact-entry label="Steam" icon="brand-icons.steam">
                         <a href="https://steamcommunity.com/id/owlmanatt/">owlmanatt</a>
                     </x-contact-entry>
