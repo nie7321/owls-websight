@@ -60,7 +60,7 @@ class BlogPostResource extends Resource
                     ->afterStateUpdated(function (Get $get, Set $set, ?BlogPost $post, ?string $state) {
                         // Only update it automatically for drafts.
                         // Otherwise the permalink will break and that's bad.
-                        if ($post->exists && $post->status !== PublishingStatus::DRAFT) {
+                        if ($post?->exists && $post->status !== PublishingStatus::DRAFT) {
                             return;
                         }
 

@@ -54,7 +54,7 @@ class GalleryResource extends Resource
                     ->live(onBlur: true)
                     ->afterStateUpdated(function (Get $get, Set $set, ?Gallery $gallery, ?string $state) {
                         // Only update it automatically for unsaved stuff, to avoid breaking markdown refs.
-                        if ($gallery->exists) {
+                        if ($gallery?->exists) {
                             return;
                         }
 
