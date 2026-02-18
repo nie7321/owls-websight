@@ -9,13 +9,16 @@ use App\Domains\Media\Models\Gallery;
 use App\Domains\Media\Models\Image;
 use App\Filament\Resources\Images\ImageResource;
 use Filament\Actions\Action;
-use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Concerns\HasUnsavedDataChangesAlert;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Resources\Pages\Page;
+use Filament\Schemas\Components\Actions;
+use Filament\Schemas\Components\Form;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Schema;
 use Filament\Support\Exceptions\Halt;
 use Filament\Support\Facades\FilamentView;
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +38,9 @@ class BulkImageUpload extends Page implements HasForms
 
     protected string $view = 'filament.resources.image-resource.pages.bulk-image-upload';
 
+    public ?string $prefix = null;
+    public ?string $gallery_id = null;
+
     public array $images = [];
     public ?array $data = [];
 
@@ -43,47 +49,40 @@ class BulkImageUpload extends Page implements HasForms
         abort_unless(static::getResource()::canCreate(), 403);
     }
 
-    protected function getFormSchema(): array
+    public function content(Schema $schema): Schema
     {
-        return [
-            TextInput::make('prefix')
-                ->label("Internal Name Prefix")
-                ->hint('Prepends to the internal title for all images'),
-            Select::make('gallery_id')
-                ->label('Add to Gallery')
-                ->hint('Optional gallery to add the uploaded images to')
-                ->options(Gallery::orderBy('created_at', 'desc')->pluck('title', 'id')),
-            SpatieMediaLibraryFileUpload::make('images')
-                ->key('images')
-                ->disk(config('media-library.disk_name'))
-                ->conversionsDisk(config('media-library.disk_name'))
-                ->multiple()
-                ->minFiles(1),
-        ];
-    }
-
-    public function getFormActions(): array
-    {
-        return [
-            $this->getSubmitFormAction(),
-            $this->getCancelFormAction(),
-        ];
-    }
-
-    protected function getSubmitFormAction(): Action
-    {
-        return Action::make('create')
-            ->label(__('filament-panels::resources/pages/create-record.form.actions.create.label'))
-            ->submit('create')
-            ->keyBindings(['mod+s']);
-    }
-
-    protected function getCancelFormAction(): Action
-    {
-        return Action::make('cancel')
-            ->label(__('filament-panels::resources/pages/create-record.form.actions.cancel.label'))
-            ->url($this->previousUrl ?? static::getResource()::getUrl())
-            ->color('gray');
+        return $schema
+            ->components([
+                Form::make([
+                    Actions::make([
+                        Action::make('create')
+                            ->label(__('filament-panels::resources/pages/create-record.form.actions.create.label'))
+                            ->submit('create')
+                            ->keyBindings(['mod+s']),
+                        Action::make('cancel')
+                            ->label(__('filament-panels::resources/pages/create-record.form.actions.cancel.label'))
+                            ->url($this->previousUrl ?? static::getResource()::getUrl())
+                            ->color('gray')
+                    ])->alignRight(),
+                    Grid::make()->components([
+                        TextInput::make('prefix')
+                            ->label("Internal Name Prefix")
+                            ->hint('Prepends to the internal title for all images'),
+                        Select::make('gallery_id')
+                            ->label('Add to Gallery')
+                            ->hint('Optional gallery to add the uploaded images to')
+                            ->searchable()
+                            ->options(Gallery::orderBy('created_at', 'desc')->pluck('title', 'id')),
+                        SpatieMediaLibraryFileUpload::make('images')
+                            ->key('images')
+                            ->disk(config('media-library.disk_name'))
+                            ->conversionsDisk(config('media-library.disk_name'))
+                            ->multiple()
+                            ->minFiles(1)
+                            ->columnSpanFull(),
+                    ]),
+                ])->livewireSubmitHandler('create'),
+            ]);
     }
 
     public function create(): void
@@ -95,7 +94,7 @@ class BulkImageUpload extends Page implements HasForms
 
             // Expected to be empty; file data doesn't get put in here.
             // But leaving this, in case I add more fields later.
-            $data = $this->form->getState();
+            $data = $this->getSchema('content')->getState();
 
             $this->callHook('afterValidate');
 
@@ -112,9 +111,9 @@ class BulkImageUpload extends Page implements HasForms
             $this->callHook('beforeCreate');
 
             /** @var SpatieMediaLibraryFileUpload $uploadComponent */
-            $uploadComponent = $this->form->getComponent('images');
+            $uploadComponent = $this->getSchema('content')->getComponent('images');
 
-            /** @var callable(SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record): ?string $saveCallback ) $saveCallback */
+            /** @var callable(SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record): ?string $saveCallback */
             $saveCallback = invade($uploadComponent)->saveUploadedFileUsing;
 
             /** @var Exif $exifTool */
