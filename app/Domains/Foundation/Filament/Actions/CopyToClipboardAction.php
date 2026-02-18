@@ -5,14 +5,15 @@ declare(strict_types=1);
 namespace App\Domains\Foundation\Filament\Actions;
 
 use Closure;
-use Filament\Tables\Actions\Action;
+use Filament\Actions\Action;
+use Filament\Schemas\Components\Component;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Js;
 
 /**
  * Based on `webbingbrasil/filament-copyactions`.
  *
- * @see https://github.com/webbingbrasil/filament-copyactions/blob/3.x/src/Concerns/HasCopyable.php
+ * @see https://github.com/webbingbrasil/filament-copyactions/blob/4.x/src/Actions/CopyAction.php
  */
 class CopyToClipboardAction extends Action
 {
@@ -28,22 +29,37 @@ class CopyToClipboardAction extends Action
         parent::setUp();
 
         $this
-            ->dispatch('FilamentCopyActions')
+            ->alpineClickHandler($this->getCopyableClickHandler())
             ->successNotificationTitle(__('Copied!'))
-            ->icon('heroicon-o-clipboard-document')
-            ->extraAttributes(fn () => [
-                'x-data' => '',
-                'x-on:click' => new HtmlString(
-                    'window.navigator.clipboard.writeText('.$this->getCopyable().');'
-                    . (($title = $this->getSuccessNotificationTitle()) ? ' $tooltip('.Js::from($title).');' : '')
-                ),
-            ]);
+            ->icon('heroicon-o-clipboard-document');
     }
 
     public function action(Closure | string | null $action): static
     {
-        $this->dispatch(null);
-        return parent::action($action);
+        parent::action($action);
+        $this->livewireClickHandlerEnabled(true);
+        return $this;
+    }
+
+    public function getCopyableClickHandler(): Closure
+    {
+        return function (array $arguments, $component) {
+
+            $writeText = 'event.currentTarget.dataset.copyable';
+            if ($component instanceof Component && $this->copyable === null) {
+                $writeText = '$state';
+                if (isset($arguments['item'])) {
+                    $writeText .= '['.Js::from($arguments['item']).']';
+                }
+            }
+
+            return new HtmlString(
+                "((t)=>window.navigator.clipboard.writeText("
+                . "(typeof t==='object'&&t?Object.entries({...t}).map(([k,v])=>k+': '+(v==null?'null':(typeof v==='object'?JSON.stringify(v):String(v)))).join('\\r\\n'):String(t)"
+                . ")))(" . $writeText . ");"
+                . (($title = $this->getSuccessNotificationTitle()) ? ' $tooltip('.Js::from($title).');' : '')
+            );
+        };
     }
 
     public function copyable(Closure | string | null $copyable): self
@@ -55,6 +71,15 @@ class CopyToClipboardAction extends Action
 
     public function getCopyable(): ?string
     {
-        return JS::from($this->evaluate($this->copyable))->toHtml();
+        return $this->evaluate($this->copyable);
+    }
+
+    public function toHtml(): string
+    {
+        $this->extraAttributes([
+            'data-copyable' => $this->getCopyable(),
+        ], true);
+
+        return parent::toHtml();
     }
 }
