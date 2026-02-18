@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\File;
 
 beforeEach(function () {
     $this->withoutMetadata = base_path('tests/Unit/Domains/Media/Actions/fixtures/filetype-without-metadata.png');
-    $this->withMetadata = base_path('tests/Unit/Domains/Media/Actions/fixtures/with-gps.jpg');;
+    $this->withMetadata = base_path('tests/Unit/Domains/Media/Actions/fixtures/with-gps.jpg');
     $this->exifTool = resolve(Exif::class);
 
     $this->copy = function (string $filePath): string {
@@ -20,7 +20,7 @@ beforeEach(function () {
 
         return $tmpFilePath;
     };
-});
+})->skip(fn () => ! extension_loaded('imagick'), 'imagick is required');
 
 test('detects relevant images', function () {
     expect($this->exifTool->hasMetadata($this->withoutMetadata))->toBeFalse();
