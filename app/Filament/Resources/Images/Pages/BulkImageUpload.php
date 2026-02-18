@@ -55,6 +55,8 @@ class BulkImageUpload extends Page implements HasForms
                 ->options(Gallery::orderBy('created_at', 'desc')->pluck('title', 'id')),
             SpatieMediaLibraryFileUpload::make('images')
                 ->key('images')
+                ->disk(config('media-library.disk_name'))
+                ->conversionsDisk(config('media-library.disk_name'))
                 ->multiple()
                 ->minFiles(1),
         ];
