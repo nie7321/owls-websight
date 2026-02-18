@@ -5,7 +5,7 @@ namespace App\Providers\Filament;
 use Filament\Pages\Dashboard;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
-use App\Filament\Resources\ImageResource\Pages\BulkImageUpload;
+use App\Filament\Resources\Images\Pages\BulkImageUpload;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
