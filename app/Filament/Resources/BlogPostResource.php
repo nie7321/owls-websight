@@ -2,6 +2,26 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
+use Filament\Forms\Components\MarkdownEditor;
+use Filament\Schemas\Components\Component;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreBulkAction;
+use App\Filament\Resources\BlogPostResource\Pages\ListBlogPosts;
+use App\Filament\Resources\BlogPostResource\Pages\CreateBlogPost;
+use App\Filament\Resources\BlogPostResource\Pages\EditBlogPost;
+use function Livewire\invade;
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Foundation\Filament\Actions\NowAction;
@@ -11,7 +31,6 @@ use App\Filament\Resources\BlogPostResource\Pages;
 use App\Filament\Resources\BlogPostResource\RelationManagers;
 use App\Domains\Blog\Models\BlogPost;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -26,19 +45,19 @@ class BlogPostResource extends Resource
 
     protected static ?string $modelLabel = 'Posts';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static string | \UnitEnum | null $navigationGroup = 'Blog';
 
-    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-pencil-square';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('title')
+        return $schema
+            ->components([
+                TextInput::make('title')
                     ->required()
                     ->maxLength(4000)
                     ->live(onBlur: true)
-                    ->afterStateUpdated(function (Forms\Get $get, Forms\Set $set, ?BlogPost $post, ?string $state) {
+                    ->afterStateUpdated(function (Get $get, Set $set, ?BlogPost $post, ?string $state) {
                         // Only update it automatically for drafts.
                         // Otherwise the permalink will break and that's bad.
                         if ($post->exists && $post->status !== PublishingStatus::DRAFT) {
@@ -47,23 +66,23 @@ class BlogPostResource extends Resource
 
                         $set('slug', Str::slug($state));
                     }),
-                Forms\Components\TextInput::make('slug')
+                TextInput::make('slug')
                     ->required()
                     ->maxLength(4000)
                     ->unique(ignoreRecord: true),
-                Forms\Components\MarkdownEditor::make('content')
+                MarkdownEditor::make('content')
                     ->required()
                     ->columnSpanFull()
                     ->fileAttachmentsDisk('public')
                     ->fileAttachmentsDirectory('attachments')
-                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Forms\Components\Component $component, Exif $exifTool) {
+                    ->saveUploadedFileAttachmentsUsing(function (TemporaryUploadedFile $file, Component $component, Exif $exifTool) {
                         $exifTool->stripMetadata($file->path());
-                        return \Livewire\invade($component)->handleFileAttachmentUpload($file);
+                        return invade($component)->handleFileAttachmentUpload($file);
                     }),
-                Forms\Components\MarkdownEditor::make('summary')
+                MarkdownEditor::make('summary')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Select::make('thumbnail_image_id')
+                Select::make('thumbnail_image_id')
                     ->label('Thumbnail Image')
                     ->relationship(
                         name: 'thumbnail_image',
@@ -72,13 +91,13 @@ class BlogPostResource extends Resource
                     )
                     ->searchable()
                     ->preload(),
-                Forms\Components\Select::make('author_user_id')
+                Select::make('author_user_id')
                     ->label('Author')
                     ->required()
                     ->options(User::pluck('name', 'id'))
                     ->default(fn () => auth()->user()->id),
                 RelationshipTagInput::make('tags'),
-                Forms\Components\DateTimePicker::make('published_at')
+                DateTimePicker::make('published_at')
                     ->native(false)
                     ->closeOnDateSelection()
                     ->suffixAction(NowAction::make('published_at_now')),
@@ -89,7 +108,7 @@ class BlogPostResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\IconColumn::make('status')
+                IconColumn::make('status')
                     ->icon(fn (PublishingStatus $state) => match ($state) {
                             PublishingStatus::DRAFT => 'heroicon-o-pencil',
                             PublishingStatus::SCHEDULED => 'heroicon-o-clock',
@@ -100,39 +119,39 @@ class BlogPostResource extends Resource
                         PublishingStatus::SCHEDULED => 'warning',
                         PublishingStatus::PUBLISHED => 'success',
                     }),
-                Tables\Columns\TextColumn::make('title')
+                TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('author.name')
+                TextColumn::make('author.name')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('published_at')
+                TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
+                TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->defaultSort('created_at', 'desc')
             ->filters([
-                Tables\Filters\TrashedFilter::make(),
+                TrashedFilter::make(),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                    Tables\Actions\ForceDeleteBulkAction::make(),
-                    Tables\Actions\RestoreBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                    ForceDeleteBulkAction::make(),
+                    RestoreBulkAction::make(),
                 ]),
             ]);
     }
@@ -147,9 +166,9 @@ class BlogPostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListBlogPosts::route('/'),
-            'create' => Pages\CreateBlogPost::route('/create'),
-            'edit' => Pages\EditBlogPost::route('/{record}/edit'),
+            'index' => ListBlogPosts::route('/'),
+            'create' => CreateBlogPost::route('/create'),
+            'edit' => EditBlogPost::route('/{record}/edit'),
         ];
     }
 

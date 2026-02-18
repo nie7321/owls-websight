@@ -2,6 +2,7 @@
 
 namespace App\Domains\FediBot\Backends;
 
+use Exception;
 use App\Domains\FediBot\Backends\RSS\RssTools;
 use App\Domains\FediBot\Entities\ServerLimits;
 use App\Domains\FediBot\Entities\Post;
@@ -33,7 +34,7 @@ class Gw2ForumRss implements PostBackend
     public function postsFromFeed(array $configuration, ServerLimits $limits): Collection
     {
         $feedUrl = Arr::get($configuration, 'feed');
-        throw_unless($feedUrl, new \Exception('Bad config (todo make err better'));
+        throw_unless($feedUrl, new Exception('Bad config (todo make err better'));
 
         $xml = simplexml_load_string($this->rssUtil->getFeed($feedUrl));
 

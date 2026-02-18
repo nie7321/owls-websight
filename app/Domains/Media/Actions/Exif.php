@@ -2,6 +2,7 @@
 
 namespace App\Domains\Media\Actions;
 
+use Exception;
 use Imagick;
 
 class Exif
@@ -17,7 +18,7 @@ class Exif
 
         $img = new Imagick($filePath);
         if (! $img->valid()) {
-            throw new \Exception('Image is not valid');
+            throw new Exception('Image is not valid');
         }
 
         $img = $this->strip($img);

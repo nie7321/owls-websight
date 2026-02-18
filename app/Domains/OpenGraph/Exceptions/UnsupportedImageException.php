@@ -2,7 +2,9 @@
 
 namespace App\Domains\OpenGraph\Exceptions;
 
-class UnsupportedImageException extends \Exception
+use Exception;
+
+class UnsupportedImageException extends Exception
 {
     public static function forContentType(?string $type): self
     {

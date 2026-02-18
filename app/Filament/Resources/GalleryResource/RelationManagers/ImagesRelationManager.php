@@ -2,8 +2,16 @@
 
 namespace App\Filament\Resources\GalleryResource\RelationManagers;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Actions\AttachAction;
+use Filament\Actions\EditAction;
+use Filament\Actions\DetachAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DetachBulkAction;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -15,11 +23,11 @@ class ImagesRelationManager extends RelationManager
 {
     protected static string $relationship = 'images_filament';
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('name')
+        return $schema
+            ->components([
+                TextInput::make('name')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -36,36 +44,36 @@ class ImagesRelationManager extends RelationManager
             ->recordTitleAttribute('name')
             ->reorderable($this->getTableReorderColumn())
             ->columns([
-                Tables\Columns\SpatieMediaLibraryImageColumn::make('media')
+                SpatieMediaLibraryImageColumn::make('media')
                     ->conversion('preview'),
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('caption'),
+                TextColumn::make('name'),
+                TextColumn::make('caption'),
             ])
             ->filters([
                 //
             ])
             ->headerActions([
-                Tables\Actions\AttachAction::make()
+                AttachAction::make()
                     ->preloadRecordSelect()
                     ->recordSelectOptionsQuery(fn (Builder $query) => $query->orderBy('created_at', 'desc'))
-                    ->form(fn (Tables\Actions\AttachAction $action): array => [
+                    ->form(fn (AttachAction $action): array => [
                         $action->getRecordSelect(),
-                        Forms\Components\TextInput::make('order_index')
+                        TextInput::make('order_index')
                             ->numeric()
                             ->required()
                             ->default(fn () => $this->ownerRecord->images()->count() + 1),
                     ]),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make()
-                    ->form(fn (Tables\Actions\EditAction $action): array => [
-                        Forms\Components\TextInput::make('order_index')->numeric()->required(),
+            ->recordActions([
+                EditAction::make()
+                    ->schema(fn (EditAction $action): array => [
+                        TextInput::make('order_index')->numeric()->required(),
                     ]),
-                Tables\Actions\DetachAction::make(),
+                DetachAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DetachBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DetachBulkAction::make(),
                 ]),
             ])
             ->defaultSort('order_index');

@@ -2,11 +2,24 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Toggle;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
+use Filament\Actions\EditAction;
+use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteBulkAction;
+use Filament\Actions\ForceDeleteBulkAction;
+use Filament\Actions\RestoreBulkAction;
+use App\Filament\Resources\ExternalOpmlListResource\Pages\ListExternalOpmlLists;
+use App\Filament\Resources\ExternalOpmlListResource\Pages\CreateExternalOpmlList;
+use App\Filament\Resources\ExternalOpmlListResource\Pages\EditExternalOpmlList;
 use App\Filament\Resources\ExternalOpmlListResource\Pages;
 use App\Filament\Resources\ExternalOpmlListResource\RelationManagers;
 use App\Domains\Opml\Models\ExternalOpmlList;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -19,31 +32,31 @@ class ExternalOpmlListResource extends Resource
 
     protected static ?string $pluralLabel = 'OPML Canonicalizer';
 
-    protected static ?string $navigationGroup = 'Tools';
+    protected static string | \UnitEnum | null $navigationGroup = 'Tools';
 
     protected static ?string $model = ExternalOpmlList::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-cog';
+    protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-cog';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('label')
+        return $schema
+            ->components([
+                TextInput::make('label')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('url')
+                TextInput::make('url')
                     ->label('URL')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('output_filename')
+                TextInput::make('output_filename')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('docs_url')
+                TextInput::make('docs_url')
                     ->label('Docs URL')
                     ->maxLength(255)
                     ->helperText('Added to the <head>, should explain the modifications to the feed'),
-                Forms\Components\Toggle::make('active')
+                Toggle::make('active')
                     ->required(),
             ]);
     }
@@ -52,45 +65,45 @@ class ExternalOpmlListResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\IconColumn::make('active')
+                IconColumn::make('active')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('label')
+                TextColumn::make('label')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('republished_url')
+                TextColumn::make('republished_url')
                     ->label('Republished URL')
                     ->searchable()
                     ->copyable(),
-                Tables\Columns\TextColumn::make('url')
+                TextColumn::make('url')
                     ->label('URL')
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('docs_url')
+                TextColumn::make('docs_url')
                     ->toggleable(isToggledHiddenByDefault: true)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
+                TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
+                TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                Tables\Filters\TrashedFilter::make(),
+                TrashedFilter::make(),
             ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
+            ->recordActions([
+                EditAction::make(),
             ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                    Tables\Actions\ForceDeleteBulkAction::make(),
-                    Tables\Actions\RestoreBulkAction::make(),
+            ->toolbarActions([
+                BulkActionGroup::make([
+                    DeleteBulkAction::make(),
+                    ForceDeleteBulkAction::make(),
+                    RestoreBulkAction::make(),
                 ]),
             ]);
     }
@@ -105,9 +118,9 @@ class ExternalOpmlListResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListExternalOpmlLists::route('/'),
-            'create' => Pages\CreateExternalOpmlList::route('/create'),
-            'edit' => Pages\EditExternalOpmlList::route('/{record}/edit'),
+            'index' => ListExternalOpmlLists::route('/'),
+            'create' => CreateExternalOpmlList::route('/create'),
+            'edit' => EditExternalOpmlList::route('/{record}/edit'),
         ];
     }
 

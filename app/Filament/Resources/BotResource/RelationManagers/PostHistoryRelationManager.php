@@ -2,8 +2,11 @@
 
 namespace App\Filament\Resources\BotResource\RelationManagers;
 
+use Filament\Schemas\Schema;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TrashedFilter;
 use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -14,11 +17,11 @@ class PostHistoryRelationManager extends RelationManager
 {
     protected static string $relationship = 'post_history';
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
-            ->schema([
-                Forms\Components\TextInput::make('id')
+        return $schema
+            ->components([
+                TextInput::make('id')
                     ->required()
                     ->maxLength(255),
             ]);
@@ -29,11 +32,11 @@ class PostHistoryRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('identifier')
             ->columns([
-                Tables\Columns\TextColumn::make('identifier'),
-                Tables\Columns\TextColumn::make('created_at'),
+                TextColumn::make('identifier'),
+                TextColumn::make('created_at'),
             ])
             ->filters([
-                Tables\Filters\TrashedFilter::make()
+                TrashedFilter::make()
             ])
             ->modifyQueryUsing(fn (Builder $query) => $query->orderBy('created_at', 'DESC')->withoutGlobalScopes([
                 SoftDeletingScope::class,

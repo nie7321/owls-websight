@@ -2,6 +2,8 @@
 
 namespace App\Filament\Resources\ImageResource\Pages;
 
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Select;
 use App\Domains\Media\Actions\Exif;
 use App\Domains\Media\Models\Gallery;
 use App\Domains\Media\Models\Image;
@@ -11,7 +13,6 @@ use Filament\Forms;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Form;
 use Filament\Pages\Concerns\HasUnsavedDataChangesAlert;
 use Filament\Pages\Concerns\InteractsWithFormActions;
 use Filament\Resources\Pages\Page;
@@ -24,7 +25,7 @@ use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 use function Filament\Support\is_app_url;
 
 /**
- * @property Form $form
+ * @property \Filament\Schemas\Schema $form
  */
 class BulkImageUpload extends Page implements HasForms
 {
@@ -32,7 +33,7 @@ class BulkImageUpload extends Page implements HasForms
 
     protected static string $resource = ImageResource::class;
 
-    protected static string $view = 'filament.resources.image-resource.pages.bulk-image-upload';
+    protected string $view = 'filament.resources.image-resource.pages.bulk-image-upload';
 
     public array $images = [];
     public ?array $data = [];
@@ -45,14 +46,14 @@ class BulkImageUpload extends Page implements HasForms
     protected function getFormSchema(): array
     {
         return [
-            Forms\Components\TextInput::make('prefix')
+            TextInput::make('prefix')
                 ->label("Internal Name Prefix")
                 ->hint('Prepends to the internal title for all images'),
-            Forms\Components\Select::make('gallery_id')
+            Select::make('gallery_id')
                 ->label('Add to Gallery')
                 ->hint('Optional gallery to add the uploaded images to')
                 ->options(Gallery::orderBy('created_at', 'desc')->pluck('title', 'id')),
-            Forms\Components\SpatieMediaLibraryFileUpload::make('images')
+            SpatieMediaLibraryFileUpload::make('images')
                 ->key('images')
                 ->multiple()
                 ->minFiles(1),
@@ -108,7 +109,7 @@ class BulkImageUpload extends Page implements HasForms
 
             $this->callHook('beforeCreate');
 
-            /** @var Forms\Components\SpatieMediaLibraryFileUpload $uploadComponent */
+            /** @var SpatieMediaLibraryFileUpload $uploadComponent */
             $uploadComponent = $this->form->getComponent('images');
 
             /** @var callable(SpatieMediaLibraryFileUpload $component, TemporaryUploadedFile $file, ?Model $record): ?string $saveCallback ) $saveCallback */
