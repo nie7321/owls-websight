@@ -1,6 +1,6 @@
 <?php
 
-namespace Domains\Markdown\Gallery;
+namespace Tests\Unit\Domains\Markdown\Gallery;
 
 use App\Domains\Markdown\Gallery\GalleryExtension;
 use App\Domains\Markdown\Gallery\GalleryPlaceholder;
