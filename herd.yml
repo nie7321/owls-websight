@@ -1,5 +1,5 @@
 name: owls-websight
-php: '8.3'
+php: '8.5'
 secured: true
 aliases:
     - owls-social
