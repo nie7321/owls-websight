@@ -13,17 +13,21 @@
 
                 <p>If you would like to send an encrypted email, my <a href="{{ asset('nick-at-godless-internets-dot-org-2024-02.asc') }}">public key is available for download</a>. The fingerprint is <code>0cb11d9477db14727719690e55e2142e5fe2c0f9</code>.</p>
 
-                <div class="flex flex-wrap w-full md:w-2/3">
+                <div class="flex flex-wrap w-full">
                     <x-contact-entry label="Email" icon="brand-icons.email">
                         <a href="mailto:nick@godless-internets.org">nick@godless-internets.org</a>
+                    </x-contact-entry>
+
+                    <x-contact-entry label="Fediverse" icon="brand-icons.mastodon">
+                        <a href="https://mastodon.yshi.org/@owls">@owls@yshi.org</a>
                     </x-contact-entry>
 
                     <x-contact-entry label="Matrix" icon="brand-icons.matrix">
                         <a href="https://matrix.to/#/@owls:chat.yshi.org">@owls:chat.yshi.org</a>
                     </x-contact-entry>
 
-                    <x-contact-entry label="Fediverse" icon="brand-icons.mastodon">
-                        <a href="https://mastodon.yshi.org/@owls">@owls@yshi.org</a>
+                    <x-contact-entry label="Jabber" icon="brand-icons.xmpp">
+                        <a href="xmpp://owls@talk.godless-internets.org">owls@talk.godless-internets.org</a>
                     </x-contact-entry>
 
                     <x-contact-entry label="Signal" icon="brand-icons.signal">
@@ -40,6 +44,14 @@
 
                     <x-contact-entry label="Guild Wars 2" icon="brand-icons.gw2">
                         owlmanatt.2415
+                    </x-contact-entry>
+
+                    <x-contact-entry label="Warframe" icon="brand-icons.warframe">
+                        owlmanatt#760
+                    </x-contact-entry>
+
+                    <x-contact-entry label="Soulframe" icon="brand-icons.soulframe">
+                        owlmanatt
                     </x-contact-entry>
 
                     <x-contact-entry label="Nintendo" icon="brand-icons.nintendo">
