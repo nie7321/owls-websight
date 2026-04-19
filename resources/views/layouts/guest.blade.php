@@ -74,7 +74,7 @@
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
 
                 <x-navigation.dropdown label="Stuff" id="stuff">
-                    <x-navigation.dropdown-link href="#">Portal (2002)</x-navigation.dropdown-link>
+                    <x-navigation.dropdown-link href="{{ route('portal.index') }}">Portal (2002)</x-navigation.dropdown-link>
                 </x-navigation.dropdown>
 
                 <x-navigation.dropdown label="Links" id="links">
@@ -169,6 +169,10 @@
                         </div>
                         <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('contact') }}">Contact</a>
+                        </div>
+
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('portal.index') }}">Portal (2002)</a>
                         </div>
 
                         @php /** @var \App\Domains\Blog\Models\LinkCategory $linkCategory */@endphp

@@ -26,11 +26,17 @@ class PortalEpisodesTable
                     ->searchable(),
                 TextColumn::make('name')
                     ->searchable(),
+                TextColumn::make('air_date')
+                    ->date()
+                    ->sortable(),
                 TextColumn::make('short_description')
                     ->words()
                     ->wrap()
                     ->sortable()
                     ->searchable(),
+                TextColumn::make('watch_url')
+                    ->label('Watch URL')
+                    ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('characters_count')
                     ->counts('characters')
                     ->numeric()

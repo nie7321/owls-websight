@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\PortalEpisodes\Schemas;
 
 use App\Domains\Foundation\Filament\Forms\Components\RelationshipTagInput;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
@@ -33,8 +34,14 @@ class PortalEpisodeForm
                     }),
                 TextInput::make('name')
                     ->label('Episode Name')
+                    ->required(),
+                DatePicker::make('air_date')
+                    ->label('Air Date')
+                    ->required(),
+                TextInput::make('watch_url')
+                    ->label('Watch URL')
                     ->required()
-                    ->columnSpanFull(),
+                    ->url(),
                 MarkdownEditor::make('g4_description')
                     ->required()
                     ->columnSpanFull()

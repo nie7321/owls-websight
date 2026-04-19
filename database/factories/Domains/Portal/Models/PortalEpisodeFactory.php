@@ -16,6 +16,8 @@ class PortalEpisodeFactory extends Factory
             'portal_season_id' => PortalSeason::factory(),
             'episode_number' => $this->faker->numberBetween(1, 100),
             'name' => $this->faker->name(),
+            'air_date' => $this->faker->date(),
+            'watch_url' => $this->faker->url(),
             'g4_description' => $this->faker->text(),
             'short_description' => $this->faker->text(),
             'full_description' => $this->faker->text(),

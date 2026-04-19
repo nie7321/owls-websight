@@ -25,6 +25,8 @@ return new class extends Migration
             $table->tinyInteger('episode_number')->index();
 
             $table->string('name');
+            $table->date('air_date');
+            $table->text('watch_url');
             $table->text('g4_description');
             $table->text('short_description');
             $table->text('full_description');
