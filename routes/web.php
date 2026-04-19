@@ -29,6 +29,20 @@ Route::get('links/{categorySlug}', [Controllers\LinkController::class, 'show'])-
 
 Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
 
+Route::prefix('portal')
+    ->name('portal.')
+    ->group(function () {
+        Route::get('/', [Controllers\Portal\PortalController::class, 'index'])->name('index');
+        Route::get('episode/{season}/{episode}', [Controllers\Portal\PortalController::class, 'episode'])
+            ->where([
+                'season' => '[0-9]+',
+                'episode' => '[0-9]+',
+            ])
+            ->name('episode');
+        Route::get('character/{character}', [Controllers\Portal\PortalController::class, 'character'])->name('character');
+    });
+
+
 Route::get('blog-post/preview/{id}', [Controllers\BlogPostController::class, 'preview'])->name('blog-post.preview');
 Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class, 'show'])
     ->where([

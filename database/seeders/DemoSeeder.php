@@ -8,6 +8,9 @@ use App\Domains\Blog\Models\LinkCategory;
 use App\Domains\Blog\Models\RelationshipType;
 use App\Domains\Blog\Models\Tag;
 use App\Domains\Opml\Models\ExternalOpmlList;
+use App\Domains\Portal\Models\PortalCharacter;
+use App\Domains\Portal\Models\PortalEpisode;
+use App\Domains\Portal\Models\PortalSeason;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -25,6 +28,30 @@ class DemoSeeder extends Seeder
         $this->posts($owls);
         $this->links();
         $this->opmlFeeds();
+        $this->portal();
+    }
+
+    protected function portal(): void
+    {
+        $tags = collect([Tag::create(['slug' => 'EVE', 'label' => 'EVE'])]);
+
+        $seasons = PortalSeason::factory()->createMany([
+            ['season_number' => 1, 'name' => 'S1'],
+            ['season_number' => 2, 'name' => 'S2'],
+        ]);
+
+        $characters = PortalCharacter::factory()->createMany(4);
+
+        PortalEpisode::factory()
+            ->recycle($seasons)
+            ->count(10)
+            ->hasAttached(
+                PortalCharacter::factory()->recycle($characters)->count(2),
+                ['role_in_episode' => 'lorem ipsum'],
+                'characters'
+            )
+            ->hasAttached($tags->random())
+            ->create();
     }
 
     protected function links(): void
