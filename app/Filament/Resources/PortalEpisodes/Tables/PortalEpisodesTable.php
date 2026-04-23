@@ -30,6 +30,7 @@ class PortalEpisodesTable
                     ->date()
                     ->sortable(),
                 TextColumn::make('short_description')
+                    ->html()
                     ->words()
                     ->wrap()
                     ->sortable()

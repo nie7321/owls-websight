@@ -24,6 +24,7 @@ class PortalCharactersTable
                     ->label('Character Name')
                     ->searchable(),
                 TextColumn::make('short_description')
+                    ->html()
                     ->words()
                     ->wrap()
                     ->searchable(),

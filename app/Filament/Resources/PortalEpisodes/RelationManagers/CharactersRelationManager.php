@@ -9,9 +9,6 @@ use Filament\Actions\DetachAction;
 use Filament\Actions\DetachBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Textarea;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
@@ -30,16 +27,9 @@ class CharactersRelationManager extends RelationManager
     {
         return $schema
             ->components([
-                TextInput::make('slug')
+                MarkdownEditor::make('role_in_episode')
+                    ->label('Role in Episode')
                     ->required(),
-                TextInput::make('name')
-                    ->required(),
-                Textarea::make('short_description')
-                    ->required()
-                    ->columnSpanFull(),
-                Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
             ]);
     }
 
@@ -88,7 +78,9 @@ class CharactersRelationManager extends RelationManager
                     ]),
             ])
             ->recordActions([
+                EditAction::make()->label('Edit Role'),
                 EditAction::make()
+                    ->label('Edit Character')
                     ->url(fn (PortalCharacter $character) => route('filament.admin.resources.portal-characters.edit', $character)),
                 DetachAction::make(),
             ])
