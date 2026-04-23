@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PortalCharacters\Schemas;
 
 use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Blog\Models\BlogPost;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
@@ -34,10 +35,10 @@ class PortalCharacterForm
                 TextInput::make('slug')
                     ->required()
                     ->unique(ignoreRecord: true),
-                RichEditor::make('short_description')
+                MarkdownEditor::make('short_description')
                     ->required()
                     ->columnSpanFull(),
-                RichEditor::make('description')
+                MarkdownEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
             ]);
