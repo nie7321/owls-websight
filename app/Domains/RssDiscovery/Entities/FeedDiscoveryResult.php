@@ -48,6 +48,9 @@ readonly class FeedDiscoveryResult
     static public function overrideFeed(string $siteUrl): ?DiscoveredFeed
     {
         $lookup = [
+            'https://aywren.com' => 'https://aywren.com/feed.xml',
+            'https://sag.sadesignz.org/' => 'https://sag.sadesignz.org/feed/',
+            /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',
             'https://axxuy.xyz' => 'https://axxuy.xyz/blog/feed.xml',
@@ -64,7 +67,6 @@ readonly class FeedDiscoveryResult
             'https://neurofrontiers.blog' => 'https://neurofrontiers.blog/feed/',
             'https://notes.druchan.com' => 'https://notes.druchan.com/feed.xml',
             'https://rseeber.github.io/blog/' => 'https://rseeber.github.io/blog/feed.xml',
-            'https://sag.sadesignz.org/' => 'https://sag.sadesignz.org/feed/',
             'https://splendide-mendax.com' => 'https://splendide-mendax.com/rss.xml',
             'https://taxodium.ink' => 'https://taxodium.ink/rss.xml',
             'https://aggronaut.com' => 'https://aggronaut.com/feed/',
@@ -79,6 +81,7 @@ readonly class FeedDiscoveryResult
             'https://thelosophy.net' => 'https://thelosophy.net/rss.xml',
             'https://vibesnscribes.com' => 'https://www.vibesnscribes.com/feed/',
             'https://thewanderingallison.vercel.app' => 'https://thewanderingallison.vercel.app/rss.xml',
+            */
         ];
 
         $feedUrl = Arr::get($lookup, $siteUrl);

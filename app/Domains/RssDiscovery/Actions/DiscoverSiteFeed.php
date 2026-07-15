@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domains\RssDiscovery\Actions;
 
+use App\Domains\Opml\Actions\CanonicalizeFeedUrl;
 use App\Domains\RssDiscovery\Entities\DiscoveredFeed;
 use App\Domains\RssDiscovery\Entities\FeedDiscoveryResult;
 use App\Domains\RssDiscovery\Types\FeedType;
@@ -16,6 +17,12 @@ use Throwable;
 
 class DiscoverSiteFeed
 {
+    public function __construct(
+        protected CanonicalizeFeedUrl $canonicalizer,
+    ) {
+      //
+    }
+
     public function for(?string $siteName, string $url): FeedDiscoveryResult
     {
         try {
@@ -66,6 +73,12 @@ class DiscoverSiteFeed
             $url = $link->getAttribute('href');
             if (! str_starts_with($url, 'http')) {
                 $url = (string) Uri::of($siteBaseUrl)->withPath($url);
+            }
+
+            /** Fixes problems w/ FreshRSS in dynamic OPML feeds. */
+            $cannonicalFeedUrl = $this->canonicalizer->getCannonicalFeedUrl($url);
+            if ($cannonicalFeedUrl) {
+                $url = $cannonicalFeedUrl;
             }
 
             $feeds[] = new DiscoveredFeed(

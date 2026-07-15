@@ -33,7 +33,7 @@ class OpmlWriter
         <?xml version="1.0" encoding="UTF-8"?>
         <opml version="1.0">
             <head>
-                <title>Blaugust 2025 Feeds</title>
+                <title>Blaugust 2026 Feeds</title>
             </head>
             <body/>
         </opml>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+  <head>
+    <title>Blaugust 2026 Feeds</title>
+  </head>
+  <body>
+    <outline type="rss" text="Contains Moderate Peril" xmlUrl="https://www.containsmoderateperil.com/blog?format=rss" htmlUrl="https://www.containsmoderateperil.com/blog"/>
+    <outline type="rss" text="not all those who wander are lost" xmlUrl="https://kavmac.com/feed/" htmlUrl="https://kavmac.com/blog/"/>
+    <outline type="rss" text="hamatti.org" xmlUrl="https://hamatti.org/feed/feed.xml" htmlUrl="https://hamatti.org"/>
+    <outline type="rss" text="Shadowz Abstract Gaming Blog" xmlUrl="https://sag.sadesignz.org/feed/" htmlUrl="https://sag.sadesignz.org/"/>
+    <outline type="rss" text="Troy Press" xmlUrl="https://troypress.com/feed/" htmlUrl="https://troypress.com/"/>
+    <outline type="rss" text="Gaudete Theology" xmlUrl="https://gaudetetheology.wordpress.com/feed/" htmlUrl="https://gaudetetheology.wordpress.com"/>
+    <outline type="rss" text="Words Under My Name" xmlUrl="https://wordsundermyname.wordpress.com/feed/" htmlUrl="https://wordsundermyname.wordpress.com/"/>
+    <outline type="rss" text="Cubic Creativity" xmlUrl="https://cubiccreativity.wordpress.com/feed/" htmlUrl="https://cubiccreativity.wordpress.com/"/>
+    <outline type="rss" text="Endgame Viable" xmlUrl="https://endgameviable.com/index.xml" htmlUrl="https://endgameviable.com"/>
+    <outline type="rss" text="Inventory Full" xmlUrl="https://bhagpuss.blogspot.com/feeds/posts/default" htmlUrl="https://bhagpuss.blogspot.com/"/>
+    <outline type="rss" text="Varun Barad" xmlUrl="https://varunbarad.com/feed.xml" htmlUrl="https://varunbarad.com"/>
+    <outline type="rss" text="TAGN" xmlUrl="https://tagn.wordpress.com/feed/" htmlUrl="https://tagn.wordpress.com/"/>
+    <outline type="rss" text="Through Wolfy's Eyes" xmlUrl="https://wolfyseyes.wordpress.com/feed/" htmlUrl="https://wolfyseyes.wordpress.com/"/>
+    <outline type="rss" text="Gamers Esoteric" xmlUrl="https://www.gamersesoteric.com/feeds/posts/default" htmlUrl="https://www.gamersesoteric.com/"/>
+    <outline type="rss" text="Byte Vortex" xmlUrl="https://www.bytevortex.tech/rss/" htmlUrl="https://www.bytevortex.tech/"/>
+    <outline type="rss" text="Chasing Dings!" xmlUrl="https://chasingdings.com/feed/" htmlUrl="https://chasingdings.com"/>
+    <outline type="rss" text="GamerLady P Blog" xmlUrl="https://www.gamerlady.blog/feed/" htmlUrl="https://www.gamerlady.blog/"/>
+    <outline type="rss" text="owlblog" xmlUrl="https://godless-internets.org/feed" htmlUrl="https://godless-internets.org"/>
+    <outline type="rss" text="Zelibeli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ5FDkgug9FhZm4z1CGAQ1Q" htmlUrl="https://www.youtube.com/@zelibeli/posts"/>
+    <outline type="rss" text="Mar Qaroll's The Marrowing!" xmlUrl="https://blog.marqaroll.com/feeds/posts/default" htmlUrl="https://blog.marqaroll.com"/>
+    <outline type="rss" text="Taylor film crit" xmlUrl="https://taylorfilmcritic.wordpress.com/feed/" htmlUrl="https://taylorfilmcritic.wordpress.com/"/>
+    <outline type="rss" text="Aywren's Nook" xmlUrl="https://aywren.com/feed.xml" htmlUrl="https://aywren.com"/>
+    <outline type="rss" text="MMO Casual" xmlUrl="http://wowaltaddiction.blogspot.com/feeds/posts/default" htmlUrl="http://wowaltaddiction.blogspot.com/"/>
+    <outline type="rss" text="Mailvaltar" xmlUrl="https://mailvaltar.wordpress.com/feed/" htmlUrl="https://mailvaltar.wordpress.com/"/>
+    <outline type="rss" text="Quail Creations" xmlUrl="https://quailcreations.ca/?feed=rss2" htmlUrl="https://quailcreations.ca/"/>
+    <outline type="rss" text="An Archaeopteryx" xmlUrl="https://anarchaeopteryx.bearblog.dev/feed/" htmlUrl="https://anarchaeopteryx.bearblog.dev/"/>
+  </body>
+</opml>

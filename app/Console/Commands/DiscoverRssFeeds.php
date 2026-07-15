@@ -4,23 +4,24 @@ namespace App\Console\Commands;
 
 use App\Domains\RssDiscovery\Actions\DiscoverSiteFeed;
 use App\Domains\RssDiscovery\Actions\OpmlWriter;
-use App\Domains\RssDiscovery\Entities\DiscoveredFeed;
-use App\Domains\RssDiscovery\Entities\FeedDiscoveryResult;
-use Dom\HTMLCollection;
-use Dom\HTMLDocument;
 use Exception;
 use Generator;
 use Illuminate\Console\Command;
-use Throwable;
 
+/**
+ * Processes a file of TANG's Column A from the participant list into an OPML.
+ *
+ * @url https://docs.google.com/spreadsheets/d/1lGPTuvc_4ulribJOj1NJEWGwwzFLXGqph-PSvohbVQs/edit
+ */
 class DiscoverRssFeeds extends Command
 {
-    protected $signature = 'opml:discover-feeds {path : Path to a file with "Blog URL,Site Label", one pair per line} {output : Filename (for the public dir) to output }';
+    protected $signature = 'opml:discover-feeds {file : Raw TAGN input, under resources/blaugust} {output : Filename (for the public dir) to output }';
     protected $description = 'Attempt to find an RSS feed URL for a website';
 
     public function handle(DiscoverSiteFeed $discoverSiteFeed, OpmlWriter $writer)
     {
-        $path = $this->argument('path');
+        $path = $this->argument('file');
+        $path = resource_path("blaugust/{$path}");
         $outputFile = $this->argument('output');
 
         $found = [];
@@ -68,7 +69,7 @@ class DiscoverRssFeeds extends Command
         $sites = explode("\n", $urlList);
         foreach ($sites as $line) {
             $line = preg_replace('/<li><a href="/i', '', $line);
-            $line = preg_replace('/">/', ',', $line);
+            $line = preg_replace('/"?>/', ',', $line, limit: 1);
             $line = preg_replace('/<\/a><\/li>/i', '', $line);
             $line = preg_replace('/\*\s*$/', '', $line);
 

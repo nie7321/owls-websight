@@ -60,7 +60,7 @@ class CanonicalizeFeedUrl
         return simplexml_load_string($cleanedOpml);
     }
 
-    private function getCannonicalFeedUrl(string $url): ?string
+    public function getCannonicalFeedUrl(string $url): ?string
     {
         try {
             $resp = Http::withOptions(['allow_redirects' => false])->get($url);
