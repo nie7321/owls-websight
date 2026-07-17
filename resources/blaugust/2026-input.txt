@@ -24,3 +24,13 @@
 <li><a href="https://mailvaltar.wordpress.com/>Mailvaltar</a></li>
 <li><a href="https://quailcreations.ca/>Quail Creations</a></li>
 <li><a href="https://anarchaeopteryx.bearblog.dev/>An Archaeopteryx</a></li>
+<li><a href="https://www.inconsistent.software/>inconsistent.software</a></li>
+<li><a href="https://mtwb.blog>Matt's Blog</a></li>
+<li><a href="https://nerdybookahs.wordpress.com/>Nerdy Bookahs</a></li>
+<li><a href="https://davehenry.blog/>Dave Henry Blog</a></li>
+<li><a href="https://indiecator.org/>Indiecator</a></li>
+<li><a href="https://fluidlines.neocities.org/>fluidline.neocities.org</a></li>
+<li><a href="https://lameazoid.com>Lameazoid.com</a></li>
+<li><a href="littlelum.neocities.org>I Can't Think of a Name for this Website</a></li>
+<li><a href="https://whyigame.wordpress.com>Why I Game</a></li>
+<li><a href="https://blog.gridranger.dev/>Gridranger's blog</a></li>
