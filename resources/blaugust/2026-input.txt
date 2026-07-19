@@ -34,3 +34,7 @@
 <li><a href="littlelum.neocities.org>I Can't Think of a Name for this Website</a></li>
 <li><a href="https://whyigame.wordpress.com>Why I Game</a></li>
 <li><a href="https://blog.gridranger.dev/>Gridranger's blog</a></li>
+<li><a href="https://raintreeruckus.com>Raintree Ruckus</a></li>
+<li><a href="https://mogblog.pika.page/>MogBlog</a></li>
+<li><a href="https://www.nejimakiblog.com/>世界のねじを巻くブログ</a></li>
+<li><a href="https://mmoonenight.blogspot.com>MMO One Night</a></li>

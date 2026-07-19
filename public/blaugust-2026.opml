@@ -39,5 +39,9 @@
     <outline type="rss" text="Lameazoid.com" xmlUrl="https://lameazoid.com/feed/" htmlUrl="https://lameazoid.com"/>
     <outline type="rss" text="Why I Game" xmlUrl="https://whyigame.wordpress.com/feed/" htmlUrl="https://whyigame.wordpress.com"/>
     <outline type="rss" text="Gridranger's blog" xmlUrl="https://blog.gridranger.dev/feeds/all.atom.xml" htmlUrl="https://blog.gridranger.dev/"/>
+    <outline type="rss" text="Raintree Ruckus" xmlUrl="https://raintreeruckus.com/rss/" htmlUrl="https://raintreeruckus.com"/>
+    <outline type="rss" text="MogBlog" xmlUrl="https://mogblog.pika.page/posts_feed" htmlUrl="https://mogblog.pika.page/"/>
+    <outline type="rss" text="世界のねじを巻くブログ" xmlUrl="https://www.nejimakiblog.com/feed" htmlUrl="https://www.nejimakiblog.com/"/>
+    <outline type="rss" text="MMO One Night" xmlUrl="https://mmoonenight.blogspot.com/feeds/posts/default" htmlUrl="https://mmoonenight.blogspot.com"/>
   </body>
 </opml>
