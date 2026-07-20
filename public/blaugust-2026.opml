@@ -37,11 +37,17 @@
     <outline type="rss" text="Indiecator" xmlUrl="https://indiecator.org/feed/" htmlUrl="https://indiecator.org/"/>
     <outline type="rss" text="fluidline.neocities.org" xmlUrl="https://fluidlines.neocities.org/feed.xml" htmlUrl="https://fluidlines.neocities.org/"/>
     <outline type="rss" text="Lameazoid.com" xmlUrl="https://lameazoid.com/feed/" htmlUrl="https://lameazoid.com"/>
+    <outline type="rss" text="I Can't Think of a Name for this Website" xmlUrl="https://littlelum.neocities.org/RSS.xml" htmlUrl="https://littlelum.neocities.org"/>
     <outline type="rss" text="Why I Game" xmlUrl="https://whyigame.wordpress.com/feed/" htmlUrl="https://whyigame.wordpress.com"/>
     <outline type="rss" text="Gridranger's blog" xmlUrl="https://blog.gridranger.dev/feeds/all.atom.xml" htmlUrl="https://blog.gridranger.dev/"/>
     <outline type="rss" text="Raintree Ruckus" xmlUrl="https://raintreeruckus.com/rss/" htmlUrl="https://raintreeruckus.com"/>
     <outline type="rss" text="MogBlog" xmlUrl="https://mogblog.pika.page/posts_feed" htmlUrl="https://mogblog.pika.page/"/>
     <outline type="rss" text="世界のねじを巻くブログ" xmlUrl="https://www.nejimakiblog.com/feed" htmlUrl="https://www.nejimakiblog.com/"/>
     <outline type="rss" text="MMO One Night" xmlUrl="https://mmoonenight.blogspot.com/feeds/posts/default" htmlUrl="https://mmoonenight.blogspot.com"/>
+    <outline type="rss" text="Ubergeek Kelly's World" xmlUrl="https://www.kgadams.net/feed" htmlUrl="https://www.kgadams.net"/>
+    <outline type="rss" text="Words of the AgingGamer" xmlUrl="https://aginggamer.net/feed/" htmlUrl="https://aginggamer.net"/>
+    <outline type="rss" text="Geek on a Harley" xmlUrl="https://geekonaharley.org/feed/" htmlUrl="https://geekonaharley.org"/>
+    <outline type="rss" text="Portrait of a...." xmlUrl="https://angrybunnyman.com/feed/" htmlUrl="https://angrybunnyman.com"/>
+    <outline type="rss" text="Ben Ramsey" xmlUrl="https://ben.ramsey.dev/feeds/blog.rss" htmlUrl="https://ben.ramsey.dev"/>
   </body>
 </opml>

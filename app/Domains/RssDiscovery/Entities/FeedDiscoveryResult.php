@@ -51,6 +51,7 @@ readonly class FeedDiscoveryResult
             'https://aywren.com' => 'https://aywren.com/feed.xml',
             'https://sag.sadesignz.org/' => 'https://sag.sadesignz.org/feed/',
             'https://davehenry.blog/' => 'https://davehenry.blog/atom.xml',
+            'https://littlelum.neocities.org' => 'https://littlelum.neocities.org/RSS.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',
