@@ -49,5 +49,6 @@
     <outline type="rss" text="Geek on a Harley" xmlUrl="https://geekonaharley.org/feed/" htmlUrl="https://geekonaharley.org"/>
     <outline type="rss" text="Portrait of a...." xmlUrl="https://angrybunnyman.com/feed/" htmlUrl="https://angrybunnyman.com"/>
     <outline type="rss" text="Ben Ramsey" xmlUrl="https://ben.ramsey.dev/feeds/blog.rss" htmlUrl="https://ben.ramsey.dev"/>
+    <outline type="rss" text="Lucky Instar" xmlUrl="https://luckyinstar.neocities.org/feed.xml" htmlUrl="https://luckyinstar.neocities.org/blog"/>
   </body>
 </opml>

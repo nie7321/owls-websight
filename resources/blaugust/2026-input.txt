@@ -43,3 +43,4 @@
 <li><a href="https://geekonaharley.org">Geek on a Harley</a></li>
 <li><a href="https://angrybunnyman.com">Portrait of a....</a></li>
 <li><a href="https://ben.ramsey.dev">Ben Ramsey</a></li>
+<li><a href="https://luckyinstar.neocities.org/blog">Lucky Instar</a></li>
