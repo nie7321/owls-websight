@@ -67,10 +67,14 @@
                 </a>
             </div>
             <div class="flex items-center space-x-4 leading-5 sm:space-x-6">
-                <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('blog-post.index') }}">Home</a>
+                <x-navigation.dropdown label="Blog" id="blog">
+                    <x-navigation.dropdown-link href="{{ route('blog-post.index') }}">Latest Posts</x-navigation.dropdown-link>
+                    <x-navigation.dropdown-link href="{{ route('tag.index') }}">Tags</x-navigation.dropdown-link>
+                    <x-navigation.dropdown-link href="{{ route('blog-archive.index') }}">Archive</x-navigation.dropdown-link>
+                    <x-navigation.dropdown-link href="{{ route('feed.atom') }}">Atom Feed</x-navigation.dropdown-link>
+                </x-navigation.dropdown>
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('about') }}">About</a>
                 <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Characters</a> -->
-                <!-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="#">Topics</a> -->
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
 
                 <x-navigation.dropdown label="Stuff" id="stuff">
@@ -170,7 +174,12 @@
                         <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('contact') }}">Contact</a>
                         </div>
-
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('tag.index') }}">Tags</a>
+                        </div>
+                        <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('blog-archive.index') }}">Archives</a>
+                        </div>
                         <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('portal.index') }}">Portal (2002)</a>
                         </div>

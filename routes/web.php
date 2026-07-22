@@ -27,6 +27,7 @@ Route::get('contact', fn () => view('contact'))->name('contact');
 Route::get('social-card.svg', Controllers\SocialCardController::class)->name('social-card');
 Route::get('links/{categorySlug}', [Controllers\LinkController::class, 'show'])->name('link.show');
 
+Route::get('tags', [Controllers\TagController::class, 'index'])->name('tag.index');
 Route::get('tags/{tagSlug}', [Controllers\TagController::class, 'show'])->name('tag.show');
 
 Route::prefix('portal')
@@ -42,6 +43,14 @@ Route::prefix('portal')
         Route::get('character/{character}', [Controllers\Portal\PortalController::class, 'character'])->name('character');
     });
 
+
+Route::get('blog-archive', [Controllers\BlogArchiveController::class, 'index'])->name('blog-archive.index');
+Route::get('blog-archive/{year}/{month}', [Controllers\BlogArchiveController::class, 'show'])
+    ->where([
+        'year' => '\d{4}',
+        'month' => '\d{2}',
+    ])
+    ->name('blog-archive.show');
 
 Route::get('blog-post/preview/{id}', [Controllers\BlogPostController::class, 'preview'])->name('blog-post.preview');
 Route::get('{year}/{month}/{day}/{slug}', [Controllers\BlogPostController::class, 'show'])
