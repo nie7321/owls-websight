@@ -14,18 +14,23 @@ class TagController extends Controller
 {
     public function index(): View
     {
+        $publishedPostSubquery = DB::query()
+            ->from('blog_post_tag')
+            ->join('blog_posts', 'blog_posts.id', '=', 'blog_post_tag.blog_post_id')
+            ->whereNotNull('published_at');
+
         // Gunna show them all at once, so be efficient here.
         $tags = DB::query()
             ->select([
-                'label',
-                'slug',
-                DB::raw('COUNT(blog_post_tag.*) as post_count')
+                'tags.label',
+                'tags.slug',
+                DB::raw('COUNT(posts.*) as post_count')
             ])
             ->from((new Tag)->getTable())
-            ->leftJoin('blog_post_tag', 'blog_post_tag.tag_id', '=', 'tags.id')
-            ->groupBy('label', 'slug')
+            ->leftJoinSub($publishedPostSubquery, 'posts', 'posts.tag_id', '=', 'tags.id')
+            ->groupBy('tags.label', 'tags.slug')
             ->orderBy('post_count', 'desc')
-            ->orderBy('label')
+            ->orderBy('tags.label')
             ->get()
             ->map(function (object $item) {
                 return new TagSummary(

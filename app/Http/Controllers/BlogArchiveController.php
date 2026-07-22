@@ -19,6 +19,7 @@ class BlogArchiveController extends Controller
     {
         $innerQuery = DB::query()
             ->from((new BlogPost)->getTable())
+            ->whereNotNull('published_at')
             ->groupByRaw('EXTRACT(year FROM published_at::timestamp)')
             ->groupByRaw('EXTRACT(month FROM published_at::timestamp)')
             ->select([
