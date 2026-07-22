@@ -16,26 +16,24 @@ use App\Domains\Blog\DTOs\ArchiveYear;
             <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">Wow, look at all those posts!</p>
         </div>
 
-        <ul class="pt-4">
+        <div class="pt-4 flex flex-wrap">
             @foreach ($summary as $yearSummary)
-                <li class="pb-4">
-                    <span class="text-xl font-bold leading-8 tracking-tight">
-                        {{ $yearSummary->year }}:
-                        {{ Str::plural('post', $yearSummary->totalPosts(), prependCount: true) }}
-                    </span>
+                <div class="w-full sm:w-1/3 pb-8">
+                    <h2 class="text-2xl font-bold leading-8 tracking-tight">
+                        {{ $yearSummary->year }}
+                        ({{ Str::plural('post', $yearSummary->totalPosts(), prependCount: true) }})
+                    </h2>
+
                     <ul class="ps-4">
                         @foreach($yearSummary->months as $monthSummary)
-                            <li>
-                                <a
-                                    class="underline"
-                                    href="{{ route('blog-archive.show', [$monthSummary->year, $monthSummary->padMonth()]) }}"
-                                >{{ $monthSummary->monthLabel() }}</a>
+                            <li class="text-lg">
+                                <a class="underline" href="{{ route('blog-archive.show', [$monthSummary->year, $monthSummary->padMonth()]) }}">{{ $monthSummary->monthLabel() }}</a>
                                 ({{ Str::plural('post', $monthSummary->postCount, prependCount: true) }})
                             </li>
                         @endforeach
                     </ul>
-                </li>
+                </div>
             @endforeach
-        </ul>
+        </div>
     </div>
 </x-guest-layout>
