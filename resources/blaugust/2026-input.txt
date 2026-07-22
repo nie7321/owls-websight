@@ -44,3 +44,9 @@
 <li><a href="https://angrybunnyman.com">Portrait of a....</a></li>
 <li><a href="https://ben.ramsey.dev">Ben Ramsey</a></li>
 <li><a href="https://luckyinstar.neocities.org/blog">Lucky Instar</a></li>
+<li><a href="https://knifesedgeblogs.wordpress.com/">Knifesedge Blogs</a></li>
+<li><a href="https://Manywelps.com">Many Welps</a></li>
+<li><a href="https://tallywinkle.bearblog.dev/">coffee spills </a></li>
+<li><a href="https://kaytalksgames.wordpress.com/">Kay Talks Games</a></li>
+<li><a href="https://kaylriene.com">Kayriene</a></li>
+<li><a href="https://ghastlymirror.xyz">The Ghastly Mirror</a></li>
