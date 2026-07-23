@@ -50,3 +50,5 @@
 <li><a href="https://kaytalksgames.wordpress.com/">Kay Talks Games</a></li>
 <li><a href="https://kaylriene.com">Kayriene</a></li>
 <li><a href="https://ghastlymirror.xyz">The Ghastly Mirror</a></li>
+<li><a href="https://alexsreviewcorner.com">Alex's Review Corner</a></li>
+<li><a href="https://kedara.eu">Kedara</a></li>

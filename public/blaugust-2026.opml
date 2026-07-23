@@ -56,5 +56,7 @@
     <outline type="rss" text="Kay Talks Games" xmlUrl="https://kaytalksgames.wordpress.com/feed/" htmlUrl="https://kaytalksgames.wordpress.com/"/>
     <outline type="rss" text="Kayriene" xmlUrl="https://kaylriene.com/feed/" htmlUrl="https://kaylriene.com"/>
     <outline type="rss" text="The Ghastly Mirror" xmlUrl="https://www.ghastlymirror.xyz/rss.xml" htmlUrl="https://ghastlymirror.xyz"/>
+    <outline type="rss" text="Alex's Review Corner" xmlUrl="https://super142.wordpress.com/feed/" htmlUrl="https://alexsreviewcorner.com"/>
+    <outline type="rss" text="Kedara" xmlUrl="https://kedara.eu/blog/index.xml" htmlUrl="https://kedara.eu"/>
   </body>
 </opml>
