@@ -31,10 +31,9 @@
 <li><a href="https://indiecator.org/>Indiecator</a></li>
 <li><a href="https://fluidlines.neocities.org/>fluidline.neocities.org</a></li>
 <li><a href="https://lameazoid.com>Lameazoid.com</a></li>
-<li><a href="littlelum.neocities.org>I Can't Think of a Name for this Website</a></li>
+<li><a href="https://littlelum.neocities.org">I Can't Think of a Name for this Website</a></li>
 <li><a href="https://whyigame.wordpress.com>Why I Game</a></li>
 <li><a href="https://blog.gridranger.dev/>Gridranger's blog</a></li>
-<li><a href="https://raintreeruckus.com>Raintree Ruckus</a></li>
 <li><a href="https://mogblog.pika.page/>MogBlog</a></li>
 <li><a href="https://www.nejimakiblog.com/>世界のねじを巻くブログ</a></li>
 <li><a href="https://mmoonenight.blogspot.com>MMO One Night</a></li>
@@ -52,3 +51,6 @@
 <li><a href="https://ghastlymirror.xyz">The Ghastly Mirror</a></li>
 <li><a href="https://alexsreviewcorner.com">Alex's Review Corner</a></li>
 <li><a href="https://kedara.eu">Kedara</a></li>
+<li><a href="https://www.ryanpatrickrandall.com/">Ryan Patrick Randall</a></li>
+<li><a href="https://Christopherhimes.com">Christopherhimes.com</a></li>
+<li><a href="https://themakerdad.com">The Maker Dad</a></li>

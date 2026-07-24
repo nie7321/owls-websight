@@ -40,7 +40,6 @@
     <outline type="rss" text="I Can't Think of a Name for this Website" xmlUrl="https://littlelum.neocities.org/RSS.xml" htmlUrl="https://littlelum.neocities.org"/>
     <outline type="rss" text="Why I Game" xmlUrl="https://whyigame.wordpress.com/feed/" htmlUrl="https://whyigame.wordpress.com"/>
     <outline type="rss" text="Gridranger's blog" xmlUrl="https://blog.gridranger.dev/feeds/all.atom.xml" htmlUrl="https://blog.gridranger.dev/"/>
-    <outline type="rss" text="Raintree Ruckus" xmlUrl="https://raintreeruckus.com/rss/" htmlUrl="https://raintreeruckus.com"/>
     <outline type="rss" text="MogBlog" xmlUrl="https://mogblog.pika.page/posts_feed" htmlUrl="https://mogblog.pika.page/"/>
     <outline type="rss" text="世界のねじを巻くブログ" xmlUrl="https://www.nejimakiblog.com/feed" htmlUrl="https://www.nejimakiblog.com/"/>
     <outline type="rss" text="MMO One Night" xmlUrl="https://mmoonenight.blogspot.com/feeds/posts/default" htmlUrl="https://mmoonenight.blogspot.com"/>
@@ -58,5 +57,8 @@
     <outline type="rss" text="The Ghastly Mirror" xmlUrl="https://www.ghastlymirror.xyz/rss.xml" htmlUrl="https://ghastlymirror.xyz"/>
     <outline type="rss" text="Alex's Review Corner" xmlUrl="https://super142.wordpress.com/feed/" htmlUrl="https://alexsreviewcorner.com"/>
     <outline type="rss" text="Kedara" xmlUrl="https://kedara.eu/blog/index.xml" htmlUrl="https://kedara.eu"/>
+    <outline type="rss" text="Ryan Patrick Randall" xmlUrl="https://www.ryanpatrickrandall.com/feed.xml" htmlUrl="https://www.ryanpatrickrandall.com/"/>
+    <outline type="rss" text="Christopherhimes.com" xmlUrl="https://christopherhimes.com/feed.xml" htmlUrl="https://Christopherhimes.com"/>
+    <outline type="rss" text="The Maker Dad" xmlUrl="https://themakerdad.com/rss/" htmlUrl="https://themakerdad.com"/>
   </body>
 </opml>
