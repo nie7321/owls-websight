@@ -52,7 +52,7 @@ readonly class FeedDiscoveryResult
             'https://sag.sadesignz.org/' => 'https://sag.sadesignz.org/feed/',
             'https://davehenry.blog/' => 'https://davehenry.blog/atom.xml',
             'https://littlelum.neocities.org' => 'https://littlelum.neocities.org/RSS.xml',
-            'https://82mhz.net' => 'http://82mhz.net/feeds/',
+            'https://82mhz.net' => 'https://82mhz.net/index.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

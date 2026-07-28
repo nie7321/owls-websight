@@ -4,6 +4,7 @@
     <title>Blaugust 2026 Feeds</title>
   </head>
   <body>
+    <outline type="rss" text="82MHz" xmlUrl="https://82mhz.net/index.xml" htmlUrl="https://82mhz.net"/>
     <outline type="rss" text="Alex's Review Corner" xmlUrl="https://super142.wordpress.com/feed/" htmlUrl="https://alexsreviewcorner.com"/>
     <outline type="rss" text="An Archaeopteryx" xmlUrl="https://anarchaeopteryx.bearblog.dev/feed/" htmlUrl="https://anarchaeopteryx.bearblog.dev/"/>
     <outline type="rss" text="Aywren's Nook" xmlUrl="https://aywren.com/feed.xml" htmlUrl="https://aywren.com"/>
