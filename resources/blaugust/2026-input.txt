@@ -81,3 +81,6 @@
 <li><a href="https://note.com/lawcontents/m/m40b99913f2f5">note (large blog platform)</a></li>
 <li><a href="https://thefriendlynecromancer.blogspot.com/">The Friendly Necromancer</a></li>
 <li><a href="https://selectstar.life">Select * From Life</a></li>
+<li><a href="https://fragmentary.neocities.org/blog/">Fragmentary</a></li>
+<li><a href="https://leehenry.top/">伏枥之间</a></li>
+<li><a href="https://comradenerdy.com/">ComradeNerdy Blog</a></li>

@@ -84,5 +84,7 @@
     <outline type="rss" text="Point" xmlUrl="https://welshtroll.co.uk/feed/" htmlUrl="https://welshtroll.co.uk"/>
     <outline type="rss" text="もうすぐ33歳" xmlUrl="https://wakanatrium.site/?mode=rss" htmlUrl="https://wakanatrium.site/"/>
     <outline type="rss" text="The Friendly Necromancer" xmlUrl="https://thefriendlynecromancer.blogspot.com/feeds/posts/default" htmlUrl="https://thefriendlynecromancer.blogspot.com/"/>
+    <outline type="rss" text="伏枥之间" xmlUrl="https://leehenry.top/rss.xml" htmlUrl="https://leehenry.top/"/>
+    <outline type="rss" text="ComradeNerdy Blog" xmlUrl="https://comradenerdy.com/feed/" htmlUrl="https://comradenerdy.com/"/>
   </body>
 </opml>
