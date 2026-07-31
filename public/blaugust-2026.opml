@@ -86,5 +86,7 @@
     <outline type="rss" text="The Friendly Necromancer" xmlUrl="https://thefriendlynecromancer.blogspot.com/feeds/posts/default" htmlUrl="https://thefriendlynecromancer.blogspot.com/"/>
     <outline type="rss" text="伏枥之间" xmlUrl="https://leehenry.top/rss.xml" htmlUrl="https://leehenry.top/"/>
     <outline type="rss" text="ComradeNerdy Blog" xmlUrl="https://comradenerdy.com/feed/" htmlUrl="https://comradenerdy.com/"/>
+    <outline type="rss" text="Brennan.day" xmlUrl="https://brennan.day/feed.xml" htmlUrl="https://brennan.day"/>
+    <outline type="rss" text="ChristiRichards.com" xmlUrl="https://christirichards.com/rss.xml" htmlUrl="https://christirichards.com"/>
   </body>
 </opml>

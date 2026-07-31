@@ -84,3 +84,5 @@
 <li><a href="https://fragmentary.neocities.org/blog/">Fragmentary</a></li>
 <li><a href="https://leehenry.top/">伏枥之间</a></li>
 <li><a href="https://comradenerdy.com/">ComradeNerdy Blog</a></li>
+<li><a href="https://brennan.day">Brennan.day</a></li>
+<li><a href="https://christirichards.com">ChristiRichards.com</a></li>
