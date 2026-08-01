@@ -85,7 +85,6 @@
     <outline type="rss" text="もうすぐ33歳" xmlUrl="https://wakanatrium.site/?mode=rss" htmlUrl="https://wakanatrium.site/"/>
     <outline type="rss" text="note (large blog platform)" xmlUrl="https://note.com/lawcontents/rss" htmlUrl="https://note.com/lawcontents/m/m40b99913f2f5"/>
     <outline type="rss" text="The Friendly Necromancer" xmlUrl="https://thefriendlynecromancer.blogspot.com/feeds/posts/default" htmlUrl="https://thefriendlynecromancer.blogspot.com/"/>
-    <outline type="rss" text="Select * From Life" xmlUrl="https://selectstar.life/rss.xml" htmlUrl="https://selectstar.life"/>
     <outline type="rss" text="伏枥之间" xmlUrl="https://leehenry.top/rss.xml" htmlUrl="https://leehenry.top/"/>
     <outline type="rss" text="ComradeNerdy Blog" xmlUrl="https://comradenerdy.com/feed/" htmlUrl="https://comradenerdy.com/"/>
     <outline type="rss" text="Brennan.day" xmlUrl="https://brennan.day/feed.xml" htmlUrl="https://brennan.day"/>
@@ -106,5 +105,9 @@
     <outline type="rss" text="Kai Gulliksen" xmlUrl="https://kaigulliksen.com/feed.xml" htmlUrl="https://kaigulliksen.com/"/>
     <outline type="rss" text="392ms" xmlUrl="https://392ms.witchserver.jp/kb/?mode=rss" htmlUrl="https://392ms.witchserver.jp/kb/"/>
     <outline type="rss" text="re: nyman" xmlUrl="https://blog.nyman.re/feed.xml" htmlUrl="https://blog.nyman.re"/>
+    <outline type="rss" text="Noisy Deadlines" xmlUrl="https://noisydeadlines.net/feed/" htmlUrl="https://noisydeadlines.net/"/>
+    <outline type="rss" text="BurgeonLab" xmlUrl="https://burgeonlab.com/all/feed.xml" htmlUrl="https://burgeonlab.com/"/>
+    <outline type="rss" text="Beyond the Horizon" xmlUrl="https://blog.spencermagnusson.com/feed.xml" htmlUrl="https://blog.spencermagnusson.com"/>
+    <outline type="rss" text="Notes by JCProbably" xmlUrl="https://notes.jeddacp.com/feed/" htmlUrl="https://notes.jeddacp.com/"/>
   </body>
 </opml>

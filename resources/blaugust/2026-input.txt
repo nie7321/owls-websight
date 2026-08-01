@@ -102,3 +102,7 @@
 <li><a href="https://kaigulliksen.com/">Kai Gulliksen</a></li>
 <li><a href="https://392ms.witchserver.jp/kb/">392ms</a></li>
 <li><a href="https://blog.nyman.re">re: nyman</a></li>
+<li><a href="https://noisydeadlines.net/">Noisy Deadlines</a></li>
+<li><a href="https://burgeonlab.com/">BurgeonLab</a></li>
+<li><a href="https://blog.spencermagnusson.com">Beyond the Horizon</a></li>
+<li><a href="https://notes.jeddacp.com/">Notes by JCProbably</a></li>
