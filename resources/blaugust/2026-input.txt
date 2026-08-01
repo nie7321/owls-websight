@@ -106,3 +106,4 @@
 <li><a href="https://burgeonlab.com/">BurgeonLab</a></li>
 <li><a href="https://blog.spencermagnusson.com">Beyond the Horizon</a></li>
 <li><a href="https://notes.jeddacp.com/">Notes by JCProbably</a></li>
+<li><a href="https://sweaterpockets.bearblog.dev/">SweaterPockets</a></li>
