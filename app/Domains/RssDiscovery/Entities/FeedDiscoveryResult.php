@@ -56,6 +56,7 @@ readonly class FeedDiscoveryResult
             'https://thekeerok.neocities.org/' => 'https://thekeerok.neocities.org/feed.xml',
             'https://note.com/lawcontents/m/m40b99913f2f5' => 'https://note.com/lawcontents/rss',
             'https://Medium.com/@audreyzetta' => 'https://medium.com/feed/@audreyzetta', // discoverable, but bot protection *__*
+            'https://26g.netlify.app' => 'https://26g.netlify.app/feed.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

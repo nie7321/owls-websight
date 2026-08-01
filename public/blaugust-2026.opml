@@ -85,6 +85,7 @@
     <outline type="rss" text="もうすぐ33歳" xmlUrl="https://wakanatrium.site/?mode=rss" htmlUrl="https://wakanatrium.site/"/>
     <outline type="rss" text="note (large blog platform)" xmlUrl="https://note.com/lawcontents/rss" htmlUrl="https://note.com/lawcontents/m/m40b99913f2f5"/>
     <outline type="rss" text="The Friendly Necromancer" xmlUrl="https://thefriendlynecromancer.blogspot.com/feeds/posts/default" htmlUrl="https://thefriendlynecromancer.blogspot.com/"/>
+    <outline type="rss" text="Select * From Life" xmlUrl="https://selectstar.life/rss.xml" htmlUrl="https://selectstar.life"/>
     <outline type="rss" text="伏枥之间" xmlUrl="https://leehenry.top/rss.xml" htmlUrl="https://leehenry.top/"/>
     <outline type="rss" text="ComradeNerdy Blog" xmlUrl="https://comradenerdy.com/feed/" htmlUrl="https://comradenerdy.com/"/>
     <outline type="rss" text="Brennan.day" xmlUrl="https://brennan.day/feed.xml" htmlUrl="https://brennan.day"/>
@@ -97,5 +98,13 @@
     <outline type="rss" text="Personal InfoCloud" xmlUrl="https://personalinfocloud.com/feed/" htmlUrl="https://personalinfocloud.com"/>
     <outline type="rss" text="Medium" xmlUrl="https://medium.com/feed/@audreyzetta" htmlUrl="https://Medium.com/@audreyzetta"/>
     <outline type="rss" text="clandestini" xmlUrl="https://clandestini.org/feed/" htmlUrl="http://clandestini.org"/>
+    <outline type="rss" text="michcia's notes" xmlUrl="https://michcia.bearblog.dev/feed/" htmlUrl="https://michcia.bearblog.dev/"/>
+    <outline type="rss" text="Tabitha" xmlUrl="https://tabitha.computer/feed/" htmlUrl="https://tabitha.computer"/>
+    <outline type="rss" text="OrbitalMartian" xmlUrl="https://orbitalmartian.polymaths.page/feed.xml" htmlUrl="https://orbitalmartian.polymaths.page"/>
+    <outline type="rss" text="コーポ雪原" xmlUrl="https://coop-setsugen.com/feed.xml" htmlUrl="https://coop-setsugen.com/"/>
+    <outline type="rss" text="26g" xmlUrl="https://26g.netlify.app/feed.xml" htmlUrl="https://26g.netlify.app"/>
+    <outline type="rss" text="Kai Gulliksen" xmlUrl="https://kaigulliksen.com/feed.xml" htmlUrl="https://kaigulliksen.com/"/>
+    <outline type="rss" text="392ms" xmlUrl="https://392ms.witchserver.jp/kb/?mode=rss" htmlUrl="https://392ms.witchserver.jp/kb/"/>
+    <outline type="rss" text="re: nyman" xmlUrl="https://blog.nyman.re/feed.xml" htmlUrl="https://blog.nyman.re"/>
   </body>
 </opml>

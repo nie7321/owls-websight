@@ -94,3 +94,11 @@
 <li><a href="https://personalinfocloud.com">Personal InfoCloud</a></li>
 <li><a href="Medium.com/@audreyzetta">Medium</a></li>
 <li><a href="http://clandestini.org">clandestini</a></li>
+<li><a href="https://michcia.bearblog.dev/">michcia's notes</a></li>
+<li><a href="https://tabitha.computer">Tabitha</a></li>
+<li><a href="https://orbitalmartian.polymaths.page">OrbitalMartian</a></li>
+<li><a href="https://coop-setsugen.com/">コーポ雪原</a></li>
+<li><a href="https://26g.netlify.app">26g</a></li>
+<li><a href="https://kaigulliksen.com/">Kai Gulliksen</a></li>
+<li><a href="https://392ms.witchserver.jp/kb/">392ms</a></li>
+<li><a href="https://blog.nyman.re">re: nyman</a></li>
