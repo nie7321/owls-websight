@@ -55,6 +55,7 @@ readonly class FeedDiscoveryResult
             'https://82mhz.net' => 'https://82mhz.net/index.xml',
             'https://thekeerok.neocities.org/' => 'https://thekeerok.neocities.org/feed.xml',
             'https://note.com/lawcontents/m/m40b99913f2f5' => 'https://note.com/lawcontents/rss',
+            'https://Medium.com/@audreyzetta' => 'https://medium.com/feed/@audreyzetta', // discoverable, but bot protection *__*
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

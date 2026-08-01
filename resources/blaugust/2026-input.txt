@@ -86,3 +86,11 @@
 <li><a href="https://comradenerdy.com/">ComradeNerdy Blog</a></li>
 <li><a href="https://brennan.day">Brennan.day</a></li>
 <li><a href="https://christirichards.com">ChristiRichards.com</a></li>
+<li><a href="https://fyr.io">fyr.io</a></li>
+<li><a href="https://kvibber.com">KVibber.com</a></li>
+<li><a href="https://journal.kvibber.com"> K-Squared Ramblings</a></li>
+<li><a href="https://wakupanbouquet.hatenablog.com/">わくパンの思考のかけら</a></li>
+<li><a href="https://vanderwal.net/random/">Off the Top, </a></li>
+<li><a href="https://personalinfocloud.com">Personal InfoCloud</a></li>
+<li><a href="Medium.com/@audreyzetta">Medium</a></li>
+<li><a href="http://clandestini.org">clandestini</a></li>

@@ -89,5 +89,13 @@
     <outline type="rss" text="ComradeNerdy Blog" xmlUrl="https://comradenerdy.com/feed/" htmlUrl="https://comradenerdy.com/"/>
     <outline type="rss" text="Brennan.day" xmlUrl="https://brennan.day/feed.xml" htmlUrl="https://brennan.day"/>
     <outline type="rss" text="ChristiRichards.com" xmlUrl="https://christirichards.com/rss.xml" htmlUrl="https://christirichards.com"/>
+    <outline type="rss" text="fyr.io" xmlUrl="https://fyr.io/feed" htmlUrl="https://fyr.io"/>
+    <outline type="rss" text="KVibber.com" xmlUrl="https://kvibber.com/feed.xml" htmlUrl="https://kvibber.com"/>
+    <outline type="rss" text="K-Squared Ramblings" xmlUrl="https://journal.kvibber.com/feed/" htmlUrl="https://journal.kvibber.com"/>
+    <outline type="rss" text="わくパンの思考のかけら" xmlUrl="https://wakupanbouquet.hatenablog.com/feed" htmlUrl="https://wakupanbouquet.hatenablog.com/"/>
+    <outline type="rss" text="Off the Top" xmlUrl="https://www.vanderwal.net/random/vanderwal.xml" htmlUrl="https://vanderwal.net/random/"/>
+    <outline type="rss" text="Personal InfoCloud" xmlUrl="https://personalinfocloud.com/feed/" htmlUrl="https://personalinfocloud.com"/>
+    <outline type="rss" text="Medium" xmlUrl="https://medium.com/feed/@audreyzetta" htmlUrl="https://Medium.com/@audreyzetta"/>
+    <outline type="rss" text="clandestini" xmlUrl="https://clandestini.org/feed/" htmlUrl="http://clandestini.org"/>
   </body>
 </opml>
