@@ -107,3 +107,15 @@
 <li><a href="https://blog.spencermagnusson.com">Beyond the Horizon</a></li>
 <li><a href="https://notes.jeddacp.com/">Notes by JCProbably</a></li>
 <li><a href="https://sweaterpockets.bearblog.dev/">SweaterPockets</a></li>
+<li><a href="https://syls.blog/">Syl's Blog</a></li>
+<li><a href="https://prin.lu">prin.lu</a></li>
+<li><a href="https://divergentrays.com/blog">Divergent Rays</a></li>
+<li><a href="https://gregorlove.com/">gRegorLove.com</a></li>
+<li><a href="https://tantek.com/">Tantek Çelik</a></li>
+<li><a href="https://departure.blog/">A parenthetical departure</a></li>
+<li><a href="https://casualaggro.wordpress.com/">Casual Aggro</a></li>
+<li><a href="https://blog.x2600.cc">blog.x2600.cc</a></li>
+<li><a href="https://diary.lollyrots.com/index.html">diary.lollyrots.com</a></li>
+<li><a href="https://alessandrocuzzocrea.com/">Alessandro Cuzzocrea</a></li>
+<li><a href="https://heartsoulmachine.com/">Heart Soul Machine</a></li>
+<li><a href="https://joelchrono.xyz">Joelchrono's Blog</a></li>
