@@ -95,6 +95,7 @@
     <outline type="rss" text="わくパンの思考のかけら" xmlUrl="https://wakupanbouquet.hatenablog.com/feed" htmlUrl="https://wakupanbouquet.hatenablog.com/"/>
     <outline type="rss" text="Off the Top" xmlUrl="https://www.vanderwal.net/random/vanderwal.xml" htmlUrl="https://vanderwal.net/random/"/>
     <outline type="rss" text="Personal InfoCloud" xmlUrl="https://personalinfocloud.com/feed/" htmlUrl="https://personalinfocloud.com"/>
+    <outline type="rss" text="Medium" xmlUrl="https://medium.com/feed/@audreyzetta" htmlUrl="https://medium.com/@audreyzetta"/>
     <outline type="rss" text="clandestini" xmlUrl="https://clandestini.org/feed/" htmlUrl="http://clandestini.org"/>
     <outline type="rss" text="michcia's notes" xmlUrl="https://michcia.bearblog.dev/feed/" htmlUrl="https://michcia.bearblog.dev/"/>
     <outline type="rss" text="Tabitha" xmlUrl="https://tabitha.computer/feed/" htmlUrl="https://tabitha.computer"/>
@@ -131,5 +132,8 @@
     <outline type="rss" text="rachonaut" xmlUrl="https://rachonaut.com/feed/" htmlUrl="https://rachonaut.com/"/>
     <outline type="rss" text="Sheri42.net" xmlUrl="https://sheri42.net/feed/" htmlUrl="https://sheri42.net/category/the-daily/"/>
     <outline type="rss" text="muttthecowcat" xmlUrl="https://muttthecowcat.neocities.org/rss.xml" htmlUrl="https://muttthecowcat.neocities.org/"/>
+    <outline type="rss" text="Nullish" xmlUrl="https://nullish.smol.pub/atom.xml" htmlUrl="https://nullish.smol.pub/"/>
+    <outline type="rss" text="Dear Angel" xmlUrl="https://dearangelblog.tumblr.com/rss" htmlUrl="https://dearangelblog.tumblr.com/"/>
+    <outline type="rss" text="Beyond Tannhauser Gate" xmlUrl="https://www.beyondtannhausergate.com/feed/" htmlUrl="https://www.beyondtannhausergate.com/"/>
   </body>
 </opml>

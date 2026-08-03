@@ -131,3 +131,6 @@
 <li><a href="https://rachonaut.com/">rachonaut</a></li>
 <li><a href="https://sheri42.net/category/the-daily/">Sheri42.net</a></li>
 <li><a href="https://muttthecowcat.neocities.org/">muttthecowcat</a></li>
+<li><a href="https://nullish.smol.pub/">Nullish</a></li>
+<li><a href="https://dearangelblog.tumblr.com/">Dear Angel</a></li>
+<li><a href="https://www.beyondtannhausergate.com/">Beyond Tannhauser Gate</a></li>
