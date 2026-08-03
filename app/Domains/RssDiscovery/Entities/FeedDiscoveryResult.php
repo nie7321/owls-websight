@@ -60,6 +60,8 @@ readonly class FeedDiscoveryResult
             'https://blog.spencermagnusson.com' => 'https://blog.spencermagnusson.com/feed.xml',
             'https://lyonsinbeta.com' => 'https://lyonsinbeta.com/feed.xml',
             'https://divergentrays.com/blog' => 'https://divergentrays.com/blog/blogfeed.xml',
+            'https://muttthecowcat.neocities.org/' => 'https://muttthecowcat.neocities.org/rss.xml',
+            'https://kevincunningham.co.uk' => 'https://kevincunningham.co.uk/rss.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

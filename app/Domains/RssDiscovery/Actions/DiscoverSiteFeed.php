@@ -70,7 +70,7 @@ class DiscoverSiteFeed
                 continue;
             }
 
-            $url = $link->getAttribute('href');
+            $url = strtolower($link->getAttribute('href'));
             if (! str_starts_with($url, 'http')) {
                 $url = (string) Uri::of($siteBaseUrl)->withPath($url);
             }

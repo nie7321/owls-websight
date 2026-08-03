@@ -75,7 +75,7 @@ class DiscoverRssFeeds extends Command
 
             [$url, $label] = explode(',', $line);
 
-            $url = trim($url);
+            $url = strtolower(trim($url));
             $label = trim($label);
 
             if (! str_starts_with($url, 'http')) {

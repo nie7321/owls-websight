@@ -119,3 +119,15 @@
 <li><a href="https://alessandrocuzzocrea.com/">Alessandro Cuzzocrea</a></li>
 <li><a href="https://heartsoulmachine.com/">Heart Soul Machine</a></li>
 <li><a href="https://joelchrono.xyz">Joelchrono's Blog</a></li>
+<li><a href="https://aneeshsathe.com">aneeshsathe.com</a></li>
+<li><a href="https://blog.agnes.love">Agnes the Alien's blog</a></li>
+<li><a href="https://substack.com/@thethinkingboard">thethinkingboard</a></li>
+<li><a href="www.dozenialdragons.me.uk">Dozenial Dragons</a></li>
+<li><a href="https://jak2k.eu/">Jak2k's Website</a></li>
+<li><a href="http://wrywriter.ca">Wry Writer</a></li>
+<li><a href="https://jamesg.blog">with words, wonder</a></li>
+<li><a href="HTTPS://kevinCunningham.co.uk">Kevin Cunningham</a></li>
+<li><a href="https://taterinx.bearblog.dev/">Biggus Bloggus</a></li>
+<li><a href="https://rachonaut.com/">rachonaut</a></li>
+<li><a href="https://sheri42.net/category/the-daily/">Sheri42.net</a></li>
+<li><a href="https://muttthecowcat.neocities.org/">muttthecowcat</a></li>

@@ -22,7 +22,7 @@
     <outline type="rss" text="Chasing Dings!" xmlUrl="https://chasingdings.com/feed/" htmlUrl="https://chasingdings.com"/>
     <outline type="rss" text="GamerLady P Blog" xmlUrl="https://www.gamerlady.blog/feed/" htmlUrl="https://www.gamerlady.blog/"/>
     <outline type="rss" text="owlblog" xmlUrl="https://godless-internets.org/feed" htmlUrl="https://godless-internets.org"/>
-    <outline type="rss" text="Zelibeli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCQ5FDkgug9FhZm4z1CGAQ1Q" htmlUrl="https://www.youtube.com/@zelibeli/posts"/>
+    <outline type="rss" text="Zelibeli" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=ucq5fdkgug9fhzm4z1cgaq1q" htmlUrl="https://www.youtube.com/@zelibeli/posts"/>
     <outline type="rss" text="Mar Qaroll's The Marrowing!" xmlUrl="https://blog.marqaroll.com/feeds/posts/default" htmlUrl="https://blog.marqaroll.com"/>
     <outline type="rss" text="Taylor film crit" xmlUrl="https://taylorfilmcritic.wordpress.com/feed/" htmlUrl="https://taylorfilmcritic.wordpress.com/"/>
     <outline type="rss" text="Aywren's Nook" xmlUrl="https://aywren.com/feed.xml" htmlUrl="https://aywren.com"/>
@@ -50,7 +50,7 @@
     <outline type="rss" text="Ben Ramsey" xmlUrl="https://ben.ramsey.dev/feeds/blog.rss" htmlUrl="https://ben.ramsey.dev"/>
     <outline type="rss" text="Lucky Instar" xmlUrl="https://luckyinstar.neocities.org/feed.xml" htmlUrl="https://luckyinstar.neocities.org/blog"/>
     <outline type="rss" text="Knifesedge Blogs" xmlUrl="https://knifesedgeblogs.wordpress.com/feed/" htmlUrl="https://knifesedgeblogs.wordpress.com/"/>
-    <outline type="rss" text="Many Welps" xmlUrl="https://manywelps.com/feed/" htmlUrl="https://Manywelps.com"/>
+    <outline type="rss" text="Many Welps" xmlUrl="https://manywelps.com/feed/" htmlUrl="https://manywelps.com"/>
     <outline type="rss" text="coffee spills" xmlUrl="https://tallywinkle.bearblog.dev/feed/" htmlUrl="https://tallywinkle.bearblog.dev/"/>
     <outline type="rss" text="Kay Talks Games" xmlUrl="https://kaytalksgames.wordpress.com/feed/" htmlUrl="https://kaytalksgames.wordpress.com/"/>
     <outline type="rss" text="Kayriene" xmlUrl="https://kaylriene.com/feed/" htmlUrl="https://kaylriene.com"/>
@@ -58,7 +58,7 @@
     <outline type="rss" text="Alex's Review Corner" xmlUrl="https://super142.wordpress.com/feed/" htmlUrl="https://alexsreviewcorner.com"/>
     <outline type="rss" text="Kedara" xmlUrl="https://kedara.eu/blog/index.xml" htmlUrl="https://kedara.eu"/>
     <outline type="rss" text="Ryan Patrick Randall" xmlUrl="https://www.ryanpatrickrandall.com/feed.xml" htmlUrl="https://www.ryanpatrickrandall.com/"/>
-    <outline type="rss" text="Christopherhimes.com" xmlUrl="https://christopherhimes.com/feed.xml" htmlUrl="https://Christopherhimes.com"/>
+    <outline type="rss" text="Christopherhimes.com" xmlUrl="https://christopherhimes.com/feed.xml" htmlUrl="https://christopherhimes.com"/>
     <outline type="rss" text="The Maker Dad" xmlUrl="https://themakerdad.com/rss/" htmlUrl="https://themakerdad.com"/>
     <outline type="rss" text="Lyons in Beta" xmlUrl="https://lyonsinbeta.com/feed.xml" htmlUrl="https://lyonsinbeta.com"/>
     <outline type="rss" text="WCRobinson" xmlUrl="https://wcrobinson.org/feed/" htmlUrl="https://wcrobinson.org/"/>
@@ -95,7 +95,6 @@
     <outline type="rss" text="わくパンの思考のかけら" xmlUrl="https://wakupanbouquet.hatenablog.com/feed" htmlUrl="https://wakupanbouquet.hatenablog.com/"/>
     <outline type="rss" text="Off the Top" xmlUrl="https://www.vanderwal.net/random/vanderwal.xml" htmlUrl="https://vanderwal.net/random/"/>
     <outline type="rss" text="Personal InfoCloud" xmlUrl="https://personalinfocloud.com/feed/" htmlUrl="https://personalinfocloud.com"/>
-    <outline type="rss" text="Medium" xmlUrl="https://medium.com/feed/@audreyzetta" htmlUrl="https://Medium.com/@audreyzetta"/>
     <outline type="rss" text="clandestini" xmlUrl="https://clandestini.org/feed/" htmlUrl="http://clandestini.org"/>
     <outline type="rss" text="michcia's notes" xmlUrl="https://michcia.bearblog.dev/feed/" htmlUrl="https://michcia.bearblog.dev/"/>
     <outline type="rss" text="Tabitha" xmlUrl="https://tabitha.computer/feed/" htmlUrl="https://tabitha.computer"/>
@@ -121,5 +120,16 @@
     <outline type="rss" text="Alessandro Cuzzocrea" xmlUrl="https://alessandrocuzzocrea.com/feed.xml" htmlUrl="https://alessandrocuzzocrea.com/"/>
     <outline type="rss" text="Heart Soul Machine" xmlUrl="https://heartsoulmachine.com/feed.xml" htmlUrl="https://heartsoulmachine.com/"/>
     <outline type="rss" text="Joelchrono's Blog" xmlUrl="https://joelchrono.xyz/feed.xml" htmlUrl="https://joelchrono.xyz"/>
+    <outline type="rss" text="aneeshsathe.com" xmlUrl="https://aneeshsathe.com/index.xml" htmlUrl="https://aneeshsathe.com"/>
+    <outline type="rss" text="Agnes the Alien's blog" xmlUrl="https://blog.agnes.love/agnes/feed/" htmlUrl="https://blog.agnes.love"/>
+    <outline type="rss" text="Dozenial Dragons" xmlUrl="https://granary.io/url?input=html&amp;output=atom&amp;url=https%3a%2f%2fwww.dozenialdragons.me.uk%2fblog" htmlUrl="https://www.dozenialdragons.me.uk"/>
+    <outline type="rss" text="Jak2k's Website" xmlUrl="https://jak2k.eu/feed.xml" htmlUrl="https://jak2k.eu/"/>
+    <outline type="rss" text="Wry Writer" xmlUrl="https://wrywriter.ca/posts_feed" htmlUrl="http://wrywriter.ca"/>
+    <outline type="rss" text="with words" xmlUrl="https://granary.io/url?input=html&amp;output=atom&amp;url=https://jamesg.blog/longform-feed/" htmlUrl="https://jamesg.blog"/>
+    <outline type="rss" text="Kevin Cunningham" xmlUrl="https://kevincunningham.co.uk/rss.xml" htmlUrl="https://kevincunningham.co.uk"/>
+    <outline type="rss" text="Biggus Bloggus" xmlUrl="https://taterinx.bearblog.dev/feed/" htmlUrl="https://taterinx.bearblog.dev/"/>
+    <outline type="rss" text="rachonaut" xmlUrl="https://rachonaut.com/feed/" htmlUrl="https://rachonaut.com/"/>
+    <outline type="rss" text="Sheri42.net" xmlUrl="https://sheri42.net/feed/" htmlUrl="https://sheri42.net/category/the-daily/"/>
+    <outline type="rss" text="muttthecowcat" xmlUrl="https://muttthecowcat.neocities.org/rss.xml" htmlUrl="https://muttthecowcat.neocities.org/"/>
   </body>
 </opml>
