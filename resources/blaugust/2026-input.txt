@@ -134,3 +134,7 @@
 <li><a href="https://nullish.smol.pub/">Nullish</a></li>
 <li><a href="https://dearangelblog.tumblr.com/">Dear Angel</a></li>
 <li><a href="https://www.beyondtannhausergate.com/">Beyond Tannhauser Gate</a></li>
+<li><a href="https://sals.place">Sal's</a></li>
+<li><a href="https://jagsworkshop.com">JAG's Workshop</a></li>
+<li><a href="https://bavatuesdays.com/">bavatuesdays</a></li>
+<li><a href="https://lostletters.neocities.org/">Lost Letters</a></li>

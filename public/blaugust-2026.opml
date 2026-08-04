@@ -135,5 +135,9 @@
     <outline type="rss" text="Nullish" xmlUrl="https://nullish.smol.pub/atom.xml" htmlUrl="https://nullish.smol.pub/"/>
     <outline type="rss" text="Dear Angel" xmlUrl="https://dearangelblog.tumblr.com/rss" htmlUrl="https://dearangelblog.tumblr.com/"/>
     <outline type="rss" text="Beyond Tannhauser Gate" xmlUrl="https://www.beyondtannhausergate.com/feed/" htmlUrl="https://www.beyondtannhausergate.com/"/>
+    <outline type="rss" text="Sal's" xmlUrl="https://sals.place/feed/feed.xml" htmlUrl="https://sals.place"/>
+    <outline type="rss" text="JAG's Workshop" xmlUrl="https://jagsworkshop.com/rss/" htmlUrl="https://jagsworkshop.com"/>
+    <outline type="rss" text="bavatuesdays" xmlUrl="https://bavatuesdays.com/feed/" htmlUrl="https://bavatuesdays.com/"/>
+    <outline type="rss" text="Lost Letters" xmlUrl="https://lostletters.neocities.org/feed.xml" htmlUrl="https://lostletters.neocities.org/"/>
   </body>
 </opml>
