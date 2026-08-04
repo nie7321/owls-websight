@@ -138,3 +138,5 @@
 <li><a href="https://jagsworkshop.com">JAG's Workshop</a></li>
 <li><a href="https://bavatuesdays.com/">bavatuesdays</a></li>
 <li><a href="https://lostletters.neocities.org/">Lost Letters</a></li>
+<li><a href="https://nosrednayduj.dreamwidth.org">nosrednayduj</a></li>
+<li><a href="https://elve.club/">スナックエルベ</a></li>

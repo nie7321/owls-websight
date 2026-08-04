@@ -139,5 +139,7 @@
     <outline type="rss" text="JAG's Workshop" xmlUrl="https://jagsworkshop.com/rss/" htmlUrl="https://jagsworkshop.com"/>
     <outline type="rss" text="bavatuesdays" xmlUrl="https://bavatuesdays.com/feed/" htmlUrl="https://bavatuesdays.com/"/>
     <outline type="rss" text="Lost Letters" xmlUrl="https://lostletters.neocities.org/feed.xml" htmlUrl="https://lostletters.neocities.org/"/>
+    <outline type="rss" text="nosrednayduj" xmlUrl="https://nosrednayduj.dreamwidth.org/data/atom" htmlUrl="https://nosrednayduj.dreamwidth.org"/>
+    <outline type="rss" text="スナックエルベ" xmlUrl="https://elve.club/feed" htmlUrl="https://elve.club/"/>
   </body>
 </opml>
