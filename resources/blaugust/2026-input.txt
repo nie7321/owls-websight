@@ -140,3 +140,15 @@
 <li><a href="https://lostletters.neocities.org/">Lost Letters</a></li>
 <li><a href="https://nosrednayduj.dreamwidth.org">nosrednayduj</a></li>
 <li><a href="https://elve.club/">スナックエルベ</a></li>
+<li><a href="https://www.crosenthal.com/chrome/">It's Just This Little Chromium Switch Here</a></li>
+<li><a href="https://lysurps.neocities.org/">lysurps</a></li>
+<li><a href="https://devz.cl">devz.cl</a></li>
+<li><a href="https://20ilyapril.wordpress.com/">20ilyApril </a></li>
+<li><a href="https://object.computer">object dot computer</a></li>
+<li><a href="https://pux.nehukon.de/">puxped's station</a></li>
+<li><a href="https://www.ivyrun.com/inanotherplace/">inanotherplace</a></li>
+<li><a href="https://prry.uk">prry</a></li>
+<li><a href="https://drjan.org">From the keyboard of Dr Jan </a></li>
+<li><a href="https://srijan.ch">Srijan's Home</a></li>
+<li><a href="https://michaelharley.net">Michael Harley</a></li>
+<li><a href="https://pourthecoffee.bearblog.dev">Pour The Coffee</a></li>

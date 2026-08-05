@@ -62,6 +62,9 @@ readonly class FeedDiscoveryResult
             'https://divergentrays.com/blog' => 'https://divergentrays.com/blog/blogfeed.xml',
             'https://muttthecowcat.neocities.org/' => 'https://muttthecowcat.neocities.org/rss.xml',
             'https://kevincunningham.co.uk' => 'https://kevincunningham.co.uk/rss.xml',
+            'https://nosrednayduj.dreamwidth.org' => 'https://nosrednayduj.dreamwidth.org/data/atom',
+            'https://lysurps.neocities.org/' => 'https://lysurps.neocities.org/rss.xml',
+            'https://devz.cl' => 'https://devz.cl/index.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

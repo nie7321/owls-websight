@@ -135,11 +135,22 @@
     <outline type="rss" text="Nullish" xmlUrl="https://nullish.smol.pub/atom.xml" htmlUrl="https://nullish.smol.pub/"/>
     <outline type="rss" text="Dear Angel" xmlUrl="https://dearangelblog.tumblr.com/rss" htmlUrl="https://dearangelblog.tumblr.com/"/>
     <outline type="rss" text="Beyond Tannhauser Gate" xmlUrl="https://www.beyondtannhausergate.com/feed/" htmlUrl="https://www.beyondtannhausergate.com/"/>
-    <outline type="rss" text="Sal's" xmlUrl="https://sals.place/feed/feed.xml" htmlUrl="https://sals.place"/>
+    <outline type="rss" text="Sal's" xmlUrl="https://sals.place/index.xml" htmlUrl="https://sals.place"/>
     <outline type="rss" text="JAG's Workshop" xmlUrl="https://jagsworkshop.com/rss/" htmlUrl="https://jagsworkshop.com"/>
     <outline type="rss" text="bavatuesdays" xmlUrl="https://bavatuesdays.com/feed/" htmlUrl="https://bavatuesdays.com/"/>
     <outline type="rss" text="Lost Letters" xmlUrl="https://lostletters.neocities.org/feed.xml" htmlUrl="https://lostletters.neocities.org/"/>
     <outline type="rss" text="nosrednayduj" xmlUrl="https://nosrednayduj.dreamwidth.org/data/atom" htmlUrl="https://nosrednayduj.dreamwidth.org"/>
     <outline type="rss" text="スナックエルベ" xmlUrl="https://elve.club/feed" htmlUrl="https://elve.club/"/>
+    <outline type="rss" text="It's Just This Little Chromium Switch Here" xmlUrl="https://www.crosenthal.com/chrome/feed.xml" htmlUrl="https://www.crosenthal.com/chrome/"/>
+    <outline type="rss" text="lysurps" xmlUrl="https://lysurps.neocities.org/rss.xml" htmlUrl="https://lysurps.neocities.org/"/>
+    <outline type="rss" text="devz.cl" xmlUrl="https://devz.cl/index.xml" htmlUrl="https://devz.cl"/>
+    <outline type="rss" text="20ilyApril" xmlUrl="https://20ilyapril.wordpress.com/feed/" htmlUrl="https://20ilyapril.wordpress.com/"/>
+    <outline type="rss" text="object dot computer" xmlUrl="https://object.computer/feed.xml" htmlUrl="https://object.computer"/>
+    <outline type="rss" text="inanotherplace" xmlUrl="https://www.ivyrun.com/inanotherplace/?feed=rss2" htmlUrl="https://www.ivyrun.com/inanotherplace/"/>
+    <outline type="rss" text="prry" xmlUrl="https://prry.uk/feed" htmlUrl="https://prry.uk"/>
+    <outline type="rss" text="From the keyboard of Dr Jan" xmlUrl="https://drjan.org/feed/" htmlUrl="https://drjan.org"/>
+    <outline type="rss" text="Srijan's Home" xmlUrl="https://srijan.ch/feed/all.xml" htmlUrl="https://srijan.ch"/>
+    <outline type="rss" text="Michael Harley" xmlUrl="https://michaelharley.net/feed.xml" htmlUrl="https://michaelharley.net"/>
+    <outline type="rss" text="Pour The Coffee" xmlUrl="https://pourthecoffee.bearblog.dev/feed/" htmlUrl="https://pourthecoffee.bearblog.dev"/>
   </body>
 </opml>
