@@ -65,6 +65,7 @@ readonly class FeedDiscoveryResult
             'https://nosrednayduj.dreamwidth.org' => 'https://nosrednayduj.dreamwidth.org/data/atom',
             'https://lysurps.neocities.org/' => 'https://lysurps.neocities.org/rss.xml',
             'https://devz.cl' => 'https://devz.cl/index.xml',
+            'https://substack.com/@thethinkingboard' => 'https://1beautifulproblem.substack.com/feed',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',
