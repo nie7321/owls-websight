@@ -117,7 +117,6 @@
     <outline type="rss" text="Tantek Çelik" xmlUrl="https://tantek.com/updates.atom" htmlUrl="https://tantek.com/"/>
     <outline type="rss" text="A parenthetical departure" xmlUrl="https://departure.blog/feed/" htmlUrl="https://departure.blog/"/>
     <outline type="rss" text="Casual Aggro" xmlUrl="https://casualaggro.wordpress.com/feed/" htmlUrl="https://casualaggro.wordpress.com/"/>
-    <outline type="rss" text="blog.x2600.cc" xmlUrl="https://blog.x2600.cc/feed/" htmlUrl="https://blog.x2600.cc"/>
     <outline type="rss" text="Alessandro Cuzzocrea" xmlUrl="https://alessandrocuzzocrea.com/feed.xml" htmlUrl="https://alessandrocuzzocrea.com/"/>
     <outline type="rss" text="Heart Soul Machine" xmlUrl="https://heartsoulmachine.com/feed.xml" htmlUrl="https://heartsoulmachine.com/"/>
     <outline type="rss" text="Joelchrono's Blog" xmlUrl="https://joelchrono.xyz/feed.xml" htmlUrl="https://joelchrono.xyz"/>
@@ -153,5 +152,8 @@
     <outline type="rss" text="Srijan's Home" xmlUrl="https://srijan.ch/feed/all.xml" htmlUrl="https://srijan.ch"/>
     <outline type="rss" text="Michael Harley" xmlUrl="https://michaelharley.net/feed.xml" htmlUrl="https://michaelharley.net"/>
     <outline type="rss" text="Pour The Coffee" xmlUrl="https://pourthecoffee.bearblog.dev/feed/" htmlUrl="https://pourthecoffee.bearblog.dev"/>
+    <outline type="rss" text="words" xmlUrl="https://www.omz13.com/feed.atom" htmlUrl="https://www.omz13.com"/>
+    <outline type="rss" text="Aeish World Neocities" xmlUrl="https://aeish-world.neocities.org/feed.txt" htmlUrl="https://aeish-world.neocities.org/blog_front"/>
+    <outline type="rss" text="Sylvia's Studio" xmlUrl="https://sylvia.studio/feed.xml" htmlUrl="https://sylvia.studio"/>
   </body>
 </opml>

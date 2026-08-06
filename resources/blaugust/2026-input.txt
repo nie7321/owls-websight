@@ -152,3 +152,6 @@
 <li><a href="https://srijan.ch">Srijan's Home</a></li>
 <li><a href="https://michaelharley.net">Michael Harley</a></li>
 <li><a href="https://pourthecoffee.bearblog.dev">Pour The Coffee</a></li>
+<li><a href="https://www.omz13.com">words, essays, and more</a></li>
+<li><a href="https://aeish-world.neocities.org/blog_front">Aeish World Neocities</a></li>
+<li><a href="https://sylvia.studio">Sylvia's Studio</a></li>
