@@ -67,6 +67,7 @@ readonly class FeedDiscoveryResult
             'https://devz.cl' => 'https://devz.cl/index.xml',
             'https://substack.com/@thethinkingboard' => 'https://1beautifulproblem.substack.com/feed',
             'https://aeish-world.neocities.org/blog_front' => 'https://aeish-world.neocities.org/feed.txt',
+            'https://heartsoulmachine.com/' => 'https://heartsoulmachine.com/feed.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

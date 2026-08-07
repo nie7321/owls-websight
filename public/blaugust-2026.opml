@@ -155,5 +155,6 @@
     <outline type="rss" text="words" xmlUrl="https://www.omz13.com/feed.atom" htmlUrl="https://www.omz13.com"/>
     <outline type="rss" text="Aeish World Neocities" xmlUrl="https://aeish-world.neocities.org/feed.txt" htmlUrl="https://aeish-world.neocities.org/blog_front"/>
     <outline type="rss" text="Sylvia's Studio" xmlUrl="https://sylvia.studio/feed.xml" htmlUrl="https://sylvia.studio"/>
+    <outline type="rss" text="Musings Over Pints and Coffee" xmlUrl="https://musingsoverpintsandcoffee.wordpress.com/feed/" htmlUrl="https://musingsoverpintsandcoffee.wordpress.com/"/>
   </body>
 </opml>

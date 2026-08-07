@@ -155,3 +155,4 @@
 <li><a href="https://www.omz13.com">words, essays, and more</a></li>
 <li><a href="https://aeish-world.neocities.org/blog_front">Aeish World Neocities</a></li>
 <li><a href="https://sylvia.studio">Sylvia's Studio</a></li>
+<li><a href="https://musingsoverpintsandcoffee.wordpress.com/">Musings Over Pints and Coffee</a></li>
