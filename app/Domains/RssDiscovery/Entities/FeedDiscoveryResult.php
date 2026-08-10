@@ -70,6 +70,7 @@ readonly class FeedDiscoveryResult
             'https://heartsoulmachine.com/' => 'https://heartsoulmachine.com/feed.xml',
             'https://asteriisms.com' => 'https://granary.io/url?input=html&output=rss&url=https://asteriisms.com/blog',
             'https://jak2k.eu/' => 'https://jak2k.eu/feed.xml',
+            'https://selectstar.life' => 'https://selectstar.life/blog.xml',
             /*
             'https://mattbee.zone' => 'https://mattbee.zone/rss.xml',
             'https://www.achilletoupin.com' => 'https://www.achilletoupin.com/feed.xml',

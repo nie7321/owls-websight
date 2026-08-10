@@ -156,3 +156,5 @@
 <li><a href="https://aeish-world.neocities.org/blog_front">Aeish World Neocities</a></li>
 <li><a href="https://sylvia.studio">Sylvia's Studio</a></li>
 <li><a href="https://musingsoverpintsandcoffee.wordpress.com/">Musings Over Pints and Coffee</a></li>
+<li><a href="rishidass.net">Rishi Dass</a></li>
+<li><a href="https://msfjarvis.dev">msfjarvis.dev</a></li>
