@@ -158,3 +158,4 @@
 <li><a href="https://musingsoverpintsandcoffee.wordpress.com/">Musings Over Pints and Coffee</a></li>
 <li><a href="rishidass.net">Rishi Dass</a></li>
 <li><a href="https://msfjarvis.dev">msfjarvis.dev</a></li>
+<li><a href="polvoronii.bearblog.dev">Bearblog</a></li>

@@ -160,5 +160,6 @@
     <outline type="rss" text="Musings Over Pints and Coffee" xmlUrl="https://musingsoverpintsandcoffee.wordpress.com/feed/" htmlUrl="https://musingsoverpintsandcoffee.wordpress.com/"/>
     <outline type="rss" text="Rishi Dass" xmlUrl="https://rishidass.net/posts_feed" htmlUrl="https://rishidass.net"/>
     <outline type="rss" text="msfjarvis.dev" xmlUrl="https://msfjarvis.dev/notes/atom.xml" htmlUrl="https://msfjarvis.dev"/>
+    <outline type="rss" text="Bearblog" xmlUrl="https://polvoronii.bearblog.dev/feed/" htmlUrl="https://polvoronii.bearblog.dev"/>
   </body>
 </opml>
