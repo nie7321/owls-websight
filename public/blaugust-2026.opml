@@ -161,5 +161,8 @@
     <outline type="rss" text="Rishi Dass" xmlUrl="https://rishidass.net/posts_feed" htmlUrl="https://rishidass.net"/>
     <outline type="rss" text="msfjarvis.dev" xmlUrl="https://msfjarvis.dev/notes/atom.xml" htmlUrl="https://msfjarvis.dev"/>
     <outline type="rss" text="Bearblog" xmlUrl="https://polvoronii.bearblog.dev/feed/" htmlUrl="https://polvoronii.bearblog.dev"/>
+    <outline type="rss" text="Small Good Things" xmlUrl="https://hollie.eilloh.net/posts_feed" htmlUrl="https://hollie.eilloh.net"/>
+    <outline type="rss" text="Parallel Spirals" xmlUrl="https://pradx.in/feed/" htmlUrl="https://pradx.in"/>
+    <outline type="rss" text="A 3D Blog for a 3D World" xmlUrl="https://kingwilly105.blogspot.com/feeds/posts/default" htmlUrl="https://kingwilly105.blogspot.com/"/>
   </body>
 </opml>

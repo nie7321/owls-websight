@@ -159,3 +159,6 @@
 <li><a href="rishidass.net">Rishi Dass</a></li>
 <li><a href="https://msfjarvis.dev">msfjarvis.dev</a></li>
 <li><a href="polvoronii.bearblog.dev">Bearblog</a></li>
+<li><a href="https://hollie.eilloh.net">Small Good Things</a></li>
+<li><a href="https://pradx.in">Parallel Spirals</a></li>
+<li><a href="https://kingwilly105.blogspot.com/">A 3D Blog for a 3D World</a></li>
