@@ -167,5 +167,7 @@
     <outline type="rss" text="Pretend Typewriter" xmlUrl="https://pretendtypewriter.net/feed/" htmlUrl="https://pretendtypewriter.net/"/>
     <outline type="rss" text="Newsonaut" xmlUrl="https://www.newsonaut.com/rss" htmlUrl="https://newsonaut.com"/>
     <outline type="rss" text="tommyeveryday" xmlUrl="https://tommyeveryday.mataroa.blog/rss/" htmlUrl="https://tommyeveryday.mataroa.blog/"/>
+    <outline type="rss" text="Blog - 鳥啼く頃に" xmlUrl="https://torinakukoroni.blog.fc2.com/?xml" htmlUrl="https://torinakukoroni.blog.fc2.com/"/>
+    <outline type="rss" text="thiskurt’s blog" xmlUrl="https://thiskurt.me/rss.xml" htmlUrl="https://thiskurt.me"/>
   </body>
 </opml>

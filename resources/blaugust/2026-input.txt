@@ -166,3 +166,5 @@
 <li><a href="https://newsonaut.com">Newsonaut</a></li>
 <li><a href="https://rukinations.neocities.org/">Rukinations</a></li>
 <li><a href="https://tommyeveryday.mataroa.blog/">tommyeveryday</a></li>
+<li><a href="https://torinakukoroni.blog.fc2.com/">Blog - 鳥啼く頃に</a></li>
+<li><a href="https://thiskurt.me">thiskurt’s blog</a></li>
