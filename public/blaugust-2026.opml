@@ -156,7 +156,7 @@
     <outline type="rss" text="Pour The Coffee" xmlUrl="https://pourthecoffee.bearblog.dev/feed/" htmlUrl="https://pourthecoffee.bearblog.dev"/>
     <outline type="rss" text="words" xmlUrl="https://www.omz13.com/feed.atom" htmlUrl="https://www.omz13.com"/>
     <outline type="rss" text="Aeish World Neocities" xmlUrl="https://aeish-world.neocities.org/feed.txt" htmlUrl="https://aeish-world.neocities.org/blog_front"/>
-    <outline type="rss" text="Sylvia's Studio" xmlUrl="https://sylvia.studio/feed.xml" htmlUrl="https://sylvia.studio"/>
+    <outline type="rss" text="Sylvia's Studio" xmlUrl="https://sylvia.studio/atom.xml" htmlUrl="https://sylvia.studio"/>
     <outline type="rss" text="Musings Over Pints and Coffee" xmlUrl="https://musingsoverpintsandcoffee.wordpress.com/feed/" htmlUrl="https://musingsoverpintsandcoffee.wordpress.com/"/>
     <outline type="rss" text="Rishi Dass" xmlUrl="https://rishidass.net/posts_feed" htmlUrl="https://rishidass.net"/>
     <outline type="rss" text="msfjarvis.dev" xmlUrl="https://msfjarvis.dev/notes/atom.xml" htmlUrl="https://msfjarvis.dev"/>
@@ -169,5 +169,6 @@
     <outline type="rss" text="tommyeveryday" xmlUrl="https://tommyeveryday.mataroa.blog/rss/" htmlUrl="https://tommyeveryday.mataroa.blog/"/>
     <outline type="rss" text="Blog - 鳥啼く頃に" xmlUrl="https://torinakukoroni.blog.fc2.com/?xml" htmlUrl="https://torinakukoroni.blog.fc2.com/"/>
     <outline type="rss" text="thiskurt’s blog" xmlUrl="https://thiskurt.me/rss.xml" htmlUrl="https://thiskurt.me"/>
+    <outline type="rss" text="annonimax" xmlUrl="https://annonimax.bearblog.dev/feed/" htmlUrl="https://annonimax.bearblog.dev/"/>
   </body>
 </opml>
