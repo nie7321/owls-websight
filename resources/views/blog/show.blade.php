@@ -32,7 +32,7 @@
                 <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
                     <dt class="sr-only">Author</dt>
                     <dd>
-                        <ul class="h-card flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
+                        <ul class="h-card p-author flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                             <li class="flex items-center space-x-2"><img alt="avatar" loading="lazy" width="38"
                                                                          height="38" decoding="async" data-nimg="1"
                                                                          class="u-photo h-10 w-10 rounded-full"
