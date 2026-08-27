@@ -38,12 +38,12 @@
                                                                          class="h-10 w-10 rounded-full"
                                                                          style="color: transparent;"
                                                                          src="{{ asset('image/owls-avatar.png') }}">
-                                <dl class="h-card whitespace-nowrap text-sm font-medium leading-5">
+                                <dl class="whitespace-nowrap text-sm font-medium leading-5">
                                     <dt class="sr-only">Name</dt>
-                                    <dd class="p-author text-gray-900 dark:text-gray-100">owls</dd>
+                                    <dd class="h-card p-author text-gray-900 dark:text-gray-100">owls</dd>
                                     <dt class="sr-only">Mastodon</dt>
-                                    <dd><a target="_blank" rel="author noopener noreferrer" href="https://mastodon.yshi.org/@owls"
-                                           class="u-url text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
+                                    <dd><a target="_blank" rel="noopener noreferrer" href="https://mastodon.yshi.org/@owls"
+                                           class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
                                     </dd>
                                 </dl>
                             </li>
