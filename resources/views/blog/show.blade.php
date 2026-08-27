@@ -40,7 +40,7 @@
                                                                          src="{{ asset('image/owls-avatar.png') }}">
                                 <dl class="whitespace-nowrap text-sm font-medium leading-5">
                                     <dt class="sr-only">Name</dt>
-                                    <dd class="p-author text-gray-900 dark:text-gray-100">owls</dd>
+                                    <dd class="p-name text-gray-900 dark:text-gray-100">owls</dd>
                                     <dt class="sr-only">Mastodon</dt>
                                     <dd><a target="_blank" rel="author noopener noreferrer" href="https://mastodon.yshi.org/@owls"
                                            class="u-url text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
