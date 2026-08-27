@@ -32,18 +32,18 @@
                 <dl class="pb-10 pt-6 xl:border-b xl:border-gray-200 xl:pt-11 xl:dark:border-gray-700">
                     <dt class="sr-only">Author</dt>
                     <dd>
-                        <ul class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
+                        <ul class="h-card flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
                             <li class="flex items-center space-x-2"><img alt="avatar" loading="lazy" width="38"
                                                                          height="38" decoding="async" data-nimg="1"
-                                                                         class="h-10 w-10 rounded-full"
+                                                                         class="u-photo h-10 w-10 rounded-full"
                                                                          style="color: transparent;"
                                                                          src="{{ asset('image/owls-avatar.png') }}">
                                 <dl class="whitespace-nowrap text-sm font-medium leading-5">
                                     <dt class="sr-only">Name</dt>
-                                    <dd class="h-card p-author text-gray-900 dark:text-gray-100">owls</dd>
+                                    <dd class="p-author text-gray-900 dark:text-gray-100">owls</dd>
                                     <dt class="sr-only">Mastodon</dt>
                                     <dd><a target="_blank" rel="noopener noreferrer" href="https://mastodon.yshi.org/@owls"
-                                           class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
+                                           class="u-url text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
                                     </dd>
                                 </dl>
                             </li>
