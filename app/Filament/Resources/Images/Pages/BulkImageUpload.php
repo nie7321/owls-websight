@@ -38,6 +38,8 @@ class BulkImageUpload extends Page implements HasForms
 
     protected string $view = 'filament.resources.image-resource.pages.bulk-image-upload';
 
+    protected static ?int $navigationSort = 100;
+
     public ?string $prefix = null;
     public ?string $gallery_id = null;
 

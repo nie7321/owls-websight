@@ -11,6 +11,8 @@ use App\Domains\Opml\Models\ExternalOpmlList;
 use App\Domains\Portal\Models\PortalCharacter;
 use App\Domains\Portal\Models\PortalEpisode;
 use App\Domains\Portal\Models\PortalSeason;
+use App\Domains\Webmention\Models\BlogPostLinks;
+use App\Domains\Webmention\Models\BlogPostMentions;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
@@ -124,6 +126,9 @@ class DemoSeeder extends Seeder
             'slug' => Str::slug($data['title']),
             'author_user_id' => $author->id
         ]);
+
+        BlogPostLinks::factory()->recycle($post)->create();
+        BlogPostMentions::factory()->recycle($post)->count(3)->create();
 
         $tags = collect($tags)->map(fn (string $tag) => Tag::create(['slug' => $tag, 'label' => $tag]));
         $post->tags()->sync($tags->map->id);

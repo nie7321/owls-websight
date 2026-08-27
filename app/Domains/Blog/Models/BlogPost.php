@@ -5,6 +5,8 @@ namespace App\Domains\Blog\Models;
 use App\Domains\Auth\Models\User;
 use App\Domains\Blog\Enums\PublishingStatus;
 use App\Domains\Media\Models\Image;
+use App\Domains\Webmention\Models\BlogPostLinks;
+use App\Domains\Webmention\Models\BlogPostMentions;
 use Carbon\CarbonInterface;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -12,6 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 
@@ -36,6 +39,16 @@ class BlogPost extends Model
     public function thumbnail_image(): BelongsTo
     {
         return $this->belongsTo(Image::class, 'thumbnail_image_id');
+    }
+
+    public function links(): HasMany
+    {
+        return $this->hasMany(BlogPostLinks::class);
+    }
+
+    public function mentions(): HasMany
+    {
+        return $this->hasMany(BlogPostMentions::class);
     }
 
     /**
