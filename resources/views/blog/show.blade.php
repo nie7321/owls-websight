@@ -1,6 +1,6 @@
 @php /** @var \App\Domains\Blog\Models\BlogPost $post */ @endphp
 <x-guest-layout :title="$post->title" :previewImage="$post->thumbnail_image" :description="$post->summary">
-    <article>
+    <article class="h-entry">
         <div class="xl:divide-y xl:divide-gray-200 xl:dark:divide-gray-700">
             <header class="pt-6 xl:pb-6">
                 <div class="space-y-1 text-center">
@@ -9,9 +9,11 @@
                             <dt class="sr-only">Published on</dt>
                             <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                                 @if($post->published_at)
-                                    <time datetime="{{ $post->published_at->toIso8601String() }}">
-                                        {{ $post->published_at->format('l, F j, Y') }}
-                                    </time>
+                                    <a href="{{ $post->permalink }}" class="u-url">
+                                        <time class="dt-published" datetime="{{ $post->published_at->toIso8601String() }}">
+                                            {{ $post->published_at->format('l, F j, Y') }}
+                                        </time>
+                                    </a>
                                 @else
                                     <span class="italic">Unpublished</span>
                                 @endif
@@ -19,7 +21,7 @@
                         </div>
                     </dl>
                     <div>
-                        <h1 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+                        <h1 class="p-name text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
                             {{ $post->title }}
                         </h1>
                     </div>
@@ -36,12 +38,12 @@
                                                                          class="h-10 w-10 rounded-full"
                                                                          style="color: transparent;"
                                                                          src="{{ asset('image/owls-avatar.png') }}">
-                                <dl class="whitespace-nowrap text-sm font-medium leading-5">
+                                <dl class="h-card whitespace-nowrap text-sm font-medium leading-5">
                                     <dt class="sr-only">Name</dt>
-                                    <dd class="text-gray-900 dark:text-gray-100">owls</dd>
+                                    <dd class="p-author text-gray-900 dark:text-gray-100">owls</dd>
                                     <dt class="sr-only">Mastodon</dt>
                                     <dd><a target="_blank" rel="noopener noreferrer" href="https://mastodon.yshi.org/@owls"
-                                           class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
+                                           class="u-url text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@owls@yshi.org</a>
                                     </dd>
                                 </dl>
                             </li>
@@ -49,7 +51,7 @@
                     </dd>
                 </dl>
                 <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-                    <div class="prose max-w-none pb-8 pt-10 dark:prose-invert">
+                    <div class="e-content prose max-w-none pb-8 pt-10 dark:prose-invert">
                         {!! $htmlContent !!}
                     </div>
                 </div>
@@ -61,7 +63,7 @@
                             <div class="flex flex-wrap">
                                 @forelse ($post->tags as $tag)
                                     <a
-                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                        class="p-category mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                         href="{{ route('tag.show', $tag->slug) }}"
                                     >
                                         {{ $tag->label }}

@@ -3,17 +3,17 @@
         <p class="text-2xl font-bold leading-8 tracking-tight text-center">There are no posts!</p>
     </div>
 @else
-    <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+    <ul class="h-feed divide-y divide-gray-200 dark:divide-gray-700">
         @php /** @var BlogPost $post */ @endphp
         @foreach($posts as $post)
             <li class="py-12">
-                <article>
+                <article class="h-entry">
                     <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                         <dl>
                             <dt class="sr-only">Published on</dt>
                             <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                                 @if($post->published_at)
-                                    <time datetime="{{ $post->published_at->toIso8601String() }}">
+                                    <time class="dt-published" datetime="{{ $post->published_at->toIso8601String() }}">
                                         {{ $post->published_at->format('F j, Y') }}
                                     </time>
                                 @else
@@ -25,14 +25,14 @@
                             <div class="space-y-6">
                                 <div>
                                     <h2 class="text-2xl font-bold leading-8 tracking-tight">
-                                        <a class="text-gray-900 dark:text-gray-100" href="{{ $post->permalink }}">
+                                        <a class="p-name u-url text-gray-900 dark:text-gray-100" href="{{ $post->permalink }}">
                                             {{ $post->title }}
                                         </a>
                                     </h2>
                                     <div class="flex flex-wrap">
                                         @foreach($post->tags as $tag)
                                             <a
-                                                class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                                class="p-category mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                                 href="{{ route('tag.show', $tag->slug) }}"
                                             >
                                                 {{ $tag->label }}
@@ -40,7 +40,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-400">
+                                <div class="p-summary prose dark:prose-invert max-w-none text-gray-500 dark:text-gray-400">
                                     {!! $toMarkdown->convert($post->summary) !!}
                                 </div>
                             </div>
