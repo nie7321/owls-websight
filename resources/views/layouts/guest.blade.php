@@ -80,6 +80,7 @@
                 <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="{{ route('contact') }}">Contact</a>
 
                 <x-navigation.dropdown label="Stuff" id="stuff">
+                    <x-navigation.dropdown-link href="{{ route('badges.index') }}">Badges &amp; Buttons</x-navigation.dropdown-link>
                     <x-navigation.dropdown-link href="{{ route('portal.index') }}">Portal (2002)</x-navigation.dropdown-link>
                 </x-navigation.dropdown>
 
@@ -183,6 +184,9 @@
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('blog-archive.index') }}">Archives</a>
                         </div>
                         <div class="px-12 py-4">
+                            <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('badges.index') }}">Badges &amp; Buttons</a>
+                        </div>
+                        <div class="px-12 py-4">
                             <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="{{ route('portal.index') }}">Portal (2002)</a>
                         </div>
 
@@ -233,12 +237,6 @@
                     <div><a href="{{ route('legal.credits') }}">credits</a></div>
                     <div><a href="{{ route('legal.terms') }}">terms of use &amp; privacy policy</a></div>
                     <div><a href="{{ route('filament.admin.pages.dashboard') }}">admin</a></div>
-                </div>
-                <div class="mb-4 flex flex-wrap justify-center content-center gap-4">
-                    <img src="{{ asset('image/tfnow.gif') }}" alt="Team Fortress Now!" loading="lazy" class="badge-88x31">
-                    <img src="{{ asset('image/php.gif') }}" alt="Powered by PHP" loading="lazy" class="badge-88x31">
-                    <img src="{{ asset('image/petsites.gif') }}" alt="Top 100 Pet Sites" loading="lazy" class="badge-88x31">
-                    <img src="{{ asset('image/internetprivacy.gif') }}" alt="Internet Priavy Now" loading="lazy" class="badge-88x31">
                 </div>
                 <div class="mb-8">
                     <a href="https://yshi.org" target="_blank">

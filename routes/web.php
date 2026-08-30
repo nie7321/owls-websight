@@ -24,6 +24,8 @@ Route::get('legal/terms-and-privacy', fn () => view('legal.terms-and-privacy'))-
 Route::get('about', fn () => view('about'))->name('about');
 Route::get('contact', fn () => view('contact'))->name('contact');
 
+Route::get('badges', fn () => view('badges.index'))->name('badges.index');
+
 Route::get('social-card.svg', Controllers\SocialCardController::class)->name('social-card');
 Route::get('links/{categorySlug}', [Controllers\LinkController::class, 'show'])->name('link.show');
 
