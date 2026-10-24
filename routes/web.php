@@ -69,4 +69,8 @@ Route::prefix('toybox')->group(function () {
     Route::view('balloons', 'toybox.balloons.index');
 });
 
+Route::prefix('external-feeds')->group(function () {
+    Route::get('anet-jobs.atom', Controllers\ArenanetCareerFeedController::class)->name('anet-jobs');
+});
+
 Route::get('/', [Controllers\BlogPostController::class, 'index'])->name('blog-post.index');
