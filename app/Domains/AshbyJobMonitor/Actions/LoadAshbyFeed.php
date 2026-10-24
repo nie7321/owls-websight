@@ -7,6 +7,7 @@ namespace App\Domains\AshbyJobMonitor\Actions;
 use App\Domains\AshbyJobMonitor\Entities\AshbyJob;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
 class LoadAshbyFeed
@@ -41,10 +42,12 @@ class LoadAshbyFeed
 
     private function get(): array
     {
-        return Http::retry(3, 250)
-            ->acceptJson()
-            ->throw()
-            ->get($this->boardUrl)
-            ->json('jobs');
+        return Cache::remember('anet-ashby', now()->plus(minutes: 5), function () {
+            return Http::retry(3, 250)
+                ->acceptJson()
+                ->throw()
+                ->get($this->boardUrl)
+                ->json('jobs');
+        });
     }
 }
