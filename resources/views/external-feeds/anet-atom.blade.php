@@ -28,7 +28,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
         @foreach ($jobs as $job)
             <item>
                 <title><![CDATA[{{ $job->title }}]]></title>
-                <link>{{ $job->applyUrl }}</link>
+                <link>{{ $job->postUrl }}</link>
                 <description><![CDATA[{!! $job->htmlDescription !!}]]></description>
                 <guid isPermaLink="true">{{ $job->postUrl }}</guid>
                 <pubDate>{{ $job->publishedAt->toRssString() }}</pubDate>
